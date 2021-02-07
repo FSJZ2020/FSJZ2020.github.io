@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Archive
+title: 目录
 ---
 
 <section>
@@ -13,7 +13,7 @@ title: Archive
     {% else %}  
         <h3>{{ firstpostyear }}</h3>
     {% endif %}
-
+    
     {%for post in site.posts %}
       {% unless post.next %}
         <ul>
