@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="baidu-site-verification" content="vvVgSQUzPU" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="keywords" content="虎虎|博客|个人|utone|Utone|">
+    <meta name="description" content="风速决战的个人博客">
+    
+    <title>
+       HTML学习笔记 -  风速决战的个人博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+ 
+    
+      <link rel="icon" href="/images/favicon.ico" />
+    
+  <meta name="generator" content="Hexo 5.3.0"></head>
+  <body>
+    <div id="container">
+      <div id="main-left">
+        <div id="introduce">
+          <div class="logo-worp">
+            <a href="/"><img class="logo" src="/images/logo.png" alt=""/></a>
+          </div>
+          <ul>
+            
+              <li><a href="/"> 首页 </a></li>
+            
+              <li><a href="/archives"> 归档 </a></li>
+            
+              <li><a href="/about"> 关于 </a></li>
+            
+              <li><a href="/friends"> 友链 </a></li>
+            
+            <li>
+              <img id="search-img" src="/images/search.svg" alt="search" />
+            </li>
+          </ul>
+           
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HTML-%E4%BB%8B%E7%BB%8D"><span class="post-toc-number">1.</span> <span class="post-toc-text">HTML 介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#web%E6%A0%87%E5%87%86"><span class="post-toc-number">2.</span> <span class="post-toc-text">web标准</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HTML%E8%AF%AD%E6%B3%95%E8%A7%84%E8%8C%83"><span class="post-toc-number">3.</span> <span class="post-toc-text">HTML语法规范</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%A0%87%E7%AD%BE%E5%85%B3%E7%B3%BB"><span class="post-toc-number">4.</span> <span class="post-toc-text">标签关系</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HTML%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%E6%A0%87%E7%AD%BE"><span class="post-toc-number">5.</span> <span class="post-toc-text">HTML基本结构标签</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE"><span class="post-toc-number">6.</span> <span class="post-toc-text">HTML常用标签</span></a></li></ol> 
+          
+        </div>
+      </div>
+      <div id="main-right"><div id="post">
+    
+    <header class="article-header">
+        <h1>
+            HTML学习笔记
+        </h1>
+    </header>
+    
+    <div class="post-meta">
+        <time class="post-data" datetime="2021-02-18T13:20:06.000Z" itemprop="datePublished">
+            2021-02-18
+        </time>
+        
+        
+        <ul class="post-tag-list" itemprop="keywords"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a><span class="post-tag-list-count">1</span></li></ul>
+        
+    </div>
+    
+    <div class="post-entry">
+        <h2 id="HTML-介绍"><a href="#HTML-介绍" class="headerlink" title="HTML 介绍"></a>HTML 介绍</h2><p>HTML(Hyper Text Markup Language)超文本标记语言</p>
+<p>网页后缀为<code>html</code>或<code>htm</code>。</p>
+<h2 id="web标准"><a href="#web标准" class="headerlink" title="web标准"></a>web标准</h2><p>结构：用于对网页元素进行整理分类，语言为HTML</p>
+<p>表现：表现用于设置网页元素的版式、颜色、大小等外观样式，主要为CSS</p>
+<p>行为：行为指网页模型的定义及交互的编写，语言为JavaScript</p>
+<p><img src="/2021/02/18/HTML%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/QQ图片20210218212859.png" alt="三者关系"></p>
+<h2 id="HTML语法规范"><a href="#HTML语法规范" class="headerlink" title="HTML语法规范"></a>HTML语法规范</h2><ol>
+<li>HTML标签是由尖括号包围的关键词，例<code>&lt;html&gt;</code></li>
+<li>HTML标签通常是成对出现的，例如<code>&lt;html&gt;</code>和<code>&lt;/html&gt;</code>，我们称之为双标签，标签中的第一个标签为开始标签，第二个标签为结束标签</li>
+<li>有些特殊的标签为单标签(极少情况),例 <code>&lt;br&gt;</code>  </li>
+</ol>
+<h2 id="标签关系"><a href="#标签关系" class="headerlink" title="标签关系"></a>标签关系</h2><p><strong>包含关系</strong>和<strong>并列关系</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">包含关系举例</span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">并列关系举例</span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="HTML基本结构标签"><a href="#HTML基本结构标签" class="headerlink" title="HTML基本结构标签"></a>HTML基本结构标签</h2><p><code>&lt;html&gt;&lt;/html&gt;</code>页面中最大的标签，称之为根标签</p>
+<p><code>&lt;head&gt;&lt;/head&gt;</code> 在head标签中必须要设置title</p>
+<p><code>&lt;title&gt;&lt;/title&gt;</code> 网页的标题</p>
+<p><code>&lt;body&gt;&lt;/body&gt;</code> 文档的所有内容，页面内容等</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>...<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        ...</span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>如果使用VScode，敲下一个!，然后回车可以弹出网站框架</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span><span class="comment">&lt;!-- 声明网站使用的html版本，这里指用html5版本，必须位于文档中最前面的位置，在&lt;html&gt;之前 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span><span class="comment">&lt;!-- 标注出网站的语言，en为英文，zh-CN为中文，如果不为中文，浏览器会弹出要不要翻译为中文的选项 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><span class="comment">&lt;!-- 标注出网站使用的字符编码类型 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span><span class="comment">&lt;!--网站标题--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 网页的内容 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="HTML常用标签"><a href="#HTML常用标签" class="headerlink" title="HTML常用标签"></a>HTML常用标签</h2>
+    </div>
+    <!--畅言PC和WAP自适应版-->
+  
+</div></div>
+    </div>
+    <div id="footer">风速决战</div>
+    <img id="top" src="/images/up-circle.svg" alt="top" />
+    
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
+<!-- 加载主题脚本文件 -->
+
+<script src="/scripts/utone.js"></script>
+
+
+<script type="text/javascript">
+  window.onload = function() {
+    scroll.init()
+    siteSearch.init()
+  }
+</script>
