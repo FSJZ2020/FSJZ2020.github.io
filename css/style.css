@@ -510,8 +510,9 @@ a {
   margin-left: 10px;
 }
 .flogo img {
-  height: 100%;
+  height: 92%;
   border-radius: 50%;
+  margin-top: 2px;
 }
 .friends .fnd {
   float: left;
