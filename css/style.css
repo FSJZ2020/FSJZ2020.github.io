@@ -496,6 +496,31 @@ a {
   height: 100%;
   margin-top: 0;
 }
+.friends {
+  border: 2px solid #808080;
+  width: 360px;
+  height: 115px;
+}
+.friends .flogo {
+  border: 0px solid transparent;
+  border-radius: 58px;
+  float: left;
+  margin-left: 10px;
+}
+.flogo img {
+  height: 100%;
+}
+.friends .fnd {
+  float: left;
+}
+.friends .fnd .fname {
+  font-weight: 700;
+  font-size: 16px;
+}
+.friends .fnd .fdes {
+  font-weight: 400;
+  font-size: 14px;
+}
 .post-entry pre,
 .post-entry .highlight {
   margin: 0;
