@@ -497,29 +497,43 @@ a {
   margin-top: 0;
 }
 .friends {
+  display: inline-block;
   border: 2px solid #808080;
   width: 360px;
   height: 115px;
+  border-radius: 58px;
 }
 .friends .flogo {
-  border: 0px solid transparent;
   border-radius: 58px;
   float: left;
+  height: 115px;
   margin-left: 10px;
 }
 .flogo img {
   height: 100%;
+  border-radius: 50%;
 }
 .friends .fnd {
   float: left;
+  width: 220px;
 }
 .friends .fnd .fname {
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 10px;
+  text-decoration: none;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 20px;
+  color: #1572b6;
+  height: 30px;
 }
 .friends .fnd .fdes {
-  font-weight: 400;
-  font-size: 14px;
+  margin-left: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 17px;
+  height: 50px;
 }
 .post-entry pre,
 .post-entry .highlight {
