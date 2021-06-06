@@ -42,7 +42,7 @@
             </li>
           </ul>
            
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Arch-Linux-%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B"><span class="post-toc-number">1.</span> <span class="post-toc-text">Arch Linux 安装过程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%8B%E8%BD%BDISO%E6%96%87%E4%BB%B6"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">下载ISO文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85ArchLinux"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">虚拟机中安装ArchLinux</span></a></li></ol></li></ol> 
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ArchLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B"><span class="post-toc-number">1.</span> <span class="post-toc-text">ArchLinux安装教程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%8B%E8%BD%BDISO%E6%96%87%E4%BB%B6"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">下载ISO文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85ArchLinux"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">虚拟机中安装ArchLinux</span></a></li></ol></li></ol> 
           
         </div>
       </div>
@@ -65,7 +65,7 @@
       </div>
       
           <div class="post-entry">
-            <h1 id="Arch-Linux-安装过程"><a href="#Arch-Linux-安装过程" class="headerlink" title="Arch Linux 安装过程"></a>Arch Linux 安装过程</h1><p><img src="/2021/06/06/ArchLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/下载.jpeg" alt="tu"></p>
+            <h1 id="ArchLinux安装教程"><a href="#ArchLinux安装教程" class="headerlink" title="ArchLinux安装教程"></a>ArchLinux安装教程</h1><p><img src="/2021/06/06/ArchLinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/下载.jpeg" alt="tu"></p>
 <h2 id="下载ISO文件"><a href="#下载ISO文件" class="headerlink" title="下载ISO文件"></a>下载ISO文件</h2><p>首先到镜像站下载Arch Linux的ISO文件，这里使用的是中科大的<a target="_blank" rel="noopener" href="http://mirrors.ustc.edu.cn/archlinux/iso/">镜像站</a></p>
 <h2 id="虚拟机中安装ArchLinux"><a href="#虚拟机中安装ArchLinux" class="headerlink" title="虚拟机中安装ArchLinux"></a>虚拟机中安装ArchLinux</h2><p>我使用的是VirtualBox</p>
 <p><strong>点击新建</strong></p>
@@ -199,7 +199,22 @@
     <div id="footer">风速决战</div>
     <img id="top" src="/images/up-circle.svg" alt="top" />
     
-  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
 <!-- 加载主题脚本文件 -->
 
