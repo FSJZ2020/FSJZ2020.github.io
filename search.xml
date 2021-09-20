@@ -796,7 +796,7 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
     <url>/2021/09/20/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p><img src="/2021/09/20/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/lnux.jpg" alt="lnux"></p>
 <span id="more"></span>
-<h2 id="1-基础学习篇"><a href="#1-基础学习篇" class="headerlink" title="1. 基础学习篇"></a>1. 基础学习篇</h2><h3 id="X-window与命令行模式的切换"><a href="#X-window与命令行模式的切换" class="headerlink" title="X window与命令行模式的切换"></a>X window与命令行模式的切换</h3><p>快捷键：<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F1－F6</kbd> </p>
+<h2 id="基础学习篇"><a href="#基础学习篇" class="headerlink" title="基础学习篇"></a>基础学习篇</h2><h3 id="X-window与命令行模式的切换"><a href="#X-window与命令行模式的切换" class="headerlink" title="X window与命令行模式的切换"></a>X window与命令行模式的切换</h3><p>快捷键：<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F1－F6</kbd> </p>
 <p><img src="/2021/09/20/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/VirtualBox_CentOS8_20_09_2021_11_12_55.png" alt="VirtualBox_CentOS8_20_09_2021_11_12_55"></p>
 <p>在命令行模式下启动X window</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">startx</span><br></pre></td></tr></table></figure>
