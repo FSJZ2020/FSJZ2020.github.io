@@ -800,8 +800,8 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
 <p><img src="/2021/09/20/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/VirtualBox_CentOS8_20_09_2021_11_12_55.png" alt="VirtualBox_CentOS8_20_09_2021_11_12_55"></p>
 <p>在命令行模式下启动X window</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">startx</span><br></pre></td></tr></table></figure>
-<h2 id="注销Linux"><a href="#注销Linux" class="headerlink" title="注销Linux"></a>注销Linux</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
-<h2 id="执行命令"><a href="#执行命令" class="headerlink" title="执行命令"></a>执行命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">command</span> [-options] parameter1 parameter2 ...</span><br></pre></td></tr></table></figure>
+<h3 id="注销Linux"><a href="#注销Linux" class="headerlink" title="注销Linux"></a>注销Linux</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+<h3 id="执行命令"><a href="#执行命令" class="headerlink" title="执行命令"></a>执行命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">command</span> [-options] parameter1 parameter2 ...</span><br></pre></td></tr></table></figure>
 <p>选项若为简写，使用 -,如 -h，若为完整全名，则使用—，如—help。</p>
 <p>常见命令：</p>
 <ul>
@@ -809,7 +809,7 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
 <li>显示日历的命令：cal</li>
 <li>简单好用的计算器：bc</li>
 </ul>
-<h2 id="几个关键的快捷键"><a href="#几个关键的快捷键" class="headerlink" title="几个关键的快捷键"></a>几个关键的快捷键</h2><ul>
+<h3 id="几个关键的快捷键"><a href="#几个关键的快捷键" class="headerlink" title="几个关键的快捷键"></a>几个关键的快捷键</h3><ul>
 <li><p><kbd>Tab</kbd> Tab具有命令补全和文件名补全的作用，双击Tab可以显示有哪些以命令行文字开头的命令</p>
 </li>
 <li><p><kbd>Ctrl+c</kbd> 终止程序的执行</p>
@@ -817,7 +817,7 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
 <li><kbd>Ctrl+d</kbd> 相当于exit，直接退出终端</li>
 <li><kbd> shift+pageup|pagedown</kbd> 在命令行翻页，（当然，使用鼠标滚轮也可以）。</li>
 </ul>
-<h2 id="查询工具"><a href="#查询工具" class="headerlink" title="查询工具"></a>查询工具</h2><h3 id="man与info"><a href="#man与info" class="headerlink" title="man与info"></a>man与info</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">man date</span><br></pre></td></tr></table></figure>
+<h3 id="查询工具"><a href="#查询工具" class="headerlink" title="查询工具"></a>查询工具</h3><h4 id="man与info"><a href="#man与info" class="headerlink" title="man与info"></a>man与info</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">man date</span><br></pre></td></tr></table></figure>
 <p><img src="/2021/09/20/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20210920114110936.png" alt="image-20210920114110936"></p>
 <p><strong>代号代表的内容</strong></p>
 <div class="table-container">
