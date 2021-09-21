@@ -998,6 +998,50 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
 <li>系统暂停，屏幕会保留系统已经停止的信息 halt</li>
 <li>关机 poweroff</li>
 </ul>
+<h2 id="文件权限与目录配置"><a href="#文件权限与目录配置" class="headerlink" title="文件权限与目录配置"></a>文件权限与目录配置</h2><h3 id="用户与用户组"><a href="#用户与用户组" class="headerlink" title="用户与用户组"></a>用户与用户组</h3><p>Linux中的所有用户的相关账号信息记录在/etc/passwd目录中</p>
+<p>所有密码记录在/etc/shadow目录中</p>
+<p>所有用户组信息记录在/etc/group中</p>
+<h3 id="Linux文件权限概念"><a href="#Linux文件权限概念" class="headerlink" title="Linux文件权限概念"></a>Linux文件权限概念</h3><h4 id="Linux文件属性"><a href="#Linux文件属性" class="headerlink" title="Linux文件属性"></a>Linux文件属性</h4><p><img src="/2021/09/20/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20210921110630446.png" alt="image-20210921110630446" style="zoom: 80%;"></p>
+<p><img src="/2021/09/20/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20210921111743223.png" alt="image-20210921111743223" style="zoom: 80%;"></p>
+<ul>
+<li>第一个字符代表文件类型</li>
+</ul>
+<blockquote>
+<p>d为目录</p>
+<p>-为文件</p>
+<p>l为链接文件（link file）</p>
+<p>b为设备文件里可供存储的周边设备</p>
+<p>c为设备文件里的串行端口设备，如键盘、鼠标</p>
+</blockquote>
+<ul>
+<li><code>r</code>代表可读，<code>w</code>代表可写，<code>e</code>代表可执行，如果没有权限则以<code>-</code>代替</li>
+<li>第一组代表文件拥有者权限，第二组代表加入此用户组账号的权限，第三组代表其他用户所拥有的权限</li>
+</ul>
+<p>文件容量大小的默认单位为Bytes</p>
+<p>如果想要列出文件修改的详细时间，可使用命令<code>ls -al --full-time</code></p>
+<p>以<code>.</code>开头的文件为隐藏文件</p>
+<h3 id="修改文件属性与权限"><a href="#修改文件属性与权限" class="headerlink" title="修改文件属性与权限"></a>修改文件属性与权限</h3><ul>
+<li>chgrp：修改文件所属用户组</li>
+</ul>
+<blockquote>
+<p>chgrp [-R]  用户组名称 dirname/filename</p>
+<p>-R：进行递归，将子目录下的所有文件、目录都更新成这个用户组</p>
+</blockquote>
+<ul>
+<li>chown：修改文件拥有者</li>
+</ul>
+<blockquote>
+<p>chown [-R] 账号名称 文件或目录</p>
+<p>chown [-R] 账号名称:用户组名称 文件或目录</p>
+</blockquote>
+<ul>
+<li>chmod：修改文件权限</li>
+</ul>
+<blockquote>
+<p>r:4 w:2 x:1</p>
+<p>chmod [-R] xyz 文件或目录</p>
+<p>例：chmod 777 .bashrc</p>
+</blockquote>
 ]]></content>
       <tags>
         <tag>Linux</tag>
