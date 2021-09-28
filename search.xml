@@ -1047,4 +1047,17 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
         <tag>Linux</tag>
       </tags>
   </entry>
+  <entry>
+    <title>使用pyautogui操作键盘和鼠标[今天先更到这里😪]</title>
+    <url>/2021/09/28/%E4%BD%BF%E7%94%A8pyautogui%E6%93%8D%E4%BD%9C%E9%94%AE%E7%9B%98%E5%92%8C%E9%BC%A0%E6%A0%87/</url>
+    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><strong>PyAutoGui</strong>是一个可以控制鼠标和键盘的python库，当需要完成一些繁琐且重复的工作时，可以使用这个库来帮助完成</p>
+<span id="more"></span>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><code>pip install pyautogui</code></p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p><strong>导入</strong></p>
+<p><code>import pyautogui</code></p>
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
 </search>
