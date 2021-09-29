@@ -1048,14 +1048,20 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>使用pyautogui操作键盘和鼠标[今天先更到这里😪]</title>
+    <title>使用PyAutoGui操作键盘和鼠标[今天先更到这里😪]</title>
     <url>/2021/09/28/%E4%BD%BF%E7%94%A8pyautogui%E6%93%8D%E4%BD%9C%E9%94%AE%E7%9B%98%E5%92%8C%E9%BC%A0%E6%A0%87/</url>
     <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><strong>PyAutoGui</strong>是一个可以控制鼠标和键盘的python库，当需要完成一些繁琐且重复的工作时，可以使用这个库来帮助完成</p>
 <span id="more"></span>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><code>pip install pyautogui</code></p>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p><strong>导入</strong></p>
-<p><code>import pyautogui</code></p>
-]]></content>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install pyautogui</span><br></pre></td></tr></table></figure>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p><strong>导入</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pyautogui</span><br></pre></td></tr></table></figure>
+<p><strong>故障安全</strong></p>
+<p>如果鼠标位于主监视器的四个角的任意一个时，它将触发<code>pyautogui.FailSafeException</code>，调用每个PyAutoGui函数时，有0.1s的延迟可以将鼠标移动到四个角中的任意一个位置，这个延迟的时间可由<code>pyautogui.PAUSE</code>设置，如果不需要故障保护可以设置<code>pyautogui.FAILSAFE=FALSE</code></p>
+<h2 id="鼠标控制功能"><a href="#鼠标控制功能" class="headerlink" title="鼠标控制功能"></a>鼠标控制功能</h2><h3 id="屏幕和鼠标位置"><a href="#屏幕和鼠标位置" class="headerlink" title="屏幕和鼠标位置"></a>屏幕和鼠标位置</h3><p>屏幕上的位置由笛卡尔坐标引用，原点位于左上角处，X和Y均是从0开始</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">0,0       X increases --&gt;</span><br><span class="line">+---------------------------+</span><br><span class="line">|                           | Y increases</span><br><span class="line">|                           |     |</span><br><span class="line">|   1920 x 1080 screen      |     |</span><br><span class="line">|                           |     V</span><br><span class="line">|                           |</span><br><span class="line">|                           |</span><br><span class="line">+---------------------------+ 1919, 1079</span><br></pre></td></tr></table></figure>
+<p>所以1920*1080的屏幕右下角像素为（1919，1079）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>pyautogui.size()<span class="comment">#获取屏幕的大小</span></span><br><span class="line">Size(width=<span class="number">1920</span>, height=<span class="number">1080</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pyautogui.position()<span class="comment">#获取鼠标的位置</span></span><br><span class="line">Point(x=<span class="number">1253</span>, y=<span class="number">604</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pyautogui.onScreen(<span class="number">1111</span>,<span class="number">123</span>)<span class="comment">#检测某点是否在屏幕上</span></span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pyautogui.onScreen(<span class="number">1111</span>,<span class="number">1234</span>)</span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<h3 id="鼠标移动"><a href="#鼠标移动" class="headerlink" title="鼠标移动"></a>鼠标移动</h3>]]></content>
       <tags>
         <tag>python</tag>
       </tags>
