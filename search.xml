@@ -1135,4 +1135,18 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
         <tag>python</tag>
       </tags>
   </entry>
+  <entry>
+    <title>pillow学习[更新中]</title>
+    <url>/2021/10/01/pillow%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><blockquote>
+<p>pillow和PIL不能共存，安装pillow前，请先卸载PIL</p>
+</blockquote>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">im=Image.<span class="built_in">open</span>(<span class="string">&#x27;test.png&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(im.<span class="built_in">format</span>,im.size,im.mode)</span><br></pre></td></tr></table></figure>
+<p><code>format</code>为文件的格式，<code>size</code>为图像的大小，<code>mode</code>为图像的色彩格式，常见的有“L”（灰度图像），“CMYK”（打印图像），“RGB”（真彩色图像）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">im.show()<span class="comment">#显示图像</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
 </search>
