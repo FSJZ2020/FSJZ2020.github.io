@@ -1143,10 +1143,60 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
 </blockquote>
 <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">im=Image.<span class="built_in">open</span>(<span class="string">&#x27;test.png&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(im.<span class="built_in">format</span>,im.size,im.mode)</span><br></pre></td></tr></table></figure>
 <p><code>format</code>为文件的格式，<code>size</code>为图像的大小，<code>mode</code>为图像的色彩格式，常见的有“L”（灰度图像），“CMYK”（打印图像），“RGB”（真彩色图像）</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">im.show()<span class="comment">#显示图像</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">im.show()<span class="comment">#显示图像,调用系统安装的图片显示软件</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Arduino学习</title>
+    <url>/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p><img src="/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/A000066_03.front_970c6014-61ab-4226-a20f-14cc6d8d682c_1000x750.jpg" alt="A000066_03.front_970c6014-61ab-4226-a20f-14cc6d8d682c_1000x750"></p>
+<span id="more"></span>
+<h1 id="Arduino-UNO"><a href="#Arduino-UNO" class="headerlink" title="Arduino UNO"></a>Arduino UNO</h1><p>解析图</p>
+<p><img src="/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/image-20211008233333288.png" alt="image-20211008233333288"></p>
+<ol>
+<li>电源</li>
+</ol>
+<ul>
+<li>通过USB供电，电压为5V；</li>
+<li>通过DC电源输入接口供电，电压要求7~12V；</li>
+<li>通过电源接口处5V或者VIN供电，5V端口处供电必须为5V，VIN端口处供电为7~12V；</li>
+</ul>
+<ol>
+<li>指示灯</li>
+</ol>
+<ul>
+<li>ON，电源指示灯</li>
+<li>TX，串口发送指示灯</li>
+<li>RX，串口接受指示灯</li>
+<li>L，可编程指示灯，通过特殊电路连接到13号引脚，当13号引脚为<strong>高电平</strong>或<strong>高阻态</strong>时点亮，低电平时不会点亮</li>
+</ul>
+<ol>
+<li>存储空间</li>
+</ol>
+<ul>
+<li>FLASH 32KB 其中0.5KB作为BOOT区存放引导程序，实现串口下载的功能。另外的31.5KB存放程序</li>
+<li>SRAM 2KB 内存</li>
+<li>EEPROM 1KB 电可擦写的可编程只读存储器</li>
+</ul>
+<ol>
+<li>输入/输出端口</li>
+</ol>
+<p><img src="/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/Pinout-UNOrev3_latest.png" alt="Pinout-UNOrev3_latest"></p>
+<ul>
+<li>UART通信，为0（RX）和1（TX）引脚，用于接收和发送串口数据，这两个引脚通过连接到ATmega16U2与计算机通信</li>
+<li>外部中断，为2和3引脚，可以输入外部中断信号</li>
+<li>PWM输出，为3、5、6、9、10和11引脚，可以输出PWM波</li>
+<li>SPI通信，为10（SS）、11（MOSI），12（MISO）和13（SCK）引脚，可用于SPI通信</li>
+<li>TWI通信，为A4（SDA），A5（SCL）引脚和TWI接口，可用于TWI通信，兼容IIC通信</li>
+<li>AREF，模拟输入参考电压的输入端口</li>
+<li>RESET，复位端口，接低电平会使Arduino复位</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Arduino 单片机</tag>
       </tags>
   </entry>
 </search>
