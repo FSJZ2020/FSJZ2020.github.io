@@ -1152,7 +1152,7 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
   <entry>
     <title>Arduino学习</title>
     <url>/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p><img src="/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/A000066_03.front_970c6014-61ab-4226-a20f-14cc6d8d682c_1000x750.jpg" alt="A000066_03.front_970c6014-61ab-4226-a20f-14cc6d8d682c_1000x750"></p>
+    <content><![CDATA[<p><img src="/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/A000066_03.front_970c6014-61ab-4226-a20f-14cc6d8d682c_1000x750.jpg" alt="A000066_03.front_970c6014-61ab-4226-a20f-14cc6d8d682c_1000x750" style="zoom:50%;"></p>
 <span id="more"></span>
 <h1 id="Arduino-UNO"><a href="#Arduino-UNO" class="headerlink" title="Arduino UNO"></a>Arduino UNO</h1><p>解析图</p>
 <p><img src="/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/image-20211008233333288.png" alt="image-20211008233333288"></p>
@@ -1194,7 +1194,7 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
 <li>AREF，模拟输入参考电压的输入端口</li>
 <li>RESET，复位端口，接低电平会使Arduino复位</li>
 </ul>
-]]></content>
+<h1 id="Arduino语言及程序结构"><a href="#Arduino语言及程序结构" class="headerlink" title="Arduino语言及程序结构"></a>Arduino语言及程序结构</h1>]]></content>
       <tags>
         <tag>Arduino 单片机</tag>
       </tags>
