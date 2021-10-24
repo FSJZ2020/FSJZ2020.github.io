@@ -1568,4 +1568,31 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
         <tag>快捷键</tag>
       </tags>
   </entry>
+  <entry>
+    <title>CTF Web学习</title>
+    <url>/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<span id="more"></span>
+<h2 id="robots-txt"><a href="#robots-txt" class="headerlink" title="robots.txt"></a>robots.txt</h2><p>robots.txt是一个纯文本文件，在这个文件中网站管理者可以声明该网站中不想被robots访问的部分，或者指定搜索引擎只收录指定的内容。</p>
+<p>当一个搜索机器人（有的叫搜索蜘蛛）访问一个站点时，它会首先检查该站点根目录下是否存在robots.txt，如果存在，搜索机器人就会按照该文件中的内容来确定访问的范围；如果该文件不存在，那么搜索机器人就沿着链接抓取。</p>
+<p>另外，robots.txt必须放置在一个站点的根目录下，而且文件名必须全部小写。</p>
+<p>例：B站的robots.txt</p>
+<p><img src="/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/image-20211024162701745.png" alt="image-20211024162701745"></p>
+<h1 id="文件备份"><a href="#文件备份" class="headerlink" title="文件备份"></a>文件备份</h1><p>常见的备份文件后缀名有: <code>.git .svn .swp .svn .~ .bak .bash_history</code></p>
+<h1 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h1><p> Cookie是当主机访问Web服务器时，由 Web 服务器创建的，将信息存储在用户计算机上的文件。一般网络用户习惯用其复数形式 Cookies，指某些网站为了辨别用户身份、进行 Session 跟踪而存储在用户本地终端上的数据，而这些数据通常会经过加密处理。</p>
+<p>通过Chrome查看Cookie</p>
+<p><img src="/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/image-20211024163920338.png" alt="image-20211024163920338"></p>
+<p>Get-Flag</p>
+<p><img src="/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/image-20211024164007289.png" alt="image-20211024164007289"></p>
+<h1 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h1><p>php中有两种比较符号</p>
+<p><code>===</code>会同时比较字符串的值和类型</p>
+<p><code>==</code>会先将字符串换成相同类型，再作比较，属于弱类型比较</p>
+<p>php中的弱类型比较会使’abc’ == 0为真,（abc可换成任意字符）</p>
+<p>php中弱类型比较时，会使(‘1234a’ == 1234)为真</p>
+<p><img src="/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/image-20211024165034653.png" alt="image-20211024165034653"></p>
+<h1 id="两种传参方式-GET和POST"><a href="#两种传参方式-GET和POST" class="headerlink" title="两种传参方式 GET和POST"></a>两种传参方式 GET和POST</h1><p>GET方式直接在网址后接？变量名=值，POST方式可用Hackbar或Burp传递</p>
+]]></content>
+      <tags>
+        <tag>CTF</tag>
+      </tags>
+  </entry>
 </search>

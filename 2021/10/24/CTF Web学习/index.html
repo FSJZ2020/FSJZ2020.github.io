@@ -20,23 +20,33 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"fsjz2020.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="FSJZ">
-<meta property="og:url" content="https://fsjz2020.github.io/tags/%E5%8D%95%E7%89%87%E6%9C%BA/index.html">
+<meta name="description" content="robots.txtrobots.txt是一个纯文本文件，在这个文件中网站管理者可以声明该网站中不想被robots访问的部分，或者指定搜索引擎只收录指定的内容。 当一个搜索机器人（有的叫搜索蜘蛛）访问一个站点时，它会首先检查该站点根目录下是否存在robots.txt，如果存在，搜索机器人就会按照该文件中的内容来确定访问的范围；如果该文件不存在，那么搜索机器人就沿着链接抓取。 另外，robots.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CTF Web学习">
+<meta property="og:url" content="https://fsjz2020.github.io/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="FSJZ">
+<meta property="og:description" content="robots.txtrobots.txt是一个纯文本文件，在这个文件中网站管理者可以声明该网站中不想被robots访问的部分，或者指定搜索引擎只收录指定的内容。 当一个搜索机器人（有的叫搜索蜘蛛）访问一个站点时，它会首先检查该站点根目录下是否存在robots.txt，如果存在，搜索机器人就会按照该文件中的内容来确定访问的范围；如果该文件不存在，那么搜索机器人就沿着链接抓取。 另外，robots.">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fsjz2020.github.io/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/image-20211024162701745.png">
+<meta property="og:image" content="https://fsjz2020.github.io/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/image-20211024163920338.png">
+<meta property="og:image" content="https://fsjz2020.github.io/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/image-20211024164007289.png">
+<meta property="og:image" content="https://fsjz2020.github.io/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/image-20211024165034653.png">
+<meta property="article:published_time" content="2021-10-24T08:23:34.000Z">
+<meta property="article:modified_time" content="2021-10-24T09:15:57.568Z">
 <meta property="article:author" content="FSJZ">
+<meta property="article:tag" content="CTF">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fsjz2020.github.io/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/image-20211024162701745.png">
 
 
-<link rel="canonical" href="https://fsjz2020.github.io/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
+<link rel="canonical" href="https://fsjz2020.github.io/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/单片机/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://fsjz2020.github.io/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/","path":"2021/10/24/CTF Web学习/","title":"CTF Web学习"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: 单片机 | FSJZ</title>
+<title>CTF Web学习 | FSJZ</title>
   
 
 
@@ -129,7 +139,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -142,6 +152,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#robots-txt"><span class="nav-text">robots.txt</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%A4%87%E4%BB%BD"><span class="nav-text">文件备份</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cookies"><span class="nav-text">Cookies</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP"><span class="nav-text">PHP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%A4%E7%A7%8D%E4%BC%A0%E5%8F%82%E6%96%B9%E5%BC%8F-GET%E5%92%8CPOST"><span class="nav-text">两种传参方式 GET和POST</span></a></div>
         </div>
         <!--/noindex-->
 
@@ -211,51 +222,145 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h2 class="collection-header">单片机
-          <small>标签</small>
-        </h2>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://fsjz2020.github.io/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.png">
+      <meta itemprop="name" content="FSJZ">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FSJZ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CTF Web学习
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+      <time title="创建时间：2021-10-24 16:23:34 / 修改时间：17:15:57" itemprop="dateCreated datePublished" datetime="2021-10-24T16:23:34+08:00">2021-10-24</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>625</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <span id="more"></span>
+<h2 id="robots-txt"><a href="#robots-txt" class="headerlink" title="robots.txt"></a>robots.txt</h2><p>robots.txt是一个纯文本文件，在这个文件中网站管理者可以声明该网站中不想被robots访问的部分，或者指定搜索引擎只收录指定的内容。</p>
+<p>当一个搜索机器人（有的叫搜索蜘蛛）访问一个站点时，它会首先检查该站点根目录下是否存在robots.txt，如果存在，搜索机器人就会按照该文件中的内容来确定访问的范围；如果该文件不存在，那么搜索机器人就沿着链接抓取。</p>
+<p>另外，robots.txt必须放置在一个站点的根目录下，而且文件名必须全部小写。</p>
+<p>例：B站的robots.txt</p>
+<p><img src="/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/image-20211024162701745.png" alt="image-20211024162701745"></p>
+<h1 id="文件备份"><a href="#文件备份" class="headerlink" title="文件备份"></a>文件备份</h1><p>常见的备份文件后缀名有: <code>.git .svn .swp .svn .~ .bak .bash_history</code></p>
+<h1 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h1><p> Cookie是当主机访问Web服务器时，由 Web 服务器创建的，将信息存储在用户计算机上的文件。一般网络用户习惯用其复数形式 Cookies，指某些网站为了辨别用户身份、进行 Session 跟踪而存储在用户本地终端上的数据，而这些数据通常会经过加密处理。</p>
+<p>通过Chrome查看Cookie</p>
+<p><img src="/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/image-20211024163920338.png" alt="image-20211024163920338"></p>
+<p>Get-Flag</p>
+<p><img src="/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/image-20211024164007289.png" alt="image-20211024164007289"></p>
+<h1 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h1><p>php中有两种比较符号</p>
+<p><code>===</code>会同时比较字符串的值和类型</p>
+<p><code>==</code>会先将字符串换成相同类型，再作比较，属于弱类型比较</p>
+<p>php中的弱类型比较会使’abc’ == 0为真,（abc可换成任意字符）</p>
+<p>php中弱类型比较时，会使(‘1234a’ == 1234)为真</p>
+<p><img src="/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/image-20211024165034653.png" alt="image-20211024165034653"></p>
+<h1 id="两种传参方式-GET和POST"><a href="#两种传参方式-GET和POST" class="headerlink" title="两种传参方式 GET和POST"></a>两种传参方式 GET和POST</h1><p>GET方式直接在网址后接？变量名=值，POST方式可用Hackbar或Burp传递</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-10-08T23:16:40+08:00"
-              content="2021-10-08">
-          10-08
-        </time>
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
       </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/" itemprop="url">
-            <span itemprop="name">Arduino学习</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
   </div>
-  
-  
-  
+</div>
 
+          <div class="post-tags">
+              <a href="/tags/CTF/" rel="tag"><i class="fa fa-tag"></i> CTF</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/10/10/Chrome%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="prev" title="Chrome快捷键">
+                  <i class="fa fa-chevron-left"></i> Chrome快捷键
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -330,11 +435,11 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://fsjz2020.github.io/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://fsjz2020.github.io/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"FSJZ2020","repo":"fsjz2020.github.io","client_id":"f9d48f69e6bc4e6bd381","client_secret":"9896c40b70e9b983fef54bd5ef73aaa203954f72","admin_user":"FSJZ2020","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"de4680b8e560979e7b2170141525d8dd"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"FSJZ2020","repo":"fsjz2020.github.io","client_id":"f9d48f69e6bc4e6bd381","client_secret":"9896c40b70e9b983fef54bd5ef73aaa203954f72","admin_user":"FSJZ2020","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"e581ec97895942c78e4b77cac2171606"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
