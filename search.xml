@@ -1571,7 +1571,8 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
   <entry>
     <title>CTF Web学习</title>
     <url>/2021/10/24/CTF%20Web%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<span id="more"></span>
+    <content><![CDATA[<p>.</p>
+<span id="more"></span>
 <h2 id="robots-txt"><a href="#robots-txt" class="headerlink" title="robots.txt"></a>robots.txt</h2><p>robots.txt是一个纯文本文件，在这个文件中网站管理者可以声明该网站中不想被robots访问的部分，或者指定搜索引擎只收录指定的内容。</p>
 <p>当一个搜索机器人（有的叫搜索蜘蛛）访问一个站点时，它会首先检查该站点根目录下是否存在robots.txt，如果存在，搜索机器人就会按照该文件中的内容来确定访问的范围；如果该文件不存在，那么搜索机器人就沿着链接抓取。</p>
 <p>另外，robots.txt必须放置在一个站点的根目录下，而且文件名必须全部小写。</p>
