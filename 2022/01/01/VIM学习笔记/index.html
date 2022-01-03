@@ -20,28 +20,30 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"fsjz2020.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
-<meta name="description" content=".">
 <meta property="og:type" content="article">
-<meta property="og:title" content="正则表达式学习">
-<meta property="og:url" content="https://fsjz2020.github.io/2021/11/08/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:title" content="VIM学习笔记">
+<meta property="og:url" content="https://fsjz2020.github.io/2022/01/01/VIM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="FSJZ">
-<meta property="og:description" content=".">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-07T16:16:30.000Z">
-<meta property="article:modified_time" content="2021-11-08T07:25:01.970Z">
+<meta property="og:image" content="https://fsjz2020.github.io/2022/01/01/VIM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/u=3819990135,2416729285&fm=26&fmt=auto.png">
+<meta property="og:image" content="https://fsjz2020.github.io/2022/01/01/VIM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220102094440797.png">
+<meta property="og:image" content="https://fsjz2020.github.io/2022/01/01/VIM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220103154219240.png">
+<meta property="article:published_time" content="2022-01-01T11:00:38.000Z">
+<meta property="article:modified_time" content="2022-01-03T12:00:58.771Z">
 <meta property="article:author" content="FSJZ">
-<meta property="article:tag" content="re">
+<meta property="article:tag" content="VIM">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fsjz2020.github.io/2022/01/01/VIM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/u=3819990135,2416729285&fm=26&fmt=auto.png">
 
 
-<link rel="canonical" href="https://fsjz2020.github.io/2021/11/08/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0/">
+<link rel="canonical" href="https://fsjz2020.github.io/2022/01/01/VIM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://fsjz2020.github.io/2021/11/08/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0/","path":"2021/11/08/正则表达式学习/","title":"正则表达式学习"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://fsjz2020.github.io/2022/01/01/VIM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/","path":"2022/01/01/VIM学习笔记/","title":"VIM学习笔记"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>正则表达式学习 | FSJZ</title>
+<title>VIM学习笔记 | FSJZ</title>
   
 
 
@@ -147,7 +149,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%83%E5%AD%97%E7%AC%A6"><span class="nav-text">元字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E4%B9%89"><span class="nav-text">反义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%A4%8D%E9%99%90%E5%AE%9A%E7%AC%A6"><span class="nav-text">重复限定符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%BB%84"><span class="nav-text">分组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89"><span class="nav-text">转义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E6%88%96"><span class="nav-text">条件或</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E9%97%B4"><span class="nav-text">区间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B6%E5%AE%BD%E6%96%AD%E8%A8%80"><span class="nav-text">零宽断言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%AD%A3%E5%90%91%E5%85%88%E8%A1%8C%E6%96%AD%E8%A8%80"><span class="nav-text">1. 正向先行断言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%AD%A3%E5%90%91%E5%90%8E%E8%A1%8C%E6%96%AD%E8%A8%80"><span class="nav-text">2.正向后行断言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%B4%9F%E5%90%91%E5%85%88%E8%A1%8C%E6%96%AD%E8%A8%80"><span class="nav-text">3. 负向先行断言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%B4%9F%E5%90%91%E5%90%8E%E8%A1%8C%E6%96%AD%E8%A8%80"><span class="nav-text">4. 负向后行断言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8D%95%E8%8E%B7%E5%92%8C%E9%9D%9E%E6%8D%95%E8%8E%B7"><span class="nav-text">捕获和非捕获</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%95%B0%E5%AD%97%E7%BC%96%E5%8F%B7%E6%8D%95%E8%8E%B7%E7%BB%84"><span class="nav-text">1.数字编号捕获组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%91%BD%E5%90%8D%E7%BC%96%E5%8F%B7%E6%8D%95%E8%8E%B7%E7%BB%84"><span class="nav-text">2. 命名编号捕获组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%9D%9E%E6%8D%95%E8%8E%B7%E7%BB%84"><span class="nav-text">3. 非捕获组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%8F%8D%E5%90%91%E5%BC%95%E7%94%A8"><span class="nav-text">4. 反向引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%AA%E5%A9%AA%E5%92%8C%E9%9D%9E%E8%B4%AA%E5%A9%AA"><span class="nav-text">贪婪和非贪婪</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%B4%AA%E5%A9%AA"><span class="nav-text">1. 贪婪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%9D%9E%E8%B4%AA%E5%A9%AA"><span class="nav-text">2. 非贪婪</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%93%E5%86%B2%E5%8C%BA"><span class="nav-text">缓冲区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E6%96%B9%E5%BC%8F"><span class="nav-text">移动方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F"><span class="nav-text">插入模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2"><span class="nav-text">搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8-%E5%92%8C-%E6%90%9C%E7%B4%A2"><span class="nav-text">用&#x2F;和?搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%A8%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2"><span class="nav-text">跨文件搜索</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-text">快捷键</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -228,7 +230,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://fsjz2020.github.io/2021/11/08/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0/">
+    <link itemprop="mainEntityOfPage" href="https://fsjz2020.github.io/2022/01/01/VIM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/icon.png">
@@ -241,7 +243,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          正则表达式学习
+          VIM学习笔记
         </h1>
 
         <div class="post-meta-container">
@@ -251,10 +253,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-11-08 00:16:30 / 修改时间：15:25:01" itemprop="dateCreated datePublished" datetime="2021-11-08T00:16:30+08:00">2021-11-08</time>
+      <time title="创建时间：2022-01-01 19:00:38" itemprop="dateCreated datePublished" datetime="2022-01-01T19:00:38+08:00">2022-01-01</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-01-03 20:00:58" itemprop="dateModified" datetime="2022-01-03T20:00:58+08:00">2022-01-03</time>
+      </span>
 
   
     <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
@@ -269,14 +277,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.5k</span>
+      <span>1.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -287,268 +295,316 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>.</p>
+        <p><img src="/2022/01/01/VIM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/u=3819990135,2416729285&fm=26&fmt=auto.png" alt="img" style="zoom: 20%;"></p>
 <span id="more"></span>
-<h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><div class="table-container">
+<p><strong>启动</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim</span><br></pre></td></tr></table></figure>
+<p><strong>配置</strong></p>
+<p>Vim从一个名为<code>.vimrc</code>的文件读取配置信息。在Linux中<code>.vimrc</code>位于用户根目录中，即<code>/home/&lt;用户名&gt;/.vimrc</code></p>
+<p>Windows系统配置文件名称为_vimrc,可以通过在VIM命令行输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:echo $MYVIMRC</span><br></pre></td></tr></table></figure>
+<p>显示<code>.vimrc</code>的路径</p>
+<p>vimrc更改后可以重启Vim或者在Vim中执行<code>source $MYVIMRC</code>命令</p>
+<h1 id="缓冲区"><a href="#缓冲区" class="headerlink" title="缓冲区"></a>缓冲区</h1><p>可以通过<code>:ls</code>或<code>:buffers</code> 或<code>:files</code>显示缓冲区</p>
+<p><img src="/2022/01/01/VIM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220102094440797.png" alt="image-20220102094440797"></p>
+<ul>
+<li>1为缓冲区编号，在整个VIM会话中，值保持不变</li>
+<li>%表示缓冲区位于当前窗口中</li>
+<li>a表示这个缓冲区被选中</li>
+<li>123.py为文件名</li>
+<li>第 31 行代表光标位置</li>
+</ul>
+<h1 id="移动方式"><a href="#移动方式" class="headerlink" title="移动方式"></a>移动方式</h1><p><img src="/2022/01/01/VIM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220103154219240.png" alt="image-20220103154219240"></p>
+<h1 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h1><p>通过i可以进行插入，但还有别的插入方法</p>
+<ul>
+<li>a可以在光标后面进行插入</li>
+<li>A能在当前行行尾进行插入模式</li>
+<li>I用于在行首插入</li>
+<li>o在光标下面插入一行，在新行插入</li>
+<li>O在光标上面插入一行，在新行插入</li>
+<li>gi用于在最后退出的位置进行插入</li>
+<li>C用于删除光标右面的文字，然后进行插入</li>
+<li>cc或S用于删除当前行的内容，然后进行插入</li>
+<li>s用于删除单个字符，然后插入</li>
+</ul>
+<h1 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h1><h2 id="用-和-搜索"><a href="#用-和-搜索" class="headerlink" title="用/和?搜索"></a>用/和?搜索</h2><p>在命令行输入/或者?，按下Enter，就会高亮显示每个匹配项。按n遍历所有匹配位置，按N反向遍历。可以用<code>noh</code>清除高亮显示。</p>
+<h2 id="跨文件搜索"><a href="#跨文件搜索" class="headerlink" title="跨文件搜索"></a>跨文件搜索</h2><p>命令行输入<code>:vimgrep</code>，语法为:vimgrep &lt;模式&gt; &lt;路径&gt;。</p>
+<p>模式既可以是字符，也可以是Vim风格的正则表达式。当路径为**时，表示对目录递归搜索。</p>
+<p>搜索结果出来以后，可以用:cn或:cp来浏览各匹配项。也可以执行:copen命令，然后可视化显示快速恢复窗口。</p>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><div class="table-container">
 <table>
 <thead>
 <tr>
-<th>元字符</th>
-<th>说明</th>
+<th>快捷键(命令模式下)</th>
+<th>所代表含义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>.</td>
-<td>匹配除换行符以外的任意字符</td>
+<td>w</td>
+<td>（write)保存</td>
 </tr>
 <tr>
-<td>\w</td>
-<td>匹配字母数字下划线汉字</td>
+<td>w+名字</td>
+<td>另存为</td>
 </tr>
 <tr>
-<td>\s</td>
-<td>匹配任意空白符</td>
+<td>q</td>
+<td>(quit)退出</td>
 </tr>
 <tr>
-<td>\d</td>
-<td>匹配数字</td>
+<td>q!</td>
+<td>强制退出</td>
 </tr>
 <tr>
-<td>\b</td>
-<td>匹配单词的开始或结束</td>
+<td>e</td>
+<td>(edit)打开文件</td>
 </tr>
 <tr>
-<td>^</td>
-<td>匹配字符串的开始</td>
+<td>h</td>
+<td>(help)帮助</td>
+</tr>
+<tr>
+<td>h cc Ctrl+D</td>
+<td>展开多个关于cc的关键字</td>
+</tr>
+<tr>
+<td>ls 或 buffers 或 files</td>
+<td>显示缓存区列表</td>
+</tr>
+<tr>
+<td>b</td>
+<td>切换编辑文件，如b1 或 b cat</td>
+</tr>
+<tr>
+<td>bn和bp</td>
+<td>(bnext)和(bprevious)循环遍历缓存区</td>
+</tr>
+<tr>
+<td>bd</td>
+<td>删除缓存区</td>
+</tr>
+<tr>
+<td>sp</td>
+<td>(split)垂直分割窗口</td>
+</tr>
+<tr>
+<td>vs</td>
+<td>(vsplit)水平分割窗口</td>
+</tr>
+<tr>
+<td>res N</td>
+<td>(resize)用于将窗口高度设置为N</td>
+</tr>
+<tr>
+<td>vert res N</td>
+<td>(vertical resize)用于将窗口宽度设置为N</td>
+</tr>
+<tr>
+<td>res +N或-N</td>
+<td>将当前窗口增加N行或减少N行</td>
+</tr>
+<tr>
+<td>vert res +N或-N</td>
+<td>将当前窗口增加N列或减少N列</td>
+</tr>
+<tr>
+<td>tabnew</td>
+<td>在新标签页打开空缓存区</td>
+</tr>
+<tr>
+<td>tabnext（或快捷键gt)</td>
+<td>下一个标签页</td>
+</tr>
+<tr>
+<td>tabprevious（或快捷键gT）</td>
+<td>用于切换到上一个标签页</td>
+</tr>
+<tr>
+<td>tabclose</td>
+<td>关闭标签页</td>
+</tr>
+<tr>
+<td>tabmove N</td>
+<td>将当前标签页移动到第N个标签页之后</td>
+</tr>
+<tr>
+<td>Ex(Explore)</td>
+<td>打开文件浏览窗口</td>
+</tr>
+<tr>
+<td>30</td>
+<td>跳转到第30行</td>
+</tr>
+<tr>
+<td>±5</td>
+<td>向上/下移动5行</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>快捷键（正常模式下）</th>
+<th>所代表含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H J K L</td>
+<td>向左 向下 向上 向右移动光标(5j表示向下移动5个字符)</td>
+</tr>
+<tr>
+<td>W/w</td>
+<td>移动到下一个单词的开头(广义)/(狭义)</td>
+</tr>
+<tr>
+<td>E/e</td>
+<td>移动到下一个单词的结尾(广义)/(狭义)</td>
+</tr>
+<tr>
+<td>ge</td>
+<td>移动到上一个单词的结尾</td>
+</tr>
+<tr>
+<td>B/b</td>
+<td>移动到上一个单词的开头(广义)/(狭义)</td>
+</tr>
+<tr>
+<td>{</td>
+<td>向前移动一个段落</td>
+</tr>
+<tr>
+<td>}</td>
+<td>向后移动一个段落</td>
+</tr>
+<tr>
+<td>(</td>
+<td>将光标移动到句子的开头</td>
+</tr>
+<tr>
+<td>)</td>
+<td>将光标移动到句子的结尾</td>
+</tr>
+<tr>
+<td>/</td>
+<td>在文档中搜索该字符串</td>
+</tr>
+<tr>
+<td>?</td>
+<td>反向搜索字符串</td>
+</tr>
+<tr>
+<td>u</td>
+<td>撤销</td>
+</tr>
+<tr>
+<td>Ctrl+r</td>
+<td>重做此操作</td>
+</tr>
+<tr>
+<td>c</td>
+<td>(change)修改命令，删除一部分文字后立即进入编辑模式</td>
+</tr>
+<tr>
+<td>d</td>
+<td>(delete)删除命令，如d3e，删除3个单词</td>
+</tr>
+<tr>
+<td>cc</td>
+<td>删除整行，立即进入编辑模式，保持当前的缩进水平</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>删除整行</td>
+</tr>
+<tr>
+<td>gg</td>
+<td>跳转到文件开头</td>
+</tr>
+<tr>
+<td>G</td>
+<td>跳转到文件结尾</td>
+</tr>
+<tr>
+<td>Ctrl+f(或PageDown)</td>
+<td>向下翻页</td>
+</tr>
+<tr>
+<td>Ctrl+b(或PageUp)</td>
+<td>向上翻页</td>
+</tr>
+<tr>
+<td>v</td>
+<td>进入可视模式</td>
+</tr>
+<tr>
+<td>Crtl+w,q</td>
+<td>关闭当前窗口</td>
+</tr>
+<tr>
+<td>Ctrl+w,o</td>
+<td>(only)关闭除当前窗口以外的所有窗口</td>
+</tr>
+<tr>
+<td>Ctrl+w,HJKL</td>
+<td>将当前窗口移动到屏幕的最左/底/顶/右边</td>
+</tr>
+<tr>
+<td>Ctrl+w,=</td>
+<td>将所有打开的窗口宽高调整为一致</td>
+</tr>
+<tr>
+<td>Ctrl+w,+或-</td>
+<td>用于改变窗口的一行高度</td>
+</tr>
+<tr>
+<td>Ctrl+w,&lt;或&gt;</td>
+<td>用于改变窗口的一列宽度</td>
+</tr>
+<tr>
+<td>zo</td>
+<td>打开当前折叠</td>
+</tr>
+<tr>
+<td>zc</td>
+<td>关闭当前折叠</td>
+</tr>
+<tr>
+<td>za</td>
+<td>切换折叠状态</td>
+</tr>
+<tr>
+<td>zR</td>
+<td>同时打开所有折叠</td>
+</tr>
+<tr>
+<td>zM</td>
+<td>同时关闭所有折叠</td>
+</tr>
+<tr>
+<td>t[字符]</td>
+<td>(un<strong>t</strong>il)用于在<strong>当前行内</strong>搜索该字符，并将光标置于此字符之前，T为反向搜索</td>
+</tr>
+<tr>
+<td>f[字符]</td>
+<td>(<strong>f</strong>ind)在<strong>当前行内</strong>搜索该字符，将光标置于此字符之上</td>
+</tr>
+<tr>
+<td>_</td>
+<td>将光标放到行首</td>
 </tr>
 <tr>
 <td>$</td>
-<td>匹配字符串的结束</td>
+<td>将光标置于行尾</td>
 </tr>
 <tr>
-<td>\un</td>
-<td>匹配n，其中n是一个用四个十六进制数字表示的Unicode字符</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="反义"><a href="#反义" class="headerlink" title="反义"></a>反义</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>元字符</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\W</td>
-<td>匹配不是字母数字下划线汉字的字符</td>
-</tr>
-<tr>
-<td>\S</td>
-<td>匹配任意不是空白符的字符</td>
-</tr>
-<tr>
-<td>\D</td>
-<td>匹配不是数字的字符</td>
-</tr>
-<tr>
-<td>\B</td>
-<td>匹配不是单词的开始或结束的位置</td>
-</tr>
-<tr>
-<td><sup><a href="#fn_x" id="reffn_x">x</a></sup></td>
-<td>匹配除x以外的任意字符</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="重复限定符"><a href="#重复限定符" class="headerlink" title="重复限定符"></a>重复限定符</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>*</td>
-<td>重复0次或更多次</td>
-</tr>
-<tr>
-<td>+</td>
-<td>重复一次或更多次</td>
-</tr>
-<tr>
-<td>？</td>
-<td>重复0次或一次</td>
-</tr>
-<tr>
-<td>{n}</td>
-<td>重复n次</td>
-</tr>
-<tr>
-<td>{n,}</td>
-<td>重复n次或更多次</td>
-</tr>
-<tr>
-<td>{n,m}</td>
-<td>重复n到m次</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>正则表达式以小括号()来做分组</p>
-<blockquote>
-<p>^(ab)*   //匹配字符串中0到多个ab开头</p>
-</blockquote>
-<h2 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h2><p>用\转义被正则表达式使用的字符</p>
-<blockquote>
-<p>^(\(ab\))*</p>
-</blockquote>
-<h2 id="条件或"><a href="#条件或" class="headerlink" title="条件或"></a>条件或</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(130|131|132|155|156|185|145|176)\d&#123;8&#125;$</span><br></pre></td></tr></table></figure>
-<h2 id="区间"><a href="#区间" class="headerlink" title="区间"></a>区间</h2><ol>
-<li>限定0到9可以写成[0-9]</li>
-<li>限定A-Z写成[A-Z]</li>
-<li>限定某些字母[aeiou]</li>
-</ol>
-<h2 id="零宽断言"><a href="#零宽断言" class="headerlink" title="零宽断言"></a>零宽断言</h2><ol>
-<li>断言：选择在所给规则的区间内出现的内容</li>
-<li>零宽：断言只占匹配位置，不占字符，匹配结果不返回断言本身</li>
-</ol>
-<h3 id="1-正向先行断言"><a href="#1-正向先行断言" class="headerlink" title="1. 正向先行断言"></a>1. 正向先行断言</h3><ul>
-<li>语法：(?=pattern)</li>
-<li>作用：匹配pattern表达式前面的内容，不返回本身</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;read-count&quot;</span>&gt;</span>阅读数：641<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>用<code>\d+(?=&lt;/span&gt;)</code>可以匹配到641</p>
-<h3 id="2-正向后行断言"><a href="#2-正向后行断言" class="headerlink" title="2.正向后行断言"></a>2.正向后行断言</h3><ul>
-<li>语法：(?&lt;=pattern)</li>
-<li>作用：匹配pattern表达式前面的内容，不返回本身</li>
-</ul>
-<p>用<code>(?&lt;=&lt;span class=&quot;read-count&quot;&gt;阅读数：)\d+</code>可以匹配到641</p>
-<h3 id="3-负向先行断言"><a href="#3-负向先行断言" class="headerlink" title="3. 负向先行断言"></a>3. 负向先行断言</h3><ul>
-<li>语法：（?!pattern)</li>
-<li>作用：匹配非pattern表达式前面内容</li>
-</ul>
-<h3 id="4-负向后行断言"><a href="#4-负向后行断言" class="headerlink" title="4. 负向后行断言"></a>4. 负向后行断言</h3><ul>
-<li>语法：（?&lt;!pattern)</li>
-<li>作用：匹配非pattern表达式后面内容</li>
-</ul>
-<h2 id="捕获和非捕获"><a href="#捕获和非捕获" class="headerlink" title="捕获和非捕获"></a>捕获和非捕获</h2><h3 id="1-数字编号捕获组"><a href="#1-数字编号捕获组" class="headerlink" title="1.数字编号捕获组"></a>1.数字编号捕获组</h3><ul>
-<li>语法：(exp)</li>
-</ul>
-<p>例：<code>(0\d&#123;2&#125;)-(\d&#123;8&#125;)</code> 020-85653333</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">序号</th>
-<th style="text-align:center">编号</th>
-<th style="text-align:center">分组</th>
-<th style="text-align:center">内容</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">(0\d{2})-(\d{8})</td>
-<td style="text-align:center">020-85653333</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">(0\d{2})</td>
-<td style="text-align:center">020</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">(\d{8})</td>
-<td style="text-align:center">85653333</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="2-命名编号捕获组"><a href="#2-命名编号捕获组" class="headerlink" title="2. 命名编号捕获组"></a>2. 命名编号捕获组</h3><ul>
-<li>语法：(?\<name>exp)</name></li>
-</ul>
-<p>例：<code>(?&lt;quhao&gt;0\d&#123;2&#125;)-(?&lt;haoma&gt;\d&#123;8&#125;)</code></p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">序号</th>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">分组</th>
-<th style="text-align:center">内容</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">(0\d{2})-(\d{8})</td>
-<td style="text-align:center">020-85653333</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">quhao</td>
-<td style="text-align:center">(0\d{2})</td>
-<td style="text-align:center">020</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">haoma</td>
-<td style="text-align:center">(\d{8})</td>
-<td style="text-align:center">85653333</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="3-非捕获组"><a href="#3-非捕获组" class="headerlink" title="3. 非捕获组"></a>3. 非捕获组</h3><p>语法：(?:exp)</p>
-<p>例：<code>(?:0\d&#123;2&#125;)-(\d&#123;8&#125;)</code><br>| 序号 | 编号 |       分组       |     内容     |<br>| :—: | :—: | :———————: | :—————: |<br>|  0   |  0   | (0\d{2})-(\d{8}) | 020-85653333 |<br>|  1   |  1   |     (\d{8})      |   85653333   |</p>
-<h3 id="4-反向引用"><a href="#4-反向引用" class="headerlink" title="4. 反向引用"></a>4. 反向引用</h3><ol>
-<li><p>数字编号组反向引用：\number</p>
-</li>
-<li><p>命名编号组反向引用：\k\<name></name></p>
-</li>
-</ol>
-<p>如匹配重复的字符可使用<code>(\w)\1</code></p>
-<h2 id="贪婪和非贪婪"><a href="#贪婪和非贪婪" class="headerlink" title="贪婪和非贪婪"></a>贪婪和非贪婪</h2><h3 id="1-贪婪"><a href="#1-贪婪" class="headerlink" title="1. 贪婪"></a>1. 贪婪</h3><p>默认情况下匹配尽可能多的字符，如<code>\d&#123;2,6&#125;</code>在满足6个字符的条件下会匹配6个</p>
-<h3 id="2-非贪婪"><a href="#2-非贪婪" class="headerlink" title="2. 非贪婪"></a>2. 非贪婪</h3><p>懒惰量词是在贪婪量词后边加个<code>?</code></p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>*?</td>
-<td>重复0次或更多次,但尽可能少重复</td>
-</tr>
-<tr>
-<td>+?</td>
-<td>重复一次或更多次,但尽可能少重复</td>
-</tr>
-<tr>
-<td>??</td>
-<td>重复0次或一次,但尽可能少重复</td>
-</tr>
-<tr>
-<td>{n,}?</td>
-<td>重复n次或更多次,但尽可能少重复</td>
-</tr>
-<tr>
-<td>{n,m}?</td>
-<td>重复n到m次,但尽可能少重复</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -579,20 +635,20 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/re/" rel="tag"><i class="fa fa-tag"></i> re</a>
+              <a href="/tags/VIM/" rel="tag"><i class="fa fa-tag"></i> VIM</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/10/25/%E4%B8%80%E7%A7%8D%E5%8D%81%E5%88%86%E7%AE%80%E5%8D%95%E7%9A%84%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95/" rel="prev" title="一种十分简单的边缘检测算法">
-                  <i class="fa fa-chevron-left"></i> 一种十分简单的边缘检测算法
+                <a href="/2021/11/08/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0/" rel="prev" title="正则表达式学习">
+                  <i class="fa fa-chevron-left"></i> 正则表达式学习
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/01/01/VIM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="VIM学习笔记">
-                  VIM学习笔记 <i class="fa fa-chevron-right"></i>
+                <a href="/2022/01/03/mermaid%E5%AD%A6%E4%B9%A0/" rel="next" title="mermaid学习">
+                  mermaid学习 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -680,11 +736,11 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://fsjz2020.github.io/2021/11/08/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://fsjz2020.github.io/2022/01/01/VIM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"FSJZ2020","repo":"fsjz2020.github.io","client_id":"f9d48f69e6bc4e6bd381","client_secret":"9896c40b70e9b983fef54bd5ef73aaa203954f72","admin_user":"FSJZ2020","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"548189a5ce617fd2e58ac9c3435f91e0"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"FSJZ2020","repo":"fsjz2020.github.io","client_id":"f9d48f69e6bc4e6bd381","client_secret":"9896c40b70e9b983fef54bd5ef73aaa203954f72","admin_user":"FSJZ2020","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"bdca85dba7c47d64a20b6c3ea934a8a8"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
