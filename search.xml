@@ -1196,7 +1196,46 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
 <li>AREF，模拟输入参考电压的输入端口</li>
 <li>RESET，复位端口，接低电平会使Arduino复位</li>
 </ul>
-<h1 id="Arduino语言及程序结构"><a href="#Arduino语言及程序结构" class="headerlink" title="Arduino语言及程序结构"></a>Arduino语言及程序结构</h1>]]></content>
+<h1 id="Arduino语言及程序结构"><a href="#Arduino语言及程序结构" class="headerlink" title="Arduino语言及程序结构"></a>Arduino语言及程序结构</h1><p><strong>pinMode(pin,value)</strong></p>
+<blockquote>
+<p>pinMode有三种模式</p>
+<p>INPUT(0)                输入模式</p>
+<p>OUTPUT(1)            输出模式</p>
+<p>INPUT_PULLUP    输入上拉模式</p>
+</blockquote>
+<p><strong>digitalWrite(pin,value)</strong></p>
+<blockquote>
+<p>value的值</p>
+<p>HIGH(1):高电平</p>
+<p>LOW(0):低电平</p>
+</blockquote>
+<p><strong>digitalRead(pin)</strong></p>
+<blockquote>
+<p>将-0.5~1.5V的输入电压作为低电平</p>
+<p>将3~5.5v的输入电压作为高电平</p>
+</blockquote>
+<h2 id="模拟量"><a href="#模拟量" class="headerlink" title="模拟量"></a>模拟量</h2><p><strong>analogRead(A0)</strong></p>
+<blockquote>
+<p>Arduino有十位精度，5v电压可分为0~1023</p>
+</blockquote>
+<p><strong>analogWrite</strong>(9)</p>
+<blockquote>
+<p>Arduino的模拟量输出不需要再setup()中声明，采用的是PWM方式模拟的电压输出，范围为0~255。</p>
+</blockquote>
+<h2 id="串口通信"><a href="#串口通信" class="headerlink" title="串口通信"></a>串口通信</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Serial.begin(9600)</span><br></pre></td></tr></table></figure>
+<p>规定串口通信波特率，可用300、600、1200、2400、4800、9600、14400、19200、28800、38400、57600、115200，单位是(bit)。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">Serial.<span class="built_in">print</span>(val);</span><br><span class="line">Serial.<span class="built_in">println</span>(val);<span class="comment">//与print不同的是，println输出完之后输出一组回车换行符</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Serial.read()</span><br></pre></td></tr></table></figure>
+<p>调用该语句，每次返回1字节的数据</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">millis()</span><br></pre></td></tr></table></figure>
+<p>该函数返回Arduino从通电（或复位）到现在的时间，单位为毫秒，类型为unsigned long大概50天会溢出一次。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">micros()</span><br></pre></td></tr></table></figure>
+<p>该函数返回系统运行时间，单位是微秒，约70分钟溢出一次。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">delay(1000)</span><br></pre></td></tr></table></figure>
+<p>此函数为毫秒级延时</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">delayMicroseconds()</span><br></pre></td></tr></table></figure>
+<p>此函数为微秒级延时</p>
+<h1 id="高级应用"><a href="#高级应用" class="headerlink" title="高级应用"></a>高级应用</h1>]]></content>
       <tags>
         <tag>Arduino</tag>
         <tag>单片机</tag>
@@ -1935,6 +1974,21 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
 <h2 id="跨文件搜索"><a href="#跨文件搜索" class="headerlink" title="跨文件搜索"></a>跨文件搜索</h2><p>命令行输入<code>:vimgrep</code>，语法为:vimgrep &lt;模式&gt; &lt;路径&gt;。</p>
 <p>模式既可以是字符，也可以是Vim风格的正则表达式。当路径为**时，表示对目录递归搜索。</p>
 <p>搜索结果出来以后，可以用:cn或:cp来浏览各匹配项。也可以执行:copen命令，然后可视化显示快速恢复窗口。</p>
+<h1 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h1><p>在VIM中复制和粘贴文本，文本是存储在VIM寄存器里面的。</p>
+<p>寄存器访问方式是引号键”,后面接寄存器的标识符，然后是针对寄存器的操作。</p>
+<p>复制和粘贴操作默认是无名寄存器，用双引号”来标识。””p等同于p。</p>
+<p>寄存器分为a-z，0-9</p>
+<p>用数字编号的寄存器存储的是最后10次删除操作的历史记录</p>
+<p><img src="/2022/01/01/VIM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220104111319195.png" alt="image-20220104111319195"></p>
+<p>还有一些只读寄存器</p>
+<blockquote>
+<p>%存储了当前文件名</p>
+<h1 id="存储了上次打开的文件"><a href="#存储了上次打开的文件" class="headerlink" title="存储了上次打开的文件"></a>存储了上次打开的文件</h1><p>.中为最后插入的文本</p>
+<p>:为最后执行的命令</p>
+</blockquote>
+<p>使用Ctrl+r组合键可以在插入模式下粘贴内容</p>
+<p>可以用:reg列出所有寄存器内容</p>
+<p>y会覆盖寄存器的内容，若是想附加使用大写如”Ayw</p>
 <h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><div class="table-container">
 <table>
 <thead>
@@ -2208,7 +2262,12 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
 <td>将光标置于行尾</td>
 </tr>
 <tr>
-<td></td>
+<td>y</td>
+<td>复制</td>
+</tr>
+<tr>
+<td>p</td>
+<td>粘贴</td>
 </tr>
 </tbody>
 </table>
@@ -2313,6 +2372,112 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
 ]]></content>
       <tags>
         <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Blender快捷键记录</title>
+    <url>/2022/01/12/Blender%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p><img src="/2022/01/12/Blender%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/u=2994461402,3237906530&amp;fm=26&amp;fmt=auto.jpeg" alt="img"></p>
+<span id="more"></span>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">进入摄像机视图</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">透视/正交切换</td>
+</tr>
+<tr>
+<td style="text-align:center">7/Ctrl+7</td>
+<td style="text-align:center">顶视图/底视图</td>
+</tr>
+<tr>
+<td style="text-align:center">1/Ctrl+1</td>
+<td style="text-align:center">前视图/后视图</td>
+</tr>
+<tr>
+<td style="text-align:center">3/Ctrl+3</td>
+<td style="text-align:center">右视图/左视图</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">视图翻转</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+Alt+0</td>
+<td style="text-align:center">将当前活动窗口设为摄像机视图</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+Alt+q</td>
+<td style="text-align:center">四视图切换</td>
+</tr>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:center">聚焦物体</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+.</td>
+<td style="text-align:center">将四个视图都聚焦</td>
+</tr>
+<tr>
+<td style="text-align:center">/</td>
+<td style="text-align:center">屏蔽其他物体</td>
+</tr>
+<tr>
+<td style="text-align:center">Home</td>
+<td style="text-align:center">显示全场景</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+`</td>
+<td style="text-align:center">显示/关闭Gizmo</td>
+</tr>
+<tr>
+<td style="text-align:center">G</td>
+<td style="text-align:center">移动</td>
+</tr>
+<tr>
+<td style="text-align:center">R</td>
+<td style="text-align:center">旋转</td>
+</tr>
+<tr>
+<td style="text-align:center">S</td>
+<td style="text-align:center">缩放</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">全选</td>
+</tr>
+<tr>
+<td style="text-align:center">AA</td>
+<td style="text-align:center">取消全选</td>
+</tr>
+<tr>
+<td style="text-align:center">W</td>
+<td style="text-align:center">切换选择模式</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+Space</td>
+<td style="text-align:center">鼠标所在窗口最大化</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+Alt+Space</td>
+<td style="text-align:center">鼠标所在窗口最大化（隐藏功能区）</td>
+</tr>
+</tbody>
+</table>
+</div>
+]]></content>
+      <tags>
+        <tag>Blender</tag>
       </tags>
   </entry>
 </search>
