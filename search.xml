@@ -2556,6 +2556,21 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
 <td style="text-align:center">Ctrl+M</td>
 <td style="text-align:center">镜像</td>
 </tr>
+<tr>
+<td style="text-align:center">Ctrl+I</td>
+<td style="text-align:center">反选</td>
+</tr>
+<tr>
+<td style="text-align:center">Alt+E</td>
+<td style="text-align:center">打开挤出菜单</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+B</td>
+<td style="text-align:center">倒角<br>参数解释：<br><img src="/2022/01/12/Blender%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/image-20220115093756916.png" alt="image-20220115093756916"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+</tr>
 </tbody>
 </table>
 </div>
