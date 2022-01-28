@@ -28,8 +28,9 @@
 <meta property="og:description" content=".">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://fsjz2020.github.io/2022/01/16/Python%E7%AC%94%E8%AE%B0/image-20220116154226837.png">
+<meta property="og:image" content="https://fsjz2020.github.io/2022/01/16/Python%E7%AC%94%E8%AE%B0/image-20220120115629582.png">
 <meta property="article:published_time" content="2022-01-16T07:27:41.000Z">
-<meta property="article:modified_time" content="2022-01-19T02:35:32.140Z">
+<meta property="article:modified_time" content="2022-01-28T03:29:17.915Z">
 <meta property="article:author" content="FSJZ">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -149,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="nav-text">函数参数传递</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%8F%82%E6%95%B0"><span class="nav-text">特殊参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%8C%85%E5%8F%82%E6%95%B0%E5%88%97%E8%A1%A8"><span class="nav-text">解包参数列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lambda"><span class="nav-text">Lambda</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8"><span class="nav-text">列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%83%E7%BB%84"><span class="nav-text">元组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88"><span class="nav-text">集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E5%85%B8"><span class="nav-text">字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E6%8E%A7%E5%88%B6"><span class="nav-text">条件控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%94%E8%BE%83"><span class="nav-text">比较</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97"><span class="nav-text">模块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E6%A8%A1%E5%9D%97"><span class="nav-text">标准模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dir-%E5%87%BD%E6%95%B0"><span class="nav-text">dir()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85"><span class="nav-text">包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E%E5%8C%85%E4%B8%AD%E5%AF%BC%E5%85%A5"><span class="nav-text">从包中导入*</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%90%E5%8C%85%E5%8F%82%E8%80%83"><span class="nav-text">子包参考</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-text">输入输出</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">格式化字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#str%E5%92%8Crepr"><span class="nav-text">str和repr</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="nav-text">函数参数传递</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%8F%82%E6%95%B0"><span class="nav-text">特殊参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%8C%85%E5%8F%82%E6%95%B0%E5%88%97%E8%A1%A8"><span class="nav-text">解包参数列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lambda"><span class="nav-text">Lambda</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8"><span class="nav-text">列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%83%E7%BB%84"><span class="nav-text">元组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88"><span class="nav-text">集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E5%85%B8"><span class="nav-text">字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E6%8E%A7%E5%88%B6"><span class="nav-text">条件控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%94%E8%BE%83"><span class="nav-text">比较</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97"><span class="nav-text">模块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E6%A8%A1%E5%9D%97"><span class="nav-text">标准模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dir-%E5%87%BD%E6%95%B0"><span class="nav-text">dir()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85"><span class="nav-text">包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E%E5%8C%85%E4%B8%AD%E5%AF%BC%E5%85%A5"><span class="nav-text">从包中导入*</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%90%E5%8C%85%E5%8F%82%E8%80%83"><span class="nav-text">子包参考</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-text">输入输出</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">格式化字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#str%E5%92%8Crepr"><span class="nav-text">str和repr</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%8B%E5%8A%A8%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">手动格式化字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A7%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E6%96%B9%E6%B3%95"><span class="nav-text">旧的字符串格式方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E5%86%99%E6%96%87%E4%BB%B6"><span class="nav-text">读写文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%BB%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">读文件的方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="nav-text">异常处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E9%93%BE"><span class="nav-text">异常链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8"><span class="nav-text">用户自定义异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#finally%E8%AF%AD%E5%8F%A5"><span class="nav-text">finally语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%84%E6%B8%85%E7%90%86%E6%93%8D%E4%BD%9C"><span class="nav-text">预清理操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#global-and-nonlocal"><span class="nav-text">global and nonlocal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E7%B1%BB"><span class="nav-text">定义类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF"><span class="nav-text">继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%81%E6%9C%89%E5%8F%98%E9%87%8F"><span class="nav-text">私有变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8"><span class="nav-text">迭代器与生成器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%BA%93"><span class="nav-text">标准库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%8E%A5%E5%8F%A3"><span class="nav-text">操作系统接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E9%80%9A%E9%85%8D%E7%AC%A6"><span class="nav-text">文件通配符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0"><span class="nav-text">命令行参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91%E5%92%8C%E7%A8%8B%E5%BA%8F%E7%BB%88%E6%AD%A2"><span class="nav-text">错误输出重定向和程序终止</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6"><span class="nav-text">数学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4"><span class="nav-text">日期和时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%8E%8B%E7%BC%A9"><span class="nav-text">数据压缩</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="nav-text">虚拟环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pip"><span class="nav-text">pip</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8"><span class="nav-text">然后可以使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%99%84%E5%BD%95"><span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%90%AF%E5%8A%A8%E6%96%87%E4%BB%B6"><span class="nav-text">交互式启动文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E5%88%B6%E6%A8%A1%E5%9D%97"><span class="nav-text">定制模块</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -261,7 +262,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-01-19 10:35:32" itemprop="dateModified" datetime="2022-01-19T10:35:32+08:00">2022-01-19</time>
+        <time title="修改时间：2022-01-28 11:29:17" itemprop="dateModified" datetime="2022-01-28T11:29:17+08:00">2022-01-28</time>
       </span>
 
   
@@ -277,14 +278,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>8.3k</span>
+      <span>13k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>8 分钟</span>
+      <span>12 分钟</span>
     </span>
 </div>
 
@@ -386,6 +387,137 @@
 <p>字符串类型有format()方法,花括号内内容为<code>&#123;字段名!转换字段:格式说明符&#125;</code></p>
 <p>格式说明符内内容为<code>[[填充]对齐方式][正负号][#][0][宽度][分组选项][.精度][类型码]</code>具体使用方法可参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/jpch89/article/details/84099277">https://blog.csdn.net/jpch89/article/details/84099277</a></p>
 <h3 id="str和repr"><a href="#str和repr" class="headerlink" title="str和repr"></a>str和repr</h3><p>str可以将其它类型的数据转化为人可读的格式，repr则将字符转换为解释器可读的格式。</p>
+<h2 id="手动格式化字符串"><a href="#手动格式化字符串" class="headerlink" title="手动格式化字符串"></a>手动格式化字符串</h2><p><strong>ljust(n)</strong>和<strong>rjust(n)</strong>左对齐和右对齐并补空格至n位，<strong>center(n)</strong>居中对齐</p>
+<p><strong>str.zfill()</strong> ，它会在数字字符串的左边填充零。能识别正负号:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;12&#x27;</span>.zfill(<span class="number">5</span>)</span><br><span class="line"><span class="string">&#x27;00012&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;-3.14&#x27;</span>.zfill(<span class="number">7</span>)</span><br><span class="line"><span class="string">&#x27;-003.14&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;3.14159265359&#x27;</span>.zfill(<span class="number">5</span>)</span><br><span class="line"><span class="string">&#x27;3.14159265359&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="旧的字符串格式方法"><a href="#旧的字符串格式方法" class="headerlink" title="旧的字符串格式方法"></a>旧的字符串格式方法</h2><p>% 运算符（求余）也可用于字符串格式化。给定 ‘string’ % values，则 string 中的 % 实例会以零<br>个或多个 values 元素替换。此操作通常被称为字符串插值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&#x27;This is a test number %5.3f %3.5f&#x27;</span> % (<span class="number">54</span>,<span class="number">45</span>))</span><br><span class="line">This <span class="keyword">is</span> a test number <span class="number">54.000</span> <span class="number">45.00000</span></span><br></pre></td></tr></table></figure>
+<h2 id="读写文件"><a href="#读写文件" class="headerlink" title="读写文件"></a>读写文件</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f=<span class="built_in">open</span>(<span class="string">&#x27;file&#x27;</span>,<span class="string">&#x27;w&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">w</td>
+<td style="text-align:center">只能写入</td>
+</tr>
+<tr>
+<td style="text-align:center">r</td>
+<td style="text-align:center">只能读取</td>
+</tr>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:center">打开文件追加内容</td>
+</tr>
+<tr>
+<td style="text-align:center">r+</td>
+<td style="text-align:center">读写</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>默认为’r’</p>
+<h3 id="读文件的方法"><a href="#读文件的方法" class="headerlink" title="读文件的方法"></a>读文件的方法</h3><p><strong>f.read(size)</strong>若以文本方式打开，返回size个字符，若以二进制方式打开，返回size个字节，若到达文件末尾返回空字符</p>
+<p><strong>f.readline()</strong>从文件中读取一行，换行符（\n）留在字符串的末尾，如果 <strong>f.readline()</strong> 返回一个空的字符串，则表示已经到达了文件末尾</p>
+<p>要从文件中读取行，可以循环遍历文件对象，这是内存高效，快速的，并简化代码:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">...	    <span class="built_in">print</span>(line, end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">...</span><br><span class="line">This <span class="keyword">is</span> the first line of the file.</span><br><span class="line">Second line of the file</span><br></pre></td></tr></table></figure>
+<p>如果想以列表方式读取文件所有行可用<strong>list(f)</strong>或<strong>f.readlines()</strong></p>
+<p><strong>f.tell()</strong>返回一个整数，这个数字为文件对象在文件中的位置</p>
+<p><strong>f.seek(offset,whence)</strong>改变文件对象的位置，offset提供偏移量，whence提供参考点，0表示开头，1表示使用当前文件位置，2表示使用文件末尾，默认为0</p>
+<h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        x=<span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;&quot;</span>))</span><br><span class="line">    <span class="keyword">except</span> ValueError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Error&quot;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p>首先，执行try子句，若无异常，跳过except，若异常和except后的内容一样，则执行except后的子句</p>
+<p>若except后不跟异常类型，则可以处理所有异常</p>
+<p>try后可跟else子句，使用时必须放在except后面</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> arg <span class="keyword">in</span> sys.argv[<span class="number">1</span>:]:</span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		f = <span class="built_in">open</span>(arg, <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">	<span class="keyword">except</span> OSError:</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&#x27;cannot open&#x27;</span>, arg)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="built_in">print</span>(arg, <span class="string">&#x27;has&#x27;</span>, <span class="built_in">len</span>(f.readlines()), <span class="string">&#x27;lines&#x27;</span>)</span><br><span class="line">		f.close()</span><br></pre></td></tr></table></figure>
+<p>try不出错则执行else中的内容</p>
+<h2 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> E:</span><br><span class="line">    <span class="keyword">raise</span> TypeError(<span class="string">&#x27;Bad&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>报错信息：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">2</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ZeroDivisionError: division by zero</span><br><span class="line"></span><br><span class="line">During handling of the above exception, another exception occurred:</span><br><span class="line"></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">4</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: Bad</span><br></pre></td></tr></table></figure>
+<p>可以使用from使报错信息更明确</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> E:</span><br><span class="line">    <span class="keyword">raise</span> TypeError(<span class="string">&#x27;Bad&#x27;</span>) <span class="keyword">from</span> E</span><br></pre></td></tr></table></figure>
+<p>报错信息：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">2</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ZeroDivisionError: division by zero</span><br><span class="line"></span><br><span class="line">The above exception was the direct cause of the following exception:</span><br><span class="line"></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">4</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: Bad</span><br></pre></td></tr></table></figure>
+<p>可以使用<code>from None</code>使只报Exception里的错</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> E:</span><br><span class="line">    <span class="keyword">raise</span> TypeError(<span class="string">&#x27;Bad&#x27;</span>) <span class="keyword">from</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+<p>报错信息</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">4</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: Bad</span><br></pre></td></tr></table></figure>
+<h2 id="用户自定义异常"><a href="#用户自定义异常" class="headerlink" title="用户自定义异常"></a>用户自定义异常</h2><p>异常通常应该直接或间接由Exception类派生</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Error</span>(<span class="params">Exception</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Error1</span>(<span class="params">Error</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,expression,message</span>):</span></span><br><span class="line">        self.expression=expression</span><br><span class="line">        self.message=message</span><br></pre></td></tr></table></figure>
+<h2 id="finally语句"><a href="#finally语句" class="headerlink" title="finally语句"></a>finally语句</h2><p>无论try有没有异常，都会执行finally后的语句</p>
+<p>若try无异常，则try的语句执行完后执行finally中的语句</p>
+<p>若try出现异常，则在报错前先执行finally中的语句然后报错</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">try--&gt;语句1--未报错--&gt;else--&gt;语句4--&gt;finally</span><br><span class="line">finally--&gt;语句2</span><br><span class="line">语句1--报错--&gt;except--未报错--&gt;语句3--&gt;finally</span><br><span class="line">except--报错--&gt;finally</span><br><span class="line">语句2--&gt;退出</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/01/16/Python%E7%AC%94%E8%AE%B0/image-20220120115629582.png" alt="image-20220120115629582"></p>
+<h2 id="预清理操作"><a href="#预清理操作" class="headerlink" title="预清理操作"></a>预清理操作</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">	<span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">        <span class="built_in">print</span>(line)</span><br></pre></td></tr></table></figure>
+<p>执行完操作以后，f文件对象会被自动关闭</p>
+<h1 id="类"><a href="#类" class="headerlink" title="类"></a>类</h1><h2 id="global-and-nonlocal"><a href="#global-and-nonlocal" class="headerlink" title="global and nonlocal"></a>global and nonlocal</h2><p>关于<strong>global</strong>和<strong>nonlocal</strong>的使用方法，可以参考这篇博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/xCyansun/article/details/79672634">https://blog.csdn.net/xCyansun/article/details/79672634</a></p>
+<h2 id="定义类"><a href="#定义类" class="headerlink" title="定义类"></a>定义类</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassName</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>类对象支持<strong>属性引用</strong>和<strong>实例化</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassName</span>:</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;A very simple class&quot;&quot;&quot;</span></span><br><span class="line">    i=<span class="number">12345</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;Hello World!&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>类的变量不能为mutable类型</p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>Python有两个内置函数可被用于继承机制</p>
+<ul>
+<li><p><strong>isinstance()</strong>来检查一个实例的类型</p>
+<blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span>():</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>...     <span class="keyword">pass</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x=MyClass()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">isinstance</span>(x,MyClass)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p><strong>issubclass()</strong>来检查一个类是否是另一个类的子类</p>
+<blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">issubclass</span>(<span class="built_in">bool</span>,<span class="built_in">int</span>)</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<h2 id="私有变量"><a href="#私有变量" class="headerlink" title="私有变量"></a>私有变量</h2><p>带有一个下划线的名称应当看作是API的非共有部分（如_spam)</p>
+<p><strong>名称改写：</strong>任何形式为<strong>__spam</strong>（至少有两个前缀下划线，至多一个后缀下划线）的文本将被替换为<strong>_classname__spam</strong></p>
+<h2 id="迭代器与生成器"><a href="#迭代器与生成器" class="headerlink" title="迭代器与生成器"></a>迭代器与生成器</h2><p>迭代器，对一个对象使用<strong>iter()</strong>,返回迭代器，迭代器有<strong>next()</strong>方法，可以返回迭代器的下一个值，如果到达末尾，则返回<strong>StopIteration</strong></p>
+<p>生成器表达式语法类似于列表推导式，但外层是圆括号而非方括号</p>
+<h1 id="标准库"><a href="#标准库" class="headerlink" title="标准库"></a>标准库</h1><h2 id="操作系统接口"><a href="#操作系统接口" class="headerlink" title="操作系统接口"></a>操作系统接口</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.getcwd()</span><br><span class="line">os.chdir(<span class="string">&#x27;/test&#x27;</span>)</span><br><span class="line">os.system(<span class="string">&#x27;cls&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="文件通配符"><a href="#文件通配符" class="headerlink" title="文件通配符"></a>文件通配符</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> glob</span><br><span class="line">glob.glob(<span class="string">&#x27;*.py&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="命令行参数"><a href="#命令行参数" class="headerlink" title="命令行参数"></a>命令行参数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">print</span>(sys.argv)</span><br></pre></td></tr></table></figure>
+<h2 id="错误输出重定向和程序终止"><a href="#错误输出重定向和程序终止" class="headerlink" title="错误输出重定向和程序终止"></a>错误输出重定向和程序终止</h2><p>sys模块具有<strong>stdin</strong>、<strong>stdout</strong>、<strong>stderr</strong>属性，终止脚本的最直接的方法是使用<code>sys.exit()</code></p>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p><code>re</code>模块</p>
+<h2 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h2><p><code>math</code>模块，<code>random</code>模块，<code>statistics</code>模块</p>
+<h2 id="日期和时间"><a href="#日期和时间" class="headerlink" title="日期和时间"></a>日期和时间</h2><p><code>datetime</code>模块</p>
+<h2 id="数据压缩"><a href="#数据压缩" class="headerlink" title="数据压缩"></a>数据压缩</h2><p><code>zlib, gzip, bz2, lzma, zipfile 和 tarfile</code>模块</p>
+<h1 id="虚拟环境"><a href="#虚拟环境" class="headerlink" title="虚拟环境"></a>虚拟环境</h1><p>创建虚拟环境</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m venv test<span class="comment">#test为文件夹名称</span></span><br></pre></td></tr></table></figure>
+<p>激活</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\test\Scripts\activate.bat</span><br></pre></td></tr></table></figure>
+<h2 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h2><p>命令</p>
+<blockquote>
+<p>install   安装<br>download  下载<br>uninstall  卸载<br>freeze    将安装的包列表导出成想要的格式<br>list      显示安装的包列表<br>show      显示包的信息<br>check     检查包依赖<br>config<br>search    在Pypi上寻找包<br>cache<br>index<br>wheel<br>hash<br>completion<br>debug<br>help      帮助</p>
+</blockquote>
+<p><strong>install</strong></p>
+<blockquote>
+<p>pip install numpy</p>
+<p>pip install numpy==1.20.1</p>
+<p>pip install —upgrade requests</p>
+</blockquote>
+<p><strong>show</strong></p>
+<blockquote>
+<p>$pip show numpy<br>Name: numpy<br>Version: 1.21.5<br>Summary: NumPy is the fundamental package for array computing with Python.<br>Home-page: <a target="_blank" rel="noopener" href="https://www.numpy.org">https://www.numpy.org</a><br>Author: Travis E. Oliphant et al.<br>Author-email:<br>License: BSD<br>Location: d:\pyth39\lib\site-packages<br>Requires:<br>Required-by: h5py, Keras-Preprocessing, librosa, matplotlib, numba, opencv-python, opt-einsum, pandas, resampy, scikit-learn, scipy, seaborn, tensorboard, tensorflow, torchvision, umap-learn, visdom, wordcloud</p>
+</blockquote>
+<p><strong>list</strong></p>
+<blockquote>
+<p>$pip list<br>Package    Version<br>-————-         ———-<br>pip               21.3.1<br>setuptools  56.0.0</p>
+</blockquote>
+<p><strong>freeze</strong></p>
+<blockquote>
+<p>pip freeze &gt; requirements.txt</p>
+<h1 id="然后可以使用"><a href="#然后可以使用" class="headerlink" title="然后可以使用"></a>然后可以使用</h1><p>pip install -r requirements.txt</p>
+</blockquote>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><h2 id="交互式启动文件"><a href="#交互式启动文件" class="headerlink" title="交互式启动文件"></a>交互式启动文件</h2><p>在Windows的环境变量中添加名为PYTHONSTARTUP的项，将值指向一个py文件，这样，当进行交互式操作时，会首先执行这个所指向的文件</p>
+<h2 id="定制模块"><a href="#定制模块" class="headerlink" title="定制模块"></a>定制模块</h2><p>首先使用site模块获得用户自定义site-package的位置</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> site</span><br><span class="line">site.getusersitepackages()</span><br></pre></td></tr></table></figure>
+<p>然后在得到的文件夹建立一个<code>usercustomize.py</code>的文件，这样每次启动python都会首先执行这个文件，与<code>PYTHONSTARTUP</code>不同的是，<code>usercustomize.py</code>文件的命名空间与交互式窗口不同</p>
+<p><code>sitecustomize.py</code>与<code>usercustomize.py</code>作用相同，不过它比<code>usercustomize.py</code>先调用。</p>
+<p>此外，可用<code>python -s</code>禁用自动导入</p>
 
     </div>
 
@@ -456,13 +588,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">44k</span>
+    <span title="站点总字数">49k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">40 分钟</span>
+    <span title="站点阅读时长">44 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
