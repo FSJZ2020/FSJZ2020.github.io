@@ -3054,4 +3054,56 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
         <tag>python</tag>
       </tags>
   </entry>
+  <entry>
+    <title>xml学习</title>
+    <url>/2022/02/18/xml%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p><strong>xml:可扩展标记语言，用来传输和存储数据</strong></p>
+<span id="more"></span>
+<p>xml必须有一个根节点，名称随意，头声明可有可无（建议有），标签配对，大小写敏感</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">root</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">user</span>&gt;</span>用户<span class="tag">&lt;/<span class="name">user</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">age</span>&gt;</span>18<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--注释--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>转义字符</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">\&lt;</th>
+<th style="text-align:center">&lt;</th>
+<th>less than</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">\&gt;</td>
+<td style="text-align:center">&gt;</td>
+<td>greater than</td>
+</tr>
+<tr>
+<td style="text-align:center">\&amp;</td>
+<td style="text-align:center">&amp;</td>
+<td>ampersand</td>
+</tr>
+<tr>
+<td style="text-align:center">\&apos;</td>
+<td style="text-align:center">‘</td>
+<td>apostrophe</td>
+</tr>
+<tr>
+<td style="text-align:center">\&quot;</td>
+<td style="text-align:center">“</td>
+<td>quotation mark</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>属性</strong></p>
+<p>一个标签可以有多个属性，属性的值必须用引号括起来（单引号，双引号均可）</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">root</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">human</span> <span class="attr">age</span>=<span class="string">&quot;18&quot;</span>&gt;</span></span><br><span class="line">        man</span><br><span class="line">    <span class="tag">&lt;/<span class="name">human</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>CDATA</strong></p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">root</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">test</span>&gt;</span>&lt;![CDATA[&lt;&gt;&gt;&lt;&lt;&lt;&gt;&gt;&lt;&lt;&amp;&#x27;&#x27;&quot;&quot;&quot;&quot;&amp;]]&gt;<span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2022/02/18/xml%E5%AD%A6%E4%B9%A0/image-20220218215729099.png" alt="image-20220218215729099"></p>
+]]></content>
+      <tags>
+        <tag>xml</tag>
+      </tags>
+  </entry>
 </search>
