@@ -2809,4 +2809,249 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
         <tag>Python</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Lua笔记</title>
+    <url>/2022/02/02/Lua%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>.</p>
+<span id="more"></span>
+<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>使用-i可以让Lua在执行完指定的程序后进入交互模式</p>
+<p>调用函数可以用dofile，如在交互模式下，使用dofile(“test.lua”)，可以将test.lua中的函数加载到当前环境中</p>
+<p>注释用<code>--</code></p>
+<p>多行注释：</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="comment">--[[多行</span></span><br><span class="line"><span class="comment">	长注释</span></span><br><span class="line"><span class="comment">]]</span></span><br></pre></td></tr></table></figure>
+<p>常用方法(不执行语句)</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="comment">--[[</span></span><br><span class="line"><span class="comment">print(10)</span></span><br><span class="line"><span class="comment">--]]</span></span><br></pre></td></tr></table></figure>
+<p>当想要执行时</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="comment">---[[</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">10</span>)</span><br><span class="line"><span class="comment">--]]</span></span><br></pre></td></tr></table></figure>
+<h2 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h2><p>变量未赋值默认为<code>nil</code>，Lua不区分赋值为nil的变量和未初始化变量</p>
+<h2 id="类型和值"><a href="#类型和值" class="headerlink" title="类型和值"></a>类型和值</h2><p>Lua有8种基本类型</p>
+<ol>
+<li>nil（空）</li>
+<li>boolean（布尔）</li>
+<li>number（数值）</li>
+<li>string（字符串）</li>
+<li>userdata（用户数据）</li>
+<li>function（函数）</li>
+<li>thread（线程）</li>
+<li>table（表）</li>
+</ol>
+<p>使用type()可以获取值对应的类型</p>
+<h3 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h3><p>Lua语言将<strong>false</strong>和<strong>nil</strong>视作假，其他视为真</p>
+<h3 id="逻辑操作"><a href="#逻辑操作" class="headerlink" title="逻辑操作"></a>逻辑操作</h3><p><strong>and</strong></p>
+<p>如果第一个操作数为假，返回第一个操作数，否则返回第二个</p>
+<p><strong>or</strong></p>
+<p>如果第一个操作数不为假，返回第一个，否则返回第二个</p>
+<p><strong>not</strong>永远返回Boolean类型的值</p>
+<h2 id="解释器"><a href="#解释器" class="headerlink" title="解释器"></a>解释器</h2><p><strong>参数</strong></p>
+<p><code>-e</code>直接在命令行输入代码</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lua -e <span class="string">&quot;print(10)&quot;</span></span><br></pre></td></tr></table></figure>
+<h1 id="数值"><a href="#数值" class="headerlink" title="数值"></a>数值</h1><p>Lua5.2及之前的版本数值均以双精度浮点格式表示</p>
+<p>Lua5.3可以采用64位int或双精度浮点类型</p>
+<p><code>type(3)</code>和<code>type(3.0)</code>都是number</p>
+<p>可以用<code>math.type(3)</code>和<code>math.type(3.0)</code>区分整型与浮点型</p>
+<p>整除法<strong><code>//</code></strong>恒向负无穷取整</p>
+<h2 id="关系运算"><a href="#关系运算" class="headerlink" title="关系运算"></a>关系运算</h2><p><code>&lt;</code> <code>&gt;</code> <code>&lt;=</code> <code>&gt;=</code> <code>==</code> <code>~=</code></p>
+<h2 id="数学库"><a href="#数学库" class="headerlink" title="数学库"></a>数学库</h2><p>包含三角函数，指数函数，取整函数，最大和最小函数，随机数，pi以及huge，所有三角函数均以弧度为单位</p>
+<h3 id="math-random"><a href="#math-random" class="headerlink" title="math.random"></a>math.random</h3><p>不带参数返回<strong>[0,1)</strong>内的均匀分布，带1个参数m，返回<strong>[1,m]</strong>的伪随机整数，两个参数l和m返回<strong>[l,m]</strong>的伪随机整数。</p>
+<h4 id="math-randomseed"><a href="#math-randomseed" class="headerlink" title="math.randomseed()"></a>math.randomseed()</h4><p>用于设置伪随机数发生器的种子</p>
+<h3 id="取整"><a href="#取整" class="headerlink" title="取整"></a>取整</h3><p><strong>floor</strong>（向下取整）<strong>ceil</strong>（向上取整）<strong>modf</strong>（向零取整）</p>
+<p>可以用浮点值与零进行按位或运算，将浮点值强制转换为整型值</p>
+<p><img src="/2022/02/02/Lua%E7%AC%94%E8%AE%B0/image-20220203154955309.png" alt="image-20220203154955309"></p>
+<p>或用<strong>math.tointeger()</strong>,当参数含有小数或超出2^53时返回nil</p>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>与python相同，字符串是不可变量，可以用#获取字符串的长度，可以用<code>..</code>拼接字符串，可以用单引号或双引号创建字符串，与python相同</p>
+<p><strong>三种方式</strong></p>
+<p><img src="/2022/02/02/Lua%E7%AC%94%E8%AE%B0/image-20220203172336366.png" alt="image-20220203172336366"></p>
+<p><code>\ddd</code>或<code>\xhh</code>或<code>\u&#123;h...h&#125;</code></p>
+<p>多行字符</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">page=<span class="string">[[</span></span><br><span class="line"><span class="string">1</span></span><br><span class="line"><span class="string">2</span></span><br><span class="line"><span class="string">3</span></span><br><span class="line"><span class="string">4</span></span><br><span class="line"><span class="string">]]</span></span><br><span class="line"><span class="comment">--或</span></span><br><span class="line"><span class="comment">--两个中括号间等号数量相同</span></span><br><span class="line">page=<span class="string">[====[</span></span><br><span class="line"><span class="string">1</span></span><br><span class="line"><span class="string">2</span></span><br><span class="line"><span class="string">3</span></span><br><span class="line"><span class="string">4</span></span><br><span class="line"><span class="string">]====]</span></span><br></pre></td></tr></table></figure>
+<p>\z跳过所有空白字符</p>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p><strong>tonumber()</strong>将字符串转换为数值</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">tonumber</span>(<span class="string">&quot;100101&quot;</span>,<span class="number">2</span>)<span class="comment">--可以使用2到36指明任意进制</span></span><br></pre></td></tr></table></figure>
+<p><strong>tostring()</strong>将数值转换为字符串</p>
+<h2 id="字符库方法"><a href="#字符库方法" class="headerlink" title="字符库方法"></a>字符库方法</h2><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span>.<span class="built_in">rep</span>(s,n)</span><br><span class="line"><span class="built_in">string</span>.<span class="built_in">len</span>(s)</span><br><span class="line"><span class="built_in">string</span>.<span class="built_in">upper</span>(s)</span><br><span class="line"><span class="built_in">string</span>.<span class="built_in">lower</span>(s)</span><br><span class="line"><span class="built_in">string</span>.<span class="built_in">reverse</span>(s)</span><br><span class="line"><span class="built_in">string</span>.<span class="built_in">sub</span>(s,i,j)<span class="comment">--索引字符串中从i到j的字符，包括第i个和第j个，下标从1开始，最后一个为-1，=</span></span><br><span class="line"><span class="built_in">string</span>.<span class="built_in">char</span>(<span class="number">97</span>)</span><br><span class="line"><span class="built_in">string</span>.<span class="built_in">byte</span>(<span class="string">&quot;abc&quot;</span>)<span class="comment">--返回第一个字符的数值表示</span></span><br><span class="line"><span class="built_in">string</span>.<span class="built_in">byte</span>(<span class="string">&quot;abc&quot;</span>,i)<span class="comment">--返回第i个字符的数值表示</span></span><br><span class="line"><span class="built_in">string</span>.<span class="built_in">byte</span>(<span class="string">&quot;abc&quot;</span>,i,j)<span class="comment">--返回第i到j个字符的数值表示</span></span><br></pre></td></tr></table></figure>
+<p><strong>格式化字符串</strong></p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span>.<span class="built_in">format</span>(<span class="string">&quot;%x&quot;</span>,a)<span class="comment">--格式与c语言printf类似，x代表十六进制整数</span></span><br></pre></td></tr></table></figure>
+<p>设<strong>s</strong>是一个字符串，可以用s:sub(i,j)来代替string.sub(s,i,j)</p>
+<p><strong>string.find(“hello world”,”wor”)</strong>寻找子串</p>
+<p><strong>string.gsub(“hello world”,”l”,”.”)</strong>替换子串</p>
+<p><strong>utf8.char()</strong>和<strong>utf8.codepoint()</strong>等价于<strong>string.char()</strong>和<strong>string.byte()</strong></p>
+<p><strong>utf8.codepoint()</strong>中的位置采用的是字节索引，可以用<strong>utf8.offset()</strong>获取字符在字符串中的索引</p>
+<p><strong>utf8.codes()</strong></p>
+<h1 id="表"><a href="#表" class="headerlink" title="表"></a>表</h1><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">a=&#123;&#125;</span><br><span class="line">a[<span class="string">&quot;x&quot;</span>]=<span class="number">10</span></span><br><span class="line">a=<span class="literal">nil</span></span><br><span class="line">a.x==a[<span class="string">&quot;x&quot;</span>] <span class="comment">--True</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">days=&#123;<span class="string">&quot;Sunday&quot;</span>,<span class="string">&quot;Monday&quot;</span>,<span class="string">&quot;Tuesday&quot;</span>,<span class="string">&quot;Wednesday&quot;</span>,<span class="string">&quot;Thursday&quot;</span>,<span class="string">&quot;Friday&quot;</span>,<span class="string">&quot;Saturday&quot;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(day[<span class="number">4</span>]) <span class="comment">--Wednesday</span></span><br><span class="line">a=&#123;x=<span class="number">10</span>,y=<span class="number">20</span>&#125;</span><br><span class="line"><span class="comment">--等价于</span></span><br><span class="line">a=&#123;&#125;;a.x=<span class="number">10</span>;a.y=<span class="number">20</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">&#123;x=<span class="number">0</span>,y=<span class="number">0</span>&#125;<span class="comment">--&#123;[&quot;x&quot;]=0,[&quot;y&quot;]=0&#125;</span></span><br></pre></td></tr></table></figure>
+<p>可以使用#获取序列（索引为{1，n}形成的表，值为nil的键实际不在表中）的长度</p>
+<p>可以用<strong>pairs()</strong>遍历表中的元素，不过出现的键值对随机</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">&gt; <span class="keyword">for</span> k,v <span class="keyword">in</span> <span class="built_in">pairs</span>(<span class="built_in">arg</span>) <span class="keyword">do</span></span><br><span class="line">&gt;&gt; <span class="built_in">print</span>(k,v)</span><br><span class="line">&gt;&gt; <span class="keyword">end</span></span><br><span class="line"><span class="number">0</span>       lua</span><br></pre></td></tr></table></figure>
+<p>对于列表，可以用<strong>ipairs()</strong></p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">&gt; <span class="keyword">for</span> u,v <span class="keyword">in</span> <span class="built_in">ipairs</span>(t) <span class="keyword">do</span></span><br><span class="line">&gt;&gt; <span class="built_in">print</span>(u,v)</span><br><span class="line">&gt;&gt; <span class="keyword">end</span></span><br><span class="line"><span class="number">1</span>       <span class="number">10</span></span><br><span class="line"><span class="number">2</span>       <span class="function"><span class="keyword">function</span>: 0000000065<span class="title">b9cff0</span></span></span><br><span class="line"><span class="function">3       12</span></span><br><span class="line"><span class="function">4       <span class="title">hi</span></span></span><br></pre></td></tr></table></figure>
+<p>遍历一定是按照顺序进行的</p>
+<h2 id="表标准库"><a href="#表标准库" class="headerlink" title="表标准库"></a>表标准库</h2><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">table</span>.<span class="built_in">insert</span>(t,<span class="number">1</span>,x)<span class="comment">--在列表第一个位置插入x</span></span><br><span class="line"><span class="built_in">table</span>.<span class="built_in">insert</span>(t,x)<span class="comment">--在列表最后插入x</span></span><br><span class="line"><span class="built_in">table</span>.<span class="built_in">remove</span>(t)<span class="comment">--删除列表最后一个元素</span></span><br><span class="line"><span class="built_in">table</span>.<span class="built_in">remove</span>(t,x)<span class="comment">--删除列表第x个元素</span></span><br><span class="line"><span class="built_in">table</span>.move(a,f,e,t)<span class="comment">--将a表中从f到e的元素移动到t位置上</span></span><br><span class="line"><span class="built_in">table</span>.move(a,f,e,t,b)<span class="comment">--将上述元素移动到b表中</span></span><br></pre></td></tr></table></figure>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>当函数参数只有一个且为字符串或表构造器时，括号可选</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span><span class="string">&quot;HelloWorld&quot;</span></span><br><span class="line"><span class="built_in">type</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>当输入参数不够时，其他的参数被赋值为nil，当输入的参数过多时，多余的参数被丢弃</p>
+<p>当一个函数作为表达式的最后一个参数时才会返回所有的返回值，否则只会返回第一个值，如</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">x,y,z=foo(),<span class="number">20</span></span><br><span class="line"><span class="built_in">print</span>(x,y,z)</span><br><span class="line">a       <span class="number">20</span>      <span class="literal">nil</span></span><br></pre></td></tr></table></figure>
+<p>将函数调用用一个圆括号括起来可以强制只返回一个结果</p>
+<p>用<code>...</code>表示可变长度参数</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span><span class="params">(...)</span></span></span><br><span class="line">    <span class="keyword">local</span> s=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> _,v <span class="keyword">in</span> <span class="built_in">ipairs</span>&#123;...&#125; <span class="keyword">do</span></span><br><span class="line">        s=s+v</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="built_in">print</span>(sum(<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>))</span><br><span class="line"><span class="number">42</span></span><br></pre></td></tr></table></figure>
+<p>此外，还可用<code>table.pack(...)</code>返回一个表，这个表中保存了参数n</p>
+<p>还可用<code>select</code>，select返回selector后的所有参数,当selector为#号时，返回额外参数的总数</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">select</span>(<span class="number">1</span>,<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>)) <span class="comment">--a b c</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">select</span>(<span class="number">2</span>,<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>)) <span class="comment">--b c</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">select</span>(<span class="string">&quot;#&quot;</span>,<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>)) <span class="comment">--3</span></span><br></pre></td></tr></table></figure>
+<p>还有一个函数为<code>table.unpack()</code>与table.pack()相反，其参数时一个数组，返回数组中的所有元素</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">table</span>.<span class="built_in">unpack</span>(&#123;<span class="string">&quot;sun&quot;</span>,<span class="string">&quot;mon&quot;</span>,<span class="string">&quot;tue&quot;</span>,<span class="string">&quot;wed&quot;</span>&#125;,<span class="number">2</span>,<span class="number">3</span>) <span class="comment">--mon tue</span></span><br></pre></td></tr></table></figure>
+<h2 id="尾调用"><a href="#尾调用" class="headerlink" title="尾调用"></a>尾调用</h2><p>尾调用是指在一个函数的结尾递归调用一个函数，此后不进行任何操作，称为尾调用</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span></span><br><span class="line">    <span class="keyword">return</span> g(x)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>好处是无论递归多少层，栈都不会溢出</p>
+<h1 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h1><p><code>io.write()</code>可以读取任意数量的字符串并将其写入到当前输入流，可以有多个参数，应避免使用<code>io.write(a..b..c)</code>,而是使用<code>io.write(a,b,c)</code></p>
+<p><code>io.read()</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">“a”</td>
+<td style="text-align:center">读取整个文件</td>
+</tr>
+<tr>
+<td style="text-align:center">“l”</td>
+<td style="text-align:center">读取下一行（丢弃换行符）</td>
+</tr>
+<tr>
+<td style="text-align:center">“L”</td>
+<td style="text-align:center">读取下一行（保留换行符）</td>
+</tr>
+<tr>
+<td style="text-align:center">“n”</td>
+<td style="text-align:center">读取一个数值</td>
+</tr>
+<tr>
+<td style="text-align:center">num</td>
+<td style="text-align:center">以字符串读取num个字符</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code>io.read(0)</code>是一个特例，用于测试是否到达了末尾，如果没有到达末尾，返回空字符串，若到达了末尾，返回nil</p>
+<p><code>io.open()</code>打开文件，与C语言相同，r只读，w只写，a附加</p>
+<p>可以用<code>io.input()</code>和<code>io.output()</code>设置输入流和输出流</p>
+<h2 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h2><p>可以使用<code>io.open()</code>打开文件，有两个参数，一个参数是打开的文件的名称，另一个是模式，r,w,a,b,若打开错误返回nil和错误码</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> f=<span class="built_in">assert</span>(<span class="built_in">io</span>.<span class="built_in">open</span>(filename,<span class="string">&quot;r&quot;</span>))</span><br><span class="line"><span class="keyword">local</span> t=f:<span class="built_in">read</span>(<span class="string">&quot;a&quot;</span>)</span><br><span class="line">f:<span class="built_in">close</span>()</span><br></pre></td></tr></table></figure>
+<p><code>io.popen(&quot;command&quot;,&quot;mode&quot;)</code>这个函数有两个参数，第一个为在命令行所执行的指令，第二个为模式，可以为r（读取）或w（写入）</p>
+<h1 id="其他知识"><a href="#其他知识" class="headerlink" title="其他知识"></a>其他知识</h1><p>lua变量默认是全局变量，局部变量使用前必须用<strong><code>local</code></strong>声明，在交互模式下每行代码就是个代码段，所以要想连续输入多行代码，可以将其放入<code>do...end</code>中</p>
+<h2 id="控制结构"><a href="#控制结构" class="headerlink" title="控制结构"></a>控制结构</h2><p><strong><code>if...then...else...end</code></strong></p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> a&lt;<span class="number">0</span> <span class="keyword">then</span></span><br><span class="line">    a=<span class="number">0</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">if</span> a&lt;b <span class="keyword">then</span></span><br><span class="line">    <span class="keyword">return</span> a</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> b</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><strong><code>if...then...elseif...then...else...end</code></strong></p>
+<p><strong><code>while</code></strong></p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> i=<span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> a[i] <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(a[i])</span><br><span class="line">    i=i+<span class="number">1</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><strong><code>repeat...until...</code></strong></p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">local</span> line</span><br><span class="line"><span class="keyword">repeat</span></span><br><span class="line">    line=<span class="built_in">io</span>.<span class="built_in">read</span>()</span><br><span class="line"><span class="keyword">until</span> line~=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(line)</span><br></pre></td></tr></table></figure>
+<p>循环内声明的变量作用域包括until后面</p>
+<p><strong><code>for</code></strong></p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> var=exp1,exp2,exp3 <span class="keyword">do</span></span><br><span class="line">    something</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>初始exp1，结束exp2，步长exp3[可选]，默认步长为1，若不想设置上限可以使用常量<strong><code>math.huge</code></strong></p>
+<p><strong><code>goto</code></strong></p>
+<p>标签格式为：<strong><code>::label::</code></strong></p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">a=<span class="number">1</span></span><br><span class="line"><span class="keyword">goto</span> test</span><br><span class="line">a=<span class="number">2</span></span><br><span class="line">::test::</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Lua</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PyQt5学习</title>
+    <url>/2022/02/10/PyQt5%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>.</p>
+<span id="more"></span>
+<p>QApplication是整个应用，QWidget是不同窗口，他们在PyQt5.QtWidgets下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QApplication,QWidget</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment">#创建应用</span></span><br><span class="line">    app=QApplication(sys.argv)</span><br><span class="line">    <span class="comment">#创建窗口</span></span><br><span class="line">    w=QWidget()</span><br><span class="line">    <span class="comment">#窗口尺寸</span></span><br><span class="line">    w.resize(<span class="number">300</span>,<span class="number">150</span>)</span><br><span class="line">    <span class="comment">#窗口位置</span></span><br><span class="line">    w.move(<span class="number">300</span>,<span class="number">300</span>)</span><br><span class="line">    <span class="comment">#窗口图标</span></span><br><span class="line">    w.setWindowTitle(<span class="string">&#x27;桌面应用&#x27;</span>)</span><br><span class="line">    <span class="comment">#显示</span></span><br><span class="line">    w.show()</span><br><span class="line">    <span class="comment">#正常退出</span></span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+<p><strong>将ui文件转换为py文件</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyuic5 -o demo.py demo.ui</span><br></pre></td></tr></table></figure>
+<p><strong>通过ui生成的py文件生成窗口</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> Ui_demo2</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QApplication,QMainWindow</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    app=QApplication(sys.argv)</span><br><span class="line">    mainWindow=QMainWindow()</span><br><span class="line">    ui=Ui_demo2.Ui_MainWindow()</span><br><span class="line">    ui.setupUi(mainWindow)</span><br><span class="line">    mainWindow.show()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+<p><strong>热键</strong></p>
+<p>在每个标签后使用格式如<code>(&amp;A)</code>类的字符</p>
+<p><strong>主窗口类型</strong></p>
+<blockquote>
+<p>QMainWindow:包含菜单栏、工具栏、状态栏和标题栏</p>
+<p>QWidget：是对话窗口的基类。无菜单栏、工具栏、状态栏</p>
+<p>QDialog：不确定具体用途</p>
+</blockquote>
+<p><strong>获取窗口宽度和高度以及位置</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QHBoxLayout,QMainWindow,QApplication,QPushButton,QWidget</span><br><span class="line"><span class="keyword">from</span> matplotlib.widgets <span class="keyword">import</span> Widget</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">onClick_button</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Onclick&quot;</span>)</span><br><span class="line">    <span class="comment">#从窗口开始算</span></span><br><span class="line">    <span class="built_in">print</span>(widget.x())</span><br><span class="line">    <span class="built_in">print</span>(widget.y())<span class="comment">#不包含标题栏的位置</span></span><br><span class="line">    <span class="built_in">print</span>(widget.width())</span><br><span class="line">    <span class="built_in">print</span>(widget.height())</span><br><span class="line">    <span class="comment">#从工作区开始算</span></span><br><span class="line">    <span class="built_in">print</span>(widget.geometry().x())</span><br><span class="line">    <span class="built_in">print</span>(widget.geometry().y())</span><br><span class="line">    <span class="built_in">print</span>(widget.geometry().width())</span><br><span class="line">    <span class="built_in">print</span>(widget.geometry().height())</span><br><span class="line">	</span><br><span class="line">app=QApplication(sys.argv)</span><br><span class="line">widget=QWidget()</span><br><span class="line">btn=QPushButton(widget)</span><br><span class="line">btn.setText(<span class="string">&quot;按钮&quot;</span>)</span><br><span class="line">btn.clicked.connect(onClick_button)</span><br><span class="line">btn.move(<span class="number">24</span>,<span class="number">52</span>)</span><br><span class="line">widget.resize(<span class="number">300</span>,<span class="number">240</span>)<span class="comment">#设置工作区的尺寸</span></span><br><span class="line">widget.move(<span class="number">250</span>,<span class="number">200</span>)</span><br><span class="line">widget.show()</span><br><span class="line">sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+<p><strong>LineEdit校验器</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtGui <span class="keyword">import</span> QIntValidator,QDoubleValidator,QRegExpValidator</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> QRegExp</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">QLineEditValidator</span>(<span class="params">QWidget</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        formLayout=QFormLayout()</span><br><span class="line">        self.setWindowTitle(<span class="string">&quot;校验器&quot;</span>)</span><br><span class="line">        intLineEdit=QLineEdit()</span><br><span class="line">        doubleLineEdit=QLineEdit()</span><br><span class="line">        validatorLineEdit=QLineEdit()</span><br><span class="line">        formLayout.addRow(<span class="string">&#x27;整数类型&#x27;</span>,intLineEdit)</span><br><span class="line">        formLayout.addRow(<span class="string">&#x27;浮点类型&#x27;</span>,doubleLineEdit)</span><br><span class="line">        formLayout.addRow(<span class="string">&#x27;正则表达式&#x27;</span>,validatorLineEdit)</span><br><span class="line"></span><br><span class="line">        intLineEdit.setPlaceholderText(<span class="string">&quot;数字&quot;</span>)</span><br><span class="line">        doubleLineEdit.setPlaceholderText(<span class="string">&quot;浮点&quot;</span>)</span><br><span class="line">        validatorLineEdit.setPlaceholderText(<span class="string">&quot;字母数字&quot;</span>)</span><br><span class="line"></span><br><span class="line">        intvalidator=QIntValidator(self)</span><br><span class="line">        intvalidator.setRange(<span class="number">1</span>,<span class="number">99</span>)</span><br><span class="line"></span><br><span class="line">        doublevalidator=QDoubleValidator(self)</span><br><span class="line">        doublevalidator.setRange(-<span class="number">360</span>,<span class="number">360</span>)</span><br><span class="line">        doublevalidator.setNotation(QDoubleValidator.StandardNotation)</span><br><span class="line">        doublevalidator.setDecimals(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">        reg=QRegExp(<span class="string">&#x27;[a-zA-Z0-9]+$&#x27;</span>)</span><br><span class="line">        validator=QRegExpValidator(self)</span><br><span class="line">        validator.setRegExp(reg)</span><br><span class="line"></span><br><span class="line">        intLineEdit.setValidator(intvalidator)</span><br><span class="line">        doubleLineEdit.setValidator(doublevalidator)</span><br><span class="line">        validatorLineEdit.setValidator(validator)</span><br><span class="line"></span><br><span class="line">        self.setLayout(formLayout)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    main=QLineEditValidator()</span><br><span class="line">    main.show()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+<p><strong>使用掩码限制输入</strong></p>
+<p><img src="/2022/02/10/PyQt5%E5%AD%A6%E4%B9%A0/image-20220212094924849-16446305676461.png" alt="image-20220212094924849"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">QLineEditMask</span>(<span class="params">QWidget</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        formLayout=QFormLayout()</span><br><span class="line">        self.setWindowTitle(<span class="string">&quot;掩码限制输入&quot;</span>)</span><br><span class="line"></span><br><span class="line">        ipLineEdit=QLineEdit()</span><br><span class="line">        macLineEdit=QLineEdit()</span><br><span class="line">        dateLineEdit=QLineEdit()</span><br><span class="line">        licenceLineEdit=QLineEdit()</span><br><span class="line"></span><br><span class="line">        ipLineEdit.setInputMask(<span class="string">&#x27;000.000.000.000;_&#x27;</span>)</span><br><span class="line">        macLineEdit.setInputMask(<span class="string">&#x27;HH:HH:HH:HH:HH:HH;_&#x27;</span>)</span><br><span class="line">        dateLineEdit.setInputMask(<span class="string">&#x27;0000-00-00 00:00:00&#x27;</span>)</span><br><span class="line">        licenceLineEdit.setInputMask(<span class="string">&#x27;&gt;AAAAA-AAAAA-AAAAA-AAAAA-AAAAA;#&#x27;</span>)</span><br><span class="line"></span><br><span class="line">        formLayout.addRow(<span class="string">&#x27;数字掩码&#x27;</span>,ipLineEdit)</span><br><span class="line">        formLayout.addRow(<span class="string">&#x27;Mac掩码&#x27;</span>,macLineEdit)</span><br><span class="line">        formLayout.addRow(<span class="string">&#x27;日期掩码&#x27;</span>,dateLineEdit)</span><br><span class="line">        formLayout.addRow(<span class="string">&#x27;许可证掩码&#x27;</span>,licenceLineEdit)</span><br><span class="line"></span><br><span class="line">        self.setLayout(formLayout)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    app= QApplication(sys.argv)</span><br><span class="line">    main=QLineEditMask()</span><br><span class="line">    main.show()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/02/10/PyQt5%E5%AD%A6%E4%B9%A0/image-20220212095938686.png" alt="image-20220212095938686"></p>
+<p><strong>下拉选择控件(大字体)</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtGui <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ComBoxDemo</span>(<span class="params">QWidget</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        layout=QVBoxLayout()</span><br><span class="line">        self.label=QLabel(<span class="string">&quot;请选择编程语言&quot;</span>)</span><br><span class="line">        self.label.setFont(QFont(<span class="string">&#x27;黑体&#x27;</span>, <span class="number">100</span>))</span><br><span class="line">        self.label.setAlignment(Qt.AlignCenter)</span><br><span class="line">        self.combox=QComboBox()</span><br><span class="line">        self.combox.setFont(QFont(<span class="string">&#x27;黑体&#x27;</span>,<span class="number">50</span>))</span><br><span class="line">        self.combox.addItem(<span class="string">&quot;C++&quot;</span>)</span><br><span class="line">        self.combox.addItem(<span class="string">&quot;Python&quot;</span>)</span><br><span class="line">        self.combox.addItems([<span class="string">&quot;Java&quot;</span>,<span class="string">&quot;C#&quot;</span>,<span class="string">&quot;JavaScript&quot;</span>])</span><br><span class="line">        self.combox.currentIndexChanged.connect(self.selectChange)</span><br><span class="line">        layout.addWidget(self.label)</span><br><span class="line">        layout.addWidget(self.combox)</span><br><span class="line">        self.setLayout(layout)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">selectChange</span>(<span class="params">self,i</span>):</span></span><br><span class="line">        self.label.setText(self.combox.currentText())</span><br><span class="line">        self.label.adjustSize()</span><br><span class="line">        <span class="keyword">for</span> count <span class="keyword">in</span> <span class="built_in">range</span>(self.combox.count()):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;items&#x27;</span>+<span class="built_in">str</span>(count)+<span class="string">&#x27;=&#x27;</span>+self.combox.itemText(count))</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;current index&#x27;</span>,i)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    main = ComBoxDemo()</span><br><span class="line">    main.show()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/02/10/PyQt5%E5%AD%A6%E4%B9%A0/image-20220212175729721.png" alt="image-20220212175729721"></p>
+<p><strong>滑动条控件</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtGui <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SliderDemo</span>(<span class="params">QDialog</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        </span><br><span class="line">        layout=QVBoxLayout()</span><br><span class="line">        self.label = QLabel(<span class="string">&#x27;你好&#x27;</span>)</span><br><span class="line">        self.label.setAlignment(Qt.AlignCenter)</span><br><span class="line">        self.slider=QSlider(Qt.Horizontal)</span><br><span class="line">        self.slider.setMinimum(<span class="number">12</span>)</span><br><span class="line">        self.slider.setMaximum(<span class="number">400</span>)</span><br><span class="line">        self.slider.setTickPosition(QSlider.TicksBelow)</span><br><span class="line">        self.slider.setTickInterval(<span class="number">6</span>)</span><br><span class="line">        layout.addWidget(self.label)</span><br><span class="line">        layout.addWidget(self.slider)</span><br><span class="line">        self.slider.valueChanged.connect(self.getvalue)</span><br><span class="line">        self.setLayout(layout)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getvalue</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.label.setFont(QFont(<span class="string">&#x27;黑体&#x27;</span>, self.slider.value()))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    main = SliderDemo()</span><br><span class="line">    main.show()</span><br><span class="line">    sys.exit(app.exec_())</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2022/02/10/PyQt5%E5%AD%A6%E4%B9%A0/image-20220212213448429.png" alt="image-20220212213448429"></p>
+<p><strong>自定义信号槽</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> signal <span class="keyword">import</span> signal</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> *</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyTypeSignal</span>(<span class="params">QObject</span>):</span></span><br><span class="line">    signal=pyqtSignal(<span class="built_in">str</span>)</span><br><span class="line">    signal2=pyqtSignal([<span class="built_in">int</span>,<span class="built_in">str</span>],[<span class="built_in">str</span>])<span class="comment">#信号重载，输入参数可以是一个整型一个字符串，也可是一个zheng&#x27;x</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.signal.emit(<span class="string">&quot;test&quot;</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run1</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.signal2.emit(<span class="number">1</span>,<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MySlot</span>(<span class="params">QObject</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span>(<span class="params">self,msg</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(msg)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get1</span>(<span class="params">self,msg,msg2</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(msg)</span><br><span class="line">        <span class="built_in">print</span>(msg2)</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    signal=MyTypeSignal()</span><br><span class="line">    slot=MySlot()</span><br><span class="line">    signal.signal.connect(slot.get)</span><br><span class="line">    signal.signal2.connect(slot.get1)</span><br><span class="line">    signal.run()</span><br><span class="line">    signal.run1()</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Python &amp;&amp; PyQt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python句法</title>
+    <url>/2022/01/28/python%E5%8F%A5%E6%B3%95/</url>
+    <content><![CDATA[<p><strong>python句法分析</strong><a href="https://docs.python.org/zh-cn/3.9/reference/index.html">来源：python官方reference</a></p>
+<span id="more"></span>
+<h1 id="行结构"><a href="#行结构" class="headerlink" title="行结构"></a>行结构</h1><h2 id="编码声明"><a href="#编码声明" class="headerlink" title="编码声明"></a>编码声明</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">coding[=:]\s*([-\w.]+)</span><br></pre></td></tr></table></figure>
+<h1 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph TB</span><br><span class="line">A[对象]--&gt;B[编号]</span><br><span class="line">A[对象]--&gt;C[类型]</span><br><span class="line">A[对象]--&gt;D[值]</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/01/28/python%E5%8F%A5%E6%B3%95/image-20220129191159535.png" alt="image-20220129191159535"></p>
+<p>可以用<strong>id()</strong>显示编号的地址</p>
+<h2 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h2><p>列表可用<code>list1[0:10:2]</code>选中位置为偶数的元素</p>
+<h2 id="用户自定义函数"><a href="#用户自定义函数" class="headerlink" title="用户自定义函数"></a>用户自定义函数</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:center">意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">__doc__</td>
+<td style="text-align:center">函数文档，没有为None</td>
+</tr>
+<tr>
+<td style="text-align:center">__name__</td>
+<td style="text-align:center">函数名称</td>
+</tr>
+<tr>
+<td style="text-align:center">__module__</td>
+<td style="text-align:center">函数所属模块的名称</td>
+</tr>
+<tr>
+<td style="text-align:center">__globals__</td>
+<td style="text-align:center">存放该函数的模块的全局命名空间</td>
+</tr>
+<tr>
+<td style="text-align:center">__annotations__</td>
+<td style="text-align:center">包含参数标注的字典</td>
+</tr>
+<tr>
+<td style="text-align:center">__kwdefaults__</td>
+<td style="text-align:center">只包含关键字参数默认值的字典</td>
+</tr>
+</tbody>
+</table>
+</div>
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
 </search>
