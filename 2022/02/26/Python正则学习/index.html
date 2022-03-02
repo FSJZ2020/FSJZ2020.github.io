@@ -20,23 +20,29 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"fsjz2020.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="FSJZ">
-<meta property="og:url" content="https://fsjz2020.github.io/archives/index.html">
+<meta name="description" content=".">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python正则学习">
+<meta property="og:url" content="https://fsjz2020.github.io/2022/02/26/Python%E6%AD%A3%E5%88%99%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="FSJZ">
+<meta property="og:description" content=".">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-26T13:39:26.000Z">
+<meta property="article:modified_time" content="2022-03-01T02:26:51.477Z">
 <meta property="article:author" content="FSJZ">
+<meta property="article:tag" content="re">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://fsjz2020.github.io/archives/">
+<link rel="canonical" href="https://fsjz2020.github.io/2022/02/26/Python%E6%AD%A3%E5%88%99%E5%AD%A6%E4%B9%A0/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"archives/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://fsjz2020.github.io/2022/02/26/Python%E6%AD%A3%E5%88%99%E5%AD%A6%E4%B9%A0/","path":"2022/02/26/Python正则学习/","title":"Python正则学习"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>归档 | FSJZ</title>
+<title>Python正则学习 | FSJZ</title>
   
 
 
@@ -211,233 +217,214 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 22 篇日志。 继续努力。</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://fsjz2020.github.io/2022/02/26/Python%E6%AD%A3%E5%88%99%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.png">
+      <meta itemprop="name" content="FSJZ">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FSJZ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python正则学习
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-26 21:39:26" itemprop="dateCreated datePublished" datetime="2022-02-26T21:39:26+08:00">2022-02-26</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-03-01 10:26:51" itemprop="dateModified" datetime="2022-03-01T10:26:51+08:00">2022-03-01</time>
+      </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>847</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>.</p>
+<span id="more"></span>
+<p><strong>search</strong>:寻找string中的第一个pattern</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="keyword">import</span> re</span><br><span class="line">In [<span class="number">2</span>]: a = <span class="string">&quot;is&quot;</span></span><br><span class="line">In [<span class="number">3</span>]: b = <span class="string">&quot;This is a string for test&quot;</span></span><br><span class="line">In [<span class="number">4</span>]: re.search(a, b)</span><br><span class="line">Out[<span class="number">4</span>]: &lt;re.Match <span class="built_in">object</span>; span=(<span class="number">2</span>, <span class="number">4</span>), match=<span class="string">&#x27;is&#x27;</span>&gt;</span><br><span class="line">In [<span class="number">5</span>]: match = re.search(a, b)</span><br><span class="line">In [<span class="number">6</span>]: match.start()</span><br><span class="line">Out[<span class="number">6</span>]: <span class="number">2</span></span><br><span class="line">In [<span class="number">7</span>]: match.end()</span><br><span class="line">Out[<span class="number">7</span>]: <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<p><strong>findall</strong>：找到所有的符合的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">8</span>]: re.findall(a, b)</span><br><span class="line">Out[<span class="number">8</span>]: [<span class="string">&#x27;is&#x27;</span>, <span class="string">&#x27;is&#x27;</span>]</span><br></pre></td></tr></table></figure>
+<p><strong>finditer</strong>：返回迭代器</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">9</span>]: re.finditer(a, b)</span><br><span class="line">Out[<span class="number">9</span>]: &lt;callable_iterator at <span class="number">0x1d2e0145310</span>&gt;</span><br><span class="line">In [<span class="number">10</span>]: <span class="keyword">for</span> i <span class="keyword">in</span> re.finditer(a, b):</span><br><span class="line">    ...:     <span class="built_in">print</span>(i)</span><br><span class="line">&lt;re.Match <span class="built_in">object</span>; span=(<span class="number">2</span>, <span class="number">4</span>), match=<span class="string">&#x27;is&#x27;</span>&gt;</span><br><span class="line">&lt;re.Match <span class="built_in">object</span>; span=(<span class="number">5</span>, <span class="number">7</span>), match=<span class="string">&#x27;is&#x27;</span>&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>match</strong>：只能匹配开头符合的</p>
+<p><strong>fullmatch</strong>：要求整个字符串都与模式匹配</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>标志</strong></th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">IGNORECASE</td>
+<td style="text-align:center">使匹配不区分大小写</td>
+</tr>
+<tr>
+<td style="text-align:center">MULTILINE</td>
+<td style="text-align:center">使匹配可以匹配多行</td>
+</tr>
+<tr>
+<td style="text-align:center">DOTALL</td>
+<td style="text-align:center">使.可以匹配换行符</td>
+</tr>
+<tr>
+<td style="text-align:center">ASCII</td>
+<td style="text-align:center">匹配ASCII码而不是UNICODE</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>嵌入标志</strong></p>
+<p>在表达式前用<strong>(?i)</strong>来嵌入</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">标志</th>
+<th style="text-align:center">缩写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ASCII</td>
+<td style="text-align:center">a</td>
+</tr>
+<tr>
+<td style="text-align:center">IGNORECASE</td>
+<td style="text-align:center">i</td>
+</tr>
+<tr>
+<td style="text-align:center">MUTILINE</td>
+<td style="text-align:center">m</td>
+</tr>
+<tr>
+<td style="text-align:center">DOTALL</td>
+<td style="text-align:center">s</td>
+</tr>
+<tr>
+<td style="text-align:center">VERBOSE</td>
+<td style="text-align:center">x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>组命名</strong></p>
+<p><strong>(?P<name>)</name></strong></p>
+<p><strong>组引用</strong></p>
+<p><strong>(?P=name)</strong></p>
+<p><strong>不同选择模式</strong></p>
+<p><strong>?(id)yes_pattern|no_pattern</strong></p>
+<p>id是组号或编号</p>
+<p><strong>sub</strong>替换</p>
+<p><strong>subn</strong>替换并返回替换次数</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-02-26T21:39:26+08:00"
-              content="2022-02-26">
-          02-26
-        </time>
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
       </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/02/26/Python%E6%AD%A3%E5%88%99%E5%AD%A6%E4%B9%A0/" itemprop="url">
-            <span itemprop="name">Python正则学习</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-02-19T16:35:27+08:00"
-              content="2022-02-19">
-          02-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/02/19/numpy%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">numpy笔记</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-02-18T20:40:21+08:00"
-              content="2022-02-18">
-          02-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/02/18/xml%E5%AD%A6%E4%B9%A0/" itemprop="url">
-            <span itemprop="name">xml学习</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-02-10T13:57:07+08:00"
-              content="2022-02-10">
-          02-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/02/10/PyQt5%E5%AD%A6%E4%B9%A0/" itemprop="url">
-            <span itemprop="name">PyQt5学习</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-02-02T22:24:17+08:00"
-              content="2022-02-02">
-          02-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/02/02/Lua%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">Lua笔记</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-01-28T22:58:20+08:00"
-              content="2022-01-28">
-          01-28
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/01/28/python%E5%8F%A5%E6%B3%95/" itemprop="url">
-            <span itemprop="name">python句法</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-01-16T15:27:41+08:00"
-              content="2022-01-16">
-          01-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/01/16/Python%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">Python笔记</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-01-12T14:48:05+08:00"
-              content="2022-01-12">
-          01-12
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/01/12/Blender%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/" itemprop="url">
-            <span itemprop="name">Blender快捷键记录</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-01-03T16:48:08+08:00"
-              content="2022-01-03">
-          01-03
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/01/03/mermaid%E5%AD%A6%E4%B9%A0/" itemprop="url">
-            <span itemprop="name">mermaid学习</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-01-01T19:00:38+08:00"
-              content="2022-01-01">
-          01-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/01/01/VIM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">VIM学习笔记</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-
-    </div>
   </div>
-  
-  
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
+</div>
 
+          <div class="post-tags">
+              <a href="/tags/re/" rel="tag"><i class="fa fa-tag"></i> re</a>
+              <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/02/19/numpy%E7%AC%94%E8%AE%B0/" rel="prev" title="numpy笔记">
+                  <i class="fa fa-chevron-left"></i> numpy笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -512,11 +499,11 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://fsjz2020.github.io/archives/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://fsjz2020.github.io/2022/02/26/Python%E6%AD%A3%E5%88%99%E5%AD%A6%E4%B9%A0/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"FSJZ2020","repo":"fsjz2020.github.io","client_id":"f9d48f69e6bc4e6bd381","client_secret":"9896c40b70e9b983fef54bd5ef73aaa203954f72","admin_user":"FSJZ2020","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"b86805e3c045105f4f74c304744b551e"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"FSJZ2020","repo":"fsjz2020.github.io","client_id":"f9d48f69e6bc4e6bd381","client_secret":"9896c40b70e9b983fef54bd5ef73aaa203954f72","admin_user":"FSJZ2020","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"72dceb2ed5e9e6becf24887c4c572236"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>

@@ -3106,4 +3106,273 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
         <tag>xml</tag>
       </tags>
   </entry>
+  <entry>
+    <title>numpy笔记</title>
+    <url>/2022/02/19/numpy%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>.</p>
+<span id="more"></span>
+<h1 id="Numpy创建数组"><a href="#Numpy创建数组" class="headerlink" title="Numpy创建数组"></a>Numpy创建数组</h1><h2 id="从无到有"><a href="#从无到有" class="headerlink" title="从无到有"></a>从无到有</h2><p><strong>numpy.empty(shape,dtype=int,order=’C’)</strong></p>
+<p>创建一个未初始化的数组</p>
+<blockquote>
+<p>shape:形状</p>
+<p>dtype:数据类型</p>
+<p>order:”C”行优先,”F”列优先</p>
+</blockquote>
+<p><strong>numpy.zeros(shape,dtype=int,order=’C’)</strong></p>
+<p>创建全0数组</p>
+<p><strong>numpy.ones(shape,dtype=int,order=’C’)</strong></p>
+<p>创建全1数组</p>
+<h2 id="从已有创建新的"><a href="#从已有创建新的" class="headerlink" title="从已有创建新的"></a>从已有创建新的</h2><p><strong>numpy.asarray(a,dtype=float,order=’C’)</strong></p>
+<blockquote>
+<p>a可以是列表</p>
+</blockquote>
+<p><strong>numpy.frombuffer(buffer, dtype = float, count = -1, offset = 0)</strong>从流读取</p>
+<blockquote>
+<p>count:默认-1读取所有</p>
+<p>offset:读取位置，默认为0</p>
+</blockquote>
+<p><strong>numpy.fromiter(iterable,dtype,count=-1)</strong></p>
+<p>从可迭代对象读取</p>
+<h2 id="从数值范围创建新的"><a href="#从数值范围创建新的" class="headerlink" title="从数值范围创建新的"></a>从数值范围创建新的</h2><p><strong>numpy.arange(start,stop,step,dtype)</strong></p>
+<blockquote>
+<p>start:默认为0</p>
+<p>stop:终止值(不包含)</p>
+<p>step:步长，默认为1</p>
+<p>dtype:数据类型</p>
+</blockquote>
+<p><strong>numpy.linspace(start,stop,num=50,endpoint=True,retstep=False,dtype=None)</strong></p>
+<blockquote>
+<p>endpoint:是否包含终止值，默认为True</p>
+<p>retstep：是否包含步长</p>
+</blockquote>
+<p><strong>numpy.logspace(start, stop, num=50, endpoint=True, base=10.0, dtype=None)</strong></p>
+<blockquote>
+<p>start：起始阶</p>
+<p>stop：终止阶</p>
+<p>base：底数</p>
+</blockquote>
+<h2 id="花式索引"><a href="#花式索引" class="headerlink" title="花式索引"></a>花式索引</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=np.arange(<span class="number">32</span>).reshape(<span class="number">8</span>,<span class="number">4</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(a)</span><br><span class="line">[[ <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>]</span><br><span class="line"> [ <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>]</span><br><span class="line"> [ <span class="number">8</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">11</span>]</span><br><span class="line"> [<span class="number">12</span> <span class="number">13</span> <span class="number">14</span> <span class="number">15</span>]</span><br><span class="line"> [<span class="number">16</span> <span class="number">17</span> <span class="number">18</span> <span class="number">19</span>]</span><br><span class="line"> [<span class="number">20</span> <span class="number">21</span> <span class="number">22</span> <span class="number">23</span>]</span><br><span class="line"> [<span class="number">24</span> <span class="number">25</span> <span class="number">26</span> <span class="number">27</span>]</span><br><span class="line"> [<span class="number">28</span> <span class="number">29</span> <span class="number">30</span> <span class="number">31</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(a[[<span class="number">4</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">7</span>]])</span><br><span class="line">[[<span class="number">16</span> <span class="number">17</span> <span class="number">18</span> <span class="number">19</span>]</span><br><span class="line"> [ <span class="number">8</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">11</span>]</span><br><span class="line"> [ <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>]</span><br><span class="line"> [<span class="number">28</span> <span class="number">29</span> <span class="number">30</span> <span class="number">31</span>]]</span><br></pre></td></tr></table></figure>
+<h2 id="多个数组索引"><a href="#多个数组索引" class="headerlink" title="多个数组索引"></a>多个数组索引</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=np.arange(<span class="number">32</span>).reshape(<span class="number">8</span>,<span class="number">4</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(a)</span><br><span class="line">[[ <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>]</span><br><span class="line"> [ <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>]</span><br><span class="line"> [ <span class="number">8</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">11</span>]</span><br><span class="line"> [<span class="number">12</span> <span class="number">13</span> <span class="number">14</span> <span class="number">15</span>]</span><br><span class="line"> [<span class="number">16</span> <span class="number">17</span> <span class="number">18</span> <span class="number">19</span>]</span><br><span class="line"> [<span class="number">20</span> <span class="number">21</span> <span class="number">22</span> <span class="number">23</span>]</span><br><span class="line"> [<span class="number">24</span> <span class="number">25</span> <span class="number">26</span> <span class="number">27</span>]</span><br><span class="line"> [<span class="number">28</span> <span class="number">29</span> <span class="number">30</span> <span class="number">31</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(a[np.ix_([<span class="number">1</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">2</span>],[<span class="number">0</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>])])</span><br><span class="line">[[ <span class="number">4</span>  <span class="number">7</span>  <span class="number">5</span>  <span class="number">6</span>]</span><br><span class="line"> [<span class="number">20</span> <span class="number">23</span> <span class="number">21</span> <span class="number">22</span>]</span><br><span class="line"> [<span class="number">28</span> <span class="number">31</span> <span class="number">29</span> <span class="number">30</span>]</span><br><span class="line"> [ <span class="number">8</span> <span class="number">11</span>  <span class="number">9</span> <span class="number">10</span>]]</span><br></pre></td></tr></table></figure>
+<h1 id="广播-BroadCast"><a href="#广播-BroadCast" class="headerlink" title="广播(BroadCast)"></a>广播(BroadCast)</h1><p>当两个数组长度和维数相同，则算术运算是对应位的算术运算</p>
+<p>若长度不相同，则将短的扩充到与长的长度相同再运算</p>
+<blockquote>
+<p>规则(来自<a href="https://www.runoob.com/numpy/numpy-broadcast.html">菜鸟教程</a>)：</p>
+<ul>
+<li>数组拥有相同形状。</li>
+<li>当前维度的值相等。</li>
+<li>当前维度的值有一个是 1。</li>
+</ul>
+</blockquote>
+<h1 id="数组迭代"><a href="#数组迭代" class="headerlink" title="数组迭代"></a>数组迭代</h1><p><strong>numpy.nditer(a,order=’C’)</strong></p>
+<blockquote>
+<p>迭代顺序C风格行优先，F风格列优先</p>
+</blockquote>
+<h1 id="数组操作"><a href="#数组操作" class="headerlink" title="数组操作"></a>数组操作</h1><h2 id="修改数组形状"><a href="#修改数组形状" class="headerlink" title="修改数组形状"></a>修改数组形状</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">reshape</td>
+<td style="text-align:center">不改变数据条件下修改形状</td>
+</tr>
+<tr>
+<td style="text-align:center">flat</td>
+<td style="text-align:center">数组元素迭代器</td>
+</tr>
+<tr>
+<td style="text-align:center">flatten</td>
+<td style="text-align:center">返回一份数组拷贝，对拷贝做修改不影响原始数据</td>
+</tr>
+<tr>
+<td style="text-align:center">ravel</td>
+<td style="text-align:center">返回展开数组</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>numpy.reshape(arr,newshape,order=’C’)</strong></p>
+<blockquote>
+<p>arr：原数组</p>
+<p>newshape：整数或整数数组</p>
+<p>order：C按行，F按列，A原顺序，K元素在内存中的顺序</p>
+</blockquote>
+<p><strong>numpy.ndarray.flat</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=np.arange(<span class="number">10</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> a.flat:</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(i)</span><br><span class="line">...</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">7</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="number">9</span></span><br></pre></td></tr></table></figure>
+<p><strong>numpy.ndarray.flatten(order=’C’)</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=np.arange(<span class="number">8</span>).reshape(<span class="number">2</span>,<span class="number">4</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(a)</span><br><span class="line">[[<span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span>]</span><br><span class="line"> [<span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(a.flatten(order=<span class="string">&#x27;K&#x27;</span>))</span><br><span class="line">[<span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span>]</span><br></pre></td></tr></table></figure>
+<p><strong>numpy.ravel(a,order=’C’)</strong></p>
+<p>将数组展平</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>b=np.arange(<span class="number">1</span>,<span class="number">65</span>).reshape(<span class="number">4</span>,<span class="number">4</span>,<span class="number">4</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(b.ravel())</span><br><span class="line">[ <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span> <span class="number">13</span> <span class="number">14</span> <span class="number">15</span> <span class="number">16</span> <span class="number">17</span> <span class="number">18</span> <span class="number">19</span> <span class="number">20</span> <span class="number">21</span> <span class="number">22</span> <span class="number">23</span> <span class="number">24</span></span><br><span class="line"> <span class="number">25</span> <span class="number">26</span> <span class="number">27</span> <span class="number">28</span> <span class="number">29</span> <span class="number">30</span> <span class="number">31</span> <span class="number">32</span> <span class="number">33</span> <span class="number">34</span> <span class="number">35</span> <span class="number">36</span> <span class="number">37</span> <span class="number">38</span> <span class="number">39</span> <span class="number">40</span> <span class="number">41</span> <span class="number">42</span> <span class="number">43</span> <span class="number">44</span> <span class="number">45</span> <span class="number">46</span> <span class="number">47</span> <span class="number">48</span></span><br><span class="line"> <span class="number">49</span> <span class="number">50</span> <span class="number">51</span> <span class="number">52</span> <span class="number">53</span> <span class="number">54</span> <span class="number">55</span> <span class="number">56</span> <span class="number">57</span> <span class="number">58</span> <span class="number">59</span> <span class="number">60</span> <span class="number">61</span> <span class="number">62</span> <span class="number">63</span> <span class="number">64</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="翻转数组"><a href="#翻转数组" class="headerlink" title="翻转数组"></a>翻转数组</h2><p><strong>numpy.trranspose(arr,axes)</strong></p>
+<blockquote>
+<p>arr:要操作的数组</p>
+<p>axes:对应维度</p>
+</blockquote>
+<p><strong>numpy.ndarray.T</strong></p>
+<p>与上相同</p>
+<p><strong>numpy.rollaxis(arr,axis,start)</strong></p>
+<blockquote>
+<p>arr:数组</p>
+<p>axis:要向后滚动的轴</p>
+<p>start:默认为0</p>
+</blockquote>
+<p><strong>numpy.swapaxes(arr,axis1,axis2)</strong></p>
+<blockquote>
+<p>arr：输入的数组</p>
+<p>axis1：第一个轴</p>
+<p>axis2：第二个轴</p>
+</blockquote>
+<h2 id="修改维度"><a href="#修改维度" class="headerlink" title="修改维度"></a>修改维度</h2><p><strong>numpy.broadcast_to(array,shape,subok)</strong></p>
+<p>将array广播到shape形状</p>
+<p><strong>numpy.expand_dims(arr,axis)</strong></p>
+<p>在指定位置插入新的轴</p>
+<p><strong>numpy.squeeze(arr,axis)</strong></p>
+<p>从arr中删除axis维坐标</p>
+<h2 id="连接数组"><a href="#连接数组" class="headerlink" title="连接数组"></a>连接数组</h2><p><strong>numpy.concatenate((a1,a2,…),axis)</strong></p>
+<p>沿现有轴连接形状相同的两个或多个数组</p>
+<p><strong>numpy.stack(arrays,axis)</strong></p>
+<p>沿新轴连接新序列</p>
+<p><strong>numpy.hstack(arrays)</strong></p>
+<p>水平堆叠</p>
+<p><strong>numpy.vstack(arrays)</strong></p>
+<p>垂直堆叠</p>
+<h2 id="分割数组"><a href="#分割数组" class="headerlink" title="分割数组"></a>分割数组</h2><p><strong>numpy.split(ary,indices_or_sections,axis)</strong></p>
+<blockquote>
+<p>ary：数组</p>
+<p>indices_or_sections：如果是整数，为分成多少部分，如果是数组，则是在哪里开始分</p>
+<p>axis：沿哪个方向切分</p>
+</blockquote>
+<p><strong>numpy.hsplit(ary,nums)</strong></p>
+<p>水平切分</p>
+<p><strong>numpy.vsplit(ary,nums)</strong></p>
+<p>垂直切分</p>
+<h2 id="数组元素添加与删除"><a href="#数组元素添加与删除" class="headerlink" title="数组元素添加与删除"></a>数组元素添加与删除</h2><p><strong>numpy.resize(arr,shape)</strong></p>
+<p>与reshape作用差不多</p>
+<p><strong>numpy.append(arr,values,axis=None)</strong></p>
+<p>当axis为None时，返回的是一维数组</p>
+<p><strong>numpy.insert(arr,obj,values,axis)</strong></p>
+<p>未提供axis数组会被展开</p>
+<p><strong>numpy.delete(arr,obj,axis)</strong></p>
+<p>未传递axis数组会被展开</p>
+<p><strong>numpy.unique(arr,return_index,return_inverse,return_count)</strong></p>
+<blockquote>
+<p>arr：输入数组</p>
+<p>return_index：返回新数组元素在旧列表中的位置</p>
+<p>return_inverse：返回旧数组元素在新列表中的位置</p>
+<p>return_count：返回每个元素的个数</p>
+</blockquote>
+<h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><p><strong>bitwise_and</strong>对元素数组执行位运算</p>
+<p><strong>bitwise_or</strong>对元素数组执行或运算</p>
+<p><strong>invert</strong>按位取反</p>
+<p><strong>left_shift</strong>向左移动二进制</p>
+<p><strong>right_shift</strong>向右移动二进制</p>
+<p><strong>binary_repr</strong>二进制表示</p>
+<h1 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h1><p>字符串函数与python自带的string方法类似</p>
+<h1 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h1><p>sin、cos、tan、arcsin、arccos、arctan、degrees、around、floor(小于或等于指定表达式的最大整数，向下取整)、ceil(向上取整)</p>
+<h1 id="算术函数"><a href="#算术函数" class="headerlink" title="算术函数"></a>算术函数</h1><p>add、subtract、multiply、divide、reciprocal(倒数)、power(幂)、<strong>mod、remainder</strong>(取余)</p>
+<h1 id="统计函数"><a href="#统计函数" class="headerlink" title="统计函数"></a>统计函数</h1><p><strong>amin、amax</strong>(计算指定轴的最小最大值)<strong>ptp</strong>(计算数组元素最大值与最小值的差值)</p>
+<p><strong>percentile</strong>(百分位数)</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a=np.array([[<span class="number">4</span>,<span class="number">8</span>,<span class="number">6</span>],[<span class="number">2</span>,<span class="number">3</span>,<span class="number">9</span>]])</span><br><span class="line"><span class="built_in">print</span>(np.percentile(a,<span class="number">50</span>))</span><br><span class="line"><span class="built_in">print</span>(np.percentile(a,<span class="number">50</span>,axis=<span class="number">0</span>,keepdims=<span class="literal">True</span>))</span><br><span class="line"><span class="built_in">print</span>(np.percentile(a,<span class="number">50</span>,axis=<span class="number">1</span>,keepdims=<span class="literal">True</span>))</span><br><span class="line"><span class="number">5.0</span></span><br><span class="line">[[<span class="number">3.</span>  <span class="number">5.5</span> <span class="number">7.5</span>]]</span><br><span class="line">[[<span class="number">6.</span>]</span><br><span class="line"> [<span class="number">3.</span>]]</span><br></pre></td></tr></table></figure>
+<p><strong>median</strong>(中位数)、<strong>mean</strong>(平均数)、<strong>average</strong>(加权平均数)、<strong>std</strong>(标准差)、<strong>var</strong>(方差)</p>
+]]></content>
+      <tags>
+        <tag>python</tag>
+        <tag>numpy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python正则学习</title>
+    <url>/2022/02/26/Python%E6%AD%A3%E5%88%99%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>.</p>
+<span id="more"></span>
+<p><strong>search</strong>:寻找string中的第一个pattern</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="keyword">import</span> re</span><br><span class="line">In [<span class="number">2</span>]: a = <span class="string">&quot;is&quot;</span></span><br><span class="line">In [<span class="number">3</span>]: b = <span class="string">&quot;This is a string for test&quot;</span></span><br><span class="line">In [<span class="number">4</span>]: re.search(a, b)</span><br><span class="line">Out[<span class="number">4</span>]: &lt;re.Match <span class="built_in">object</span>; span=(<span class="number">2</span>, <span class="number">4</span>), match=<span class="string">&#x27;is&#x27;</span>&gt;</span><br><span class="line">In [<span class="number">5</span>]: match = re.search(a, b)</span><br><span class="line">In [<span class="number">6</span>]: match.start()</span><br><span class="line">Out[<span class="number">6</span>]: <span class="number">2</span></span><br><span class="line">In [<span class="number">7</span>]: match.end()</span><br><span class="line">Out[<span class="number">7</span>]: <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<p><strong>findall</strong>：找到所有的符合的</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">In [<span class="number">8</span>]: re.findall(a, b)</span><br><span class="line">Out[<span class="number">8</span>]: [<span class="string">&#x27;is&#x27;</span>, <span class="string">&#x27;is&#x27;</span>]</span><br></pre></td></tr></table></figure>
+<p><strong>finditer</strong>：返回迭代器</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">In [<span class="number">9</span>]: re.finditer(a, b)</span><br><span class="line">Out[<span class="number">9</span>]: &lt;callable_iterator at <span class="number">0x1d2e0145310</span>&gt;</span><br><span class="line">In [<span class="number">10</span>]: <span class="keyword">for</span> i <span class="keyword">in</span> re.finditer(a, b):</span><br><span class="line">    ...:     <span class="built_in">print</span>(i)</span><br><span class="line">&lt;re.Match <span class="built_in">object</span>; span=(<span class="number">2</span>, <span class="number">4</span>), match=<span class="string">&#x27;is&#x27;</span>&gt;</span><br><span class="line">&lt;re.Match <span class="built_in">object</span>; span=(<span class="number">5</span>, <span class="number">7</span>), match=<span class="string">&#x27;is&#x27;</span>&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>match</strong>：只能匹配开头符合的</p>
+<p><strong>fullmatch</strong>：要求整个字符串都与模式匹配</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>标志</strong></th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">IGNORECASE</td>
+<td style="text-align:center">使匹配不区分大小写</td>
+</tr>
+<tr>
+<td style="text-align:center">MULTILINE</td>
+<td style="text-align:center">使匹配可以匹配多行</td>
+</tr>
+<tr>
+<td style="text-align:center">DOTALL</td>
+<td style="text-align:center">使.可以匹配换行符</td>
+</tr>
+<tr>
+<td style="text-align:center">ASCII</td>
+<td style="text-align:center">匹配ASCII码而不是UNICODE</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>嵌入标志</strong></p>
+<p>在表达式前用<strong>(?i)</strong>来嵌入</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">标志</th>
+<th style="text-align:center">缩写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ASCII</td>
+<td style="text-align:center">a</td>
+</tr>
+<tr>
+<td style="text-align:center">IGNORECASE</td>
+<td style="text-align:center">i</td>
+</tr>
+<tr>
+<td style="text-align:center">MUTILINE</td>
+<td style="text-align:center">m</td>
+</tr>
+<tr>
+<td style="text-align:center">DOTALL</td>
+<td style="text-align:center">s</td>
+</tr>
+<tr>
+<td style="text-align:center">VERBOSE</td>
+<td style="text-align:center">x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>组命名</strong></p>
+<p><strong>(?P<name>)</name></strong></p>
+<p><strong>组引用</strong></p>
+<p><strong>(?P=name)</strong></p>
+<p><strong>不同选择模式</strong></p>
+<p><strong>?(id)yes_pattern|no_pattern</strong></p>
+<p>id是组号或编号</p>
+<p><strong>sub</strong>替换</p>
+<p><strong>subn</strong>替换并返回替换次数</p>
+]]></content>
+      <tags>
+        <tag>re</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
 </search>
