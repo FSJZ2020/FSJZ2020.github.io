@@ -3479,4 +3479,52 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
         <tag>git</tag>
       </tags>
   </entry>
+  <entry>
+    <title>json学习</title>
+    <url>/2022/06/04/json%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p><img src="/2022/06/04/json%E5%AD%A6%E4%B9%A0/u=2878167530,1086893345&fm=253&fmt=auto&app=138&f=JPEG.jpeg" alt="img" style="zoom:50%;"></p>
+<p>JSON(JavaScript Object Notation,JS对象标记)是一种轻量级的数据交换格式，目前使用的特别广泛。</p>
+<span id="more"></span>
+<h1 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h1><ul>
+<li>对象表示为键值对</li>
+<li>数据由逗号分隔</li>
+<li>花括号保存对象</li>
+<li>方括号保存数组</li>
+</ul>
+<p>值可以为字符串、数字、数组和json对象。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;key&quot;</span>:<span class="string">&quot;value&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;key2&quot;</span>:<span class="number">-1234.567</span>,</span><br><span class="line">    <span class="attr">&quot;Key3&quot;</span>:</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>:<span class="string">&quot;FS\&quot;JZ&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;age&quot;</span>:<span class="number">20</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">&quot;key4&quot;</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],</span><br><span class="line">    <span class="attr">&quot;key6&quot;</span>:[</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>:<span class="string">&quot;a&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;age&quot;</span>:<span class="number">18</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>:<span class="string">&quot;b&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;age&quot;</span>:<span class="number">19</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>:<span class="string">&quot;c&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;age&quot;</span>:<span class="number">20</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>:<span class="string">&quot;d&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;age&quot;</span>:<span class="number">21</span></span><br><span class="line">        &#125;,</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">&quot;key7&quot;</span>:<span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h1><p>key6[0].name</p>
+<h1 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\\</span><br><span class="line">\&quot;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>json</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>yaml学习</title>
+    <url>/2022/06/05/yaml%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p><img src="/2022/06/05/yaml%E5%AD%A6%E4%B9%A0/u=3348710092,4003996263&fm=253&fmt=auto&app=138&f=JPEG.jpeg" alt="img" style="zoom:50%;"></p>
+<span id="more"></span>
+<p>YAML是一个可读性高，用来表达数据序列化的格式，后缀<code>.yaml</code>或<code>.yml</code>。</p>
+<h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><ul>
+<li>使用缩进表示层级关系</li>
+<li>缩进的空格数不重要，只要相同层级的元素左对齐即可</li>
+<li><h1 id="表示注释"><a href="#表示注释" class="headerlink" title="表示注释"></a>表示注释</h1></li>
+</ul>
+<h1 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h1><p>纯量、数组、对象</p>
+<h1 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h1><p>null或~表示空值</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#comment here</span></span><br><span class="line"><span class="attr">name:</span> <span class="string">test</span></span><br><span class="line"><span class="attr">version:</span> <span class="number">5.6</span></span><br><span class="line"><span class="attr">port:</span> <span class="number">6379</span></span><br><span class="line"><span class="attr">stdin:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">image:</span> <span class="literal">null</span></span><br><span class="line"><span class="comment">#date and time</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2022-06-05T15:00:00+02:00</span></span><br><span class="line"></span><br><span class="line"><span class="attr">singleLineString:</span> <span class="string">&gt;-</span> <span class="comment">#&gt;表示多行文字，且每行文字后的回车以空格替换，-表示不要最后一行的回车</span></span><br><span class="line">  <span class="string">This</span> <span class="string">is</span> <span class="string">a</span> <span class="string">single</span> <span class="string">line</span> <span class="string">string</span></span><br><span class="line">  <span class="string">another</span> <span class="string">line</span></span><br><span class="line">  <span class="string">and</span> <span class="string">another</span></span><br><span class="line"><span class="attr">OtherLineString:</span> <span class="string">|</span></span><br><span class="line"><span class="string">  This is a single line string</span></span><br><span class="line"><span class="string">  another line</span></span><br><span class="line"><span class="string">  and another</span></span><br><span class="line"><span class="string"></span> <span class="comment">#|表示保留换行符</span></span><br><span class="line"><span class="comment">#数组</span></span><br><span class="line"><span class="attr">ports:</span></span><br><span class="line"><span class="bullet">-</span> <span class="number">5433</span></span><br><span class="line"><span class="bullet">-</span> <span class="number">5634</span></span><br><span class="line"><span class="attr">ports1:</span> [<span class="number">6379</span>, <span class="number">6380</span>]</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>yaml</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker学习</title>
+    <url>/2022/04/23/docker%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
 </search>
