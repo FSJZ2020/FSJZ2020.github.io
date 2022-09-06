@@ -28,8 +28,11 @@
 <meta property="og:image" content="https://fsjz2020.github.io/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/A000066_03.front_970c6014-61ab-4226-a20f-14cc6d8d682c_1000x750.jpg">
 <meta property="og:image" content="https://fsjz2020.github.io/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/image-20211008233333288.png">
 <meta property="og:image" content="https://fsjz2020.github.io/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/Pinout-UNOrev3_latest.png">
+<meta property="og:image" content="https://fsjz2020.github.io/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/image-20220829101749660.png">
+<meta property="og:image" content="https://fsjz2020.github.io/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/image-20220829115702966.png">
+<meta property="og:image" content="https://fsjz2020.github.io/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/未命名绘图.png">
 <meta property="article:published_time" content="2021-10-08T15:16:40.000Z">
-<meta property="article:modified_time" content="2022-01-06T03:16:23.261Z">
+<meta property="article:modified_time" content="2022-09-06T00:16:17.773Z">
 <meta property="article:author" content="FSJZ">
 <meta property="article:tag" content="Arduino">
 <meta property="article:tag" content="单片机">
@@ -93,7 +96,7 @@
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">26</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -150,7 +153,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Arduino-UNO"><span class="nav-text">Arduino UNO</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Arduino%E8%AF%AD%E8%A8%80%E5%8F%8A%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="nav-text">Arduino语言及程序结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F%E9%87%8F"><span class="nav-text">模拟量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1"><span class="nav-text">串口通信</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E5%BA%94%E7%94%A8"><span class="nav-text">高级应用</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Arduino-UNO"><span class="nav-text">Arduino UNO</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Arduino%E8%AF%AD%E8%A8%80%E5%8F%8A%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="nav-text">Arduino语言及程序结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="nav-text">程序结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E8%84%9A%E6%93%8D%E4%BD%9C"><span class="nav-text">引脚操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F%E9%87%8F"><span class="nav-text">模拟量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1"><span class="nav-text">串口通信</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E5%BA%94%E7%94%A8"><span class="nav-text">高级应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEADC%E5%8F%82%E8%80%83%E7%94%B5%E5%8E%8B"><span class="nav-text">设置ADC参考电压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD"><span class="nav-text">外部中断</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E5%BC%95%E8%84%9A"><span class="nav-text">中断引脚</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E6%A8%A1%E5%BC%8F"><span class="nav-text">中断模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E5%87%BD%E6%95%B0"><span class="nav-text">中断函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1-1"><span class="nav-text">串口通信</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%B2%E5%8F%A3%E4%BA%8B%E4%BB%B6"><span class="nav-text">串口事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%B2%E5%8F%A3%E7%BC%93%E5%86%B2%E5%8C%BA"><span class="nav-text">串口缓冲区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E6%A8%A1%E6%8B%9F%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E2%80%94%E2%80%94SoftwareSerial"><span class="nav-text">软件模拟串口通信——SoftwareSerial</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IIC%E6%80%BB%E7%BA%BF%E4%BD%BF%E7%94%A8"><span class="nav-text">IIC总线使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9E%E7%BA%BF"><span class="nav-text">连线</span></a></li></ol></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -166,7 +169,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -262,7 +265,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-01-06 11:16:23" itemprop="dateModified" datetime="2022-01-06T11:16:23+08:00">2022-01-06</time>
+        <time title="修改时间：2022-09-06 08:16:17" itemprop="dateModified" datetime="2022-09-06T08:16:17+08:00">2022-09-06</time>
       </span>
 
   
@@ -278,14 +281,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.2k</span>
+      <span>5.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>5 分钟</span>
     </span>
 </div>
 
@@ -298,6 +301,7 @@
     <div class="post-body" itemprop="articleBody">
         <p><img src="/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/A000066_03.front_970c6014-61ab-4226-a20f-14cc6d8d682c_1000x750.jpg" alt="A000066_03.front_970c6014-61ab-4226-a20f-14cc6d8d682c_1000x750" style="zoom:50%;"></p>
 <span id="more"></span>
+<p>[TOC]</p>
 <h1 id="Arduino-UNO"><a href="#Arduino-UNO" class="headerlink" title="Arduino UNO"></a>Arduino UNO</h1><p>解析图</p>
 <p><img src="/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/image-20211008233333288.png" alt="image-20211008233333288"></p>
 <ol>
@@ -338,12 +342,14 @@
 <li>AREF，模拟输入参考电压的输入端口</li>
 <li>RESET，复位端口，接低电平会使Arduino复位</li>
 </ul>
-<h1 id="Arduino语言及程序结构"><a href="#Arduino语言及程序结构" class="headerlink" title="Arduino语言及程序结构"></a>Arduino语言及程序结构</h1><p><strong>pinMode(pin,value)</strong></p>
+<h1 id="Arduino语言及程序结构"><a href="#Arduino语言及程序结构" class="headerlink" title="Arduino语言及程序结构"></a>Arduino语言及程序结构</h1><h2 id="程序结构"><a href="#程序结构" class="headerlink" title="程序结构"></a>程序结构</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// put your setup code here, to run once:</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// put your main code here, to run repeatedly:</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Arduino控制器通电或复位后，执行setup()函数中的程序代码，只会执行一次。setup()函数中的代码执行完以后，会重复执行loop()函数中的程序。</p>
+<h2 id="引脚操作"><a href="#引脚操作" class="headerlink" title="引脚操作"></a>引脚操作</h2><p><strong>pinMode(pin,value)</strong></p>
 <blockquote>
 <p>pinMode有三种模式</p>
-<p>INPUT(0)                输入模式</p>
-<p>OUTPUT(1)            输出模式</p>
-<p>INPUT_PULLUP    输入上拉模式</p>
+<p>INPUT(0)                         输 入 模 式</p>
+<p>OUTPUT(1)                     输 出 模 式</p>
+<p>INPUT_PULLUP（2）    输入上拉模式</p>
 </blockquote>
 <p><strong>digitalWrite(pin,value)</strong></p>
 <blockquote>
@@ -364,11 +370,12 @@
 <blockquote>
 <p>Arduino的模拟量输出不需要再setup()中声明，采用的是PWM方式模拟的电压输出，范围为0~255。</p>
 </blockquote>
+<p>analogWrite和analogRead已经完成了引脚的初始化，不用在setup()函数中初始化了。</p>
 <h2 id="串口通信"><a href="#串口通信" class="headerlink" title="串口通信"></a>串口通信</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Serial.begin(9600)</span><br></pre></td></tr></table></figure>
 <p>规定串口通信波特率，可用300、600、1200、2400、4800、9600、14400、19200、28800、38400、57600、115200，单位是(bit)。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Serial.<span class="built_in">print</span>(val);</span><br><span class="line">Serial.<span class="built_in">println</span>(val);<span class="comment">//与print不同的是，println输出完之后输出一组回车换行符</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Serial.read()</span><br></pre></td></tr></table></figure>
-<p>调用该语句，每次返回1字节的数据</p>
+<p>调用该语句，每次返回1字节的数据，在使用Serial时，Arduino会在SRAM开辟一段64B的空间，串口接收到的数据都放在该空间中。当缓存区中没有数据时，会返回int型值-1。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">millis()</span><br></pre></td></tr></table></figure>
 <p>该函数返回Arduino从通电（或复位）到现在的时间，单位为毫秒，类型为unsigned long大概50天会溢出一次。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">micros()</span><br></pre></td></tr></table></figure>
@@ -377,7 +384,284 @@
 <p>此函数为毫秒级延时</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delayMicroseconds()</span><br></pre></td></tr></table></figure>
 <p>此函数为微秒级延时</p>
-<h1 id="高级应用"><a href="#高级应用" class="headerlink" title="高级应用"></a>高级应用</h1>
+<h1 id="高级应用"><a href="#高级应用" class="headerlink" title="高级应用"></a>高级应用</h1><p><strong>tone(pin,frequency[,duration])</strong></p>
+<p>可以指定引脚产生占空比50%的指定频率的方波。</p>
+<blockquote>
+<p>使用tone()函数会影响3号和11号引脚的PWM输出，并且只能作用于一个引脚，对其他引脚使用需使用noTone()函数停止之前使用了tone()函数的引脚。</p>
+</blockquote>
+<p><strong>pulseIn(pin,value[,timeout])</strong></p>
+<blockquote>
+<p>功能：检测指定引脚上的脉冲信号宽度</p>
+<p>参数：</p>
+<p>pin：读取脉冲的引脚</p>
+<p>value：读取的脉冲类型，为HIGH或LOW</p>
+<p>timeout：超时时间，单位为微秒，未设置超时时间，默认为1s</p>
+<p>返回值：脉冲宽度，单位为微秒，数据类型为无符号长整型，如果未检测到脉冲，则返回0。</p>
+</blockquote>
+<hr>
+<p><strong>超声波模块使用方法：</strong></p>
+<blockquote>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">引脚名称</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Vcc</td>
+<td style="text-align:center">电源5V</td>
+</tr>
+<tr>
+<td style="text-align:center">Trig</td>
+<td style="text-align:center">触发引脚</td>
+</tr>
+<tr>
+<td style="text-align:center">Echo</td>
+<td style="text-align:center">回馈引脚</td>
+</tr>
+<tr>
+<td style="text-align:center">GND</td>
+<td style="text-align:center">地</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>给Trig引脚至少10$\mu s$的高电平信号触发测距功能，模块会自动发送8个40kHz的超声波脉冲，并自动检测是否有信号返回，若有信号返回，则Echo引脚会输出高电平，高电平持续时间就是超声波从发射到返回的时间。</p>
+</blockquote>
+<h2 id="设置ADC参考电压"><a href="#设置ADC参考电压" class="headerlink" title="设置ADC参考电压"></a>设置ADC参考电压</h2><p>$\mathrm{analogRead}(\mathrm{pin})函数返回值=\frac{被测电压}{参考电压}\times1023$，当没有设置参考电压时，默认使用工作电压(5V)为参考电压。通过$\mathrm{AREF}$引脚输入外部参考电压。使用$\mathrm{analogReference()}$设置参考电压</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">analogReference(type);</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">type</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">DEFAULT</td>
+<td style="text-align:center">工作电压作为参考电压</td>
+</tr>
+<tr>
+<td style="text-align:center">INTERNAL</td>
+<td style="text-align:center">使用内部参考电压（UNO为1.1V）</td>
+</tr>
+<tr>
+<td style="text-align:center">EXTERNAL</td>
+<td style="text-align:center">使用从AREF引脚输入的外部参考电压</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>❌ 外部参考电压必须大于0，且小于当前工作电压（5V），否则可能会损坏Arduino</strong></p>
+<h2 id="外部中断"><a href="#外部中断" class="headerlink" title="外部中断"></a>外部中断</h2><h3 id="中断引脚"><a href="#中断引脚" class="headerlink" title="中断引脚"></a>中断引脚</h3><p>ArduinoUNO只支持两个中断引脚，分别为2(int0)、3(int1)。</p>
+<h3 id="中断模式"><a href="#中断模式" class="headerlink" title="中断模式"></a>中断模式</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">模式名称</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">LOW</td>
+<td style="text-align:center">低电平触发</td>
+</tr>
+<tr>
+<td style="text-align:center">CHANGE</td>
+<td style="text-align:center">电平变化触发，即高变低或低变高</td>
+</tr>
+<tr>
+<td style="text-align:center">RISING</td>
+<td style="text-align:center">上升沿触发</td>
+</tr>
+<tr>
+<td style="text-align:center">FALLING</td>
+<td style="text-align:center">下降沿触发</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="中断函数"><a href="#中断函数" class="headerlink" title="中断函数"></a>中断函数</h3><p>中断函数不能带有任何参数，且返回类型为空。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Serial.<span class="built_in">println</span>(<span class="string">&quot;Hello!&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>还应在$\mathrm{setup()}$中使用$\mathrm{attachInterrupt()}$对中断引脚进行初始化。</p>
+<p><strong>attachInterrupt(interrupt,function,mode)</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">attachInterrupt</span>(<span class="number">0</span>,test,LOW);</span><br></pre></td></tr></table></figure>
+<p>如果不需要中断，可以使用$\mathrm{detachInterrupt()}$来关闭中断。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">detachInterrupt</span>(interrupt);</span><br></pre></td></tr></table></figure>
+<h1 id="串口通信-1"><a href="#串口通信-1" class="headerlink" title="串口通信"></a>串口通信</h1><p>Arduino硬件集成了串口，IIC，SPI三种常见的通信方式。</p>
+<p><img src="/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/image-20220829101749660.png" alt="串口通信示意图" style="zoom: 25%;"></p>
+<p>数据帧格式：</p>
+<p><img src="/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/image-20220829115702966.png" alt="image-20220829115702966" style="zoom:50%;"></p>
+<ul>
+<li>起始位总是<strong>低电平</strong></li>
+<li>数据位默认使用<strong>8位</strong>数据位</li>
+<li>校验位可以设置奇校验或偶校验或无校验，<strong>默认无校验</strong>。</li>
+<li>停止位表示数据帧传输结束，停止位总为<strong>高电平</strong>，可设置1位或2位，<strong>默认为1位</strong>。</li>
+</ul>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p><strong>available()</strong></p>
+<blockquote>
+<p>功能：获取串口接受缓存区的字节数，缓存区最多保存64B</p>
+</blockquote>
+<p><strong>begin()</strong></p>
+<blockquote>
+<p>初始化串口，配置各项参数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Serial.<span class="built_in">begin</span>(speed[,config])</span><br></pre></td></tr></table></figure>
+<p>speed：波特率</p>
+<p>config：数据位、校验位、停止位配置。</p>
+</blockquote>
+<p><strong>end()</strong></p>
+<blockquote>
+<p>结束串口通信，可使该串口所在的数字引脚作为普通数字引脚使用。</p>
+</blockquote>
+<p><strong>find()</strong></p>
+<blockquote>
+<p>从串口缓存区读取数据直到读到指定的字符或字符串。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Serial.<span class="built_in">find</span>(target);</span><br></pre></td></tr></table></figure>
+<p>返回true(找到)，false(没有找到)。</p>
+</blockquote>
+<p><strong>findUntil()</strong></p>
+<blockquote>
+<p>从串口缓存区读取数据，直到读到指定的字符串或指定的停止符。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Serial.<span class="built_in">findUntil</span>(target,terminal);</span><br></pre></td></tr></table></figure>
+<p>target：需要搜索的字符串或字符。</p>
+<p>terminal：停止符。</p>
+<p>无返回值。</p>
+</blockquote>
+<p><strong>flush()</strong></p>
+<blockquote>
+<p>等待正在发送的数据发送完成。</p>
+</blockquote>
+<p><strong>parseFloat()</strong></p>
+<blockquote>
+<p>从串口缓存区返回第一个有效的float数据。</p>
+</blockquote>
+<p><strong>parseInt()</strong></p>
+<blockquote>
+<p>从串口流中查找第一个有效的整型数据。</p>
+</blockquote>
+<p><strong>peek()</strong></p>
+<blockquote>
+<p>返回1字节的数据，但不会从接收缓存区删除该数据，如无可读数据，返回-1。</p>
+</blockquote>
+<p><strong>print()</strong></p>
+<blockquote>
+<p>将数据输出到串口，以ASCII码形式输出。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Serial.<span class="built_in">print</span>(val,format);</span><br></pre></td></tr></table></figure>
+<p>format:</p>
+<ol>
+<li>输出的进制形式</li>
+</ol>
+<ul>
+<li>BIN（二进制）</li>
+<li>DEC（十进制）</li>
+<li>OCT（八进制）</li>
+<li>HEX（十六进制）</li>
+</ul>
+<ol>
+<li>指定float型数据带小数的位数。</li>
+</ol>
+</blockquote>
+<p><strong>println()</strong></p>
+<blockquote>
+<p>功能与print()相同，只是会加回车换行。</p>
+</blockquote>
+<p><strong>read()</strong></p>
+<blockquote>
+<p>从串口读取1个字节数据，并将其从接受缓存区移除。</p>
+</blockquote>
+<p><strong>readBytes()</strong></p>
+<blockquote>
+<p>从缓存区读取指定长度的字符，并将其存入一个数组中。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Serial.<span class="built_in">readBytes</span>(buffer,length);</span><br></pre></td></tr></table></figure>
+<p>buffer：数组</p>
+<p>length：读取的字符长度，如果没有找到有效的数据，则返回0；</p>
+</blockquote>
+<p><strong>readBytesUntil()</strong></p>
+<blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Serial.<span class="built_in">readBytesUntil</span>(character,buffer,length)</span><br></pre></td></tr></table></figure>
+<p>character：停止符。</p>
+</blockquote>
+<p><strong>setTimeout()</strong></p>
+<blockquote>
+<p>设置超时时间，用于设置readBytes()和readBytesUntil()等待串口数据时间。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Serial.<span class="built_in">setTimeout</span>(time)</span><br></pre></td></tr></table></figure>
+<p>time单位为毫秒</p>
+</blockquote>
+<p><strong>write()</strong></p>
+<blockquote>
+<p>输出数据到串口</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Serial.<span class="built_in">write</span>(val);</span><br><span class="line">Serial.<span class="built_in">write</span>(str);</span><br><span class="line">Serial.<span class="built_in">write</span>(buf,len)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<hr>
+<blockquote>
+<p>print()和write()的区别：</p>
+<p>print是将数据转换为ASCII码再发送出去，如输出整型变量123，会输出123。</p>
+<p>write发送的是数值本身，串口监视器接收到数据后，会将数值当作ASCII码形式显示，所以write输出整型变量123，会显示<code>&#123;</code>。</p>
+</blockquote>
+<h2 id="串口事件"><a href="#串口事件" class="headerlink" title="串口事件"></a>串口事件</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">serialEvent</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//Put the code here;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当串口接收缓存区中有数据时，会触发该事件。会在两次loop()循环之间检测串口缓冲区是否有数据，如果有就执行serialEvent函数。</p>
+<h2 id="串口缓冲区"><a href="#串口缓冲区" class="headerlink" title="串口缓冲区"></a>串口缓冲区</h2><p>串口缓冲区默认为64字节，通过宏定义可以增大读写缓冲区的空间。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SERIAL_TX_BUFFER_SIZE 128</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SERIAL_RX_BUFFER_SIZE 128</span></span><br></pre></td></tr></table></figure>
+<h2 id="软件模拟串口通信——SoftwareSerial"><a href="#软件模拟串口通信——SoftwareSerial" class="headerlink" title="软件模拟串口通信——SoftwareSerial"></a>软件模拟串口通信——SoftwareSerial</h2><p>软串口是由程序模拟生成的，使用不如硬串口稳定，使用之前需先声明包含<code>SoftwareSerial.h</code>头文件，其成员函数与硬串口类似，有<code>available()</code>、<code>begin()</code>、<code>write()</code>、<code>print()</code>、<code>println()</code>、<code>peek()</code>等。</p>
+<p><strong>SoftwareSerial()</strong></p>
+<blockquote>
+<p>初始化软串口</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">SoftwareSerial <span class="title">mySerial</span><span class="params">(rxPin,txPin)</span></span>;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>listen()</strong></p>
+<blockquote>
+<p>开启软串口监听状态。Arduino同一时间内只能监听一个软串口</p>
+</blockquote>
+<p><strong>isListening()</strong></p>
+<blockquote>
+<p>检测软串口是否处于监听状态</p>
+</blockquote>
+<p><strong>overflow()</strong></p>
+<blockquote>
+<p>检测缓冲区是否已经溢出，软串口缓冲区最多可保存64B数据</p>
+</blockquote>
+<p>当切换不同的软串口时，需要对要监听的软串口使用<code>port.listen()</code>启动监听。</p>
+<h2 id="IIC总线使用"><a href="#IIC总线使用" class="headerlink" title="IIC总线使用"></a>IIC总线使用</h2><blockquote>
+<p>使用IIC协议可以通过两根双向的总线（数据线SDA和时钟线SCL）使Arduino连接最多128个IIC从机。IIC又称TWI(Two-Wire serial Interface)</p>
+<p>IIC是一种半双工通信方式。</p>
+</blockquote>
+<p>Arduino使用第三方类库Wire来进行IIC通信</p>
+<p><img src="/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/未命名绘图.png" alt="IIC通信函数示意图" style="zoom: 33%;"></p>
+<p><strong>begin([address])</strong></p>
+<p>未指定address，则以主机模式加入IIC总线，address可设置成0~127中的任意地址。</p>
+<p><strong>requestFrom(address,quantity[,stop])</strong></p>
+<p>quantity：请求的字节数</p>
+<p>stop：当为true时，发送停止信息，释放IIC总线，当为false，继续保持IIC总线有效连接。</p>
+<p><strong>beginTransmission(address)</strong></p>
+<p>开始向从机发送数据</p>
+<p><strong>endTransmission(stop)</strong></p>
+<p>当为true时，释放IIC总线，为false继续保持有效连接。</p>
+<p>返回值：byte</p>
+<ul>
+<li>0，成功</li>
+<li>1，数据过长，超过发送缓存区</li>
+<li>2，在地址发送时接收到NACK信号</li>
+<li>3，在数据发送时接收到NACK信号</li>
+<li>4，其他错误</li>
+</ul>
+<p><strong>write()</strong></p>
+<p>将要发送的数据加入发送队列</p>
+<p><strong>available()</strong></p>
+<p>返回接收到的字节数</p>
+<p><strong>read()</strong></p>
+<p>读取1B的字节</p>
+<p><strong>onReceive(handler)</strong></p>
+<p>当从机接收到主机发送的数据时触发</p>
+<p><strong>OnRequest(handler)</strong></p>
+<p>当从机接收到主机的数据请求时触发</p>
+<h4 id="连线"><a href="#连线" class="headerlink" title="连线"></a>连线</h4><p>可以通过SCL、SDA接口或A4、A5接口一一连接来建立IIC连接</p>
+
     </div>
 
     
@@ -451,13 +735,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">68k</span>
+    <span title="站点总字数">73k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:02</span>
+    <span title="站点阅读时长">1:07</span>
   </span>
 </div>
 <div class="busuanzi-count">
