@@ -329,7 +329,7 @@
 <span id="more"></span>
 <p>[TOC]</p>
 <h1 id="Arduino-UNO"><a href="#Arduino-UNO" class="headerlink" title="Arduino UNO"></a>Arduino UNO</h1><p>解析图</p>
-<p><img src="/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/image-20211008233333288.png" alt="image-20211008233333288"></p>
+<p><img src="/2021/10/08/Arduino%E5%AD%A6%E4%B9%A0/image-20211008233333288.png" alt="image-20211008233333288" style="zoom:50%;"></p>
 <ol>
 <li>电源</li>
 </ol>
@@ -3847,6 +3847,7 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
     <title>numpy笔记(二)</title>
     <url>/2022/07/02/numpy%E7%AC%94%E8%AE%B0-%E4%BA%8C/</url>
     <content><![CDATA[<h1 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h1><p>numpy默认乘为逐个元素相乘，如果想计算矩阵乘法，可用@或dot函数</p>
+<span id="more"></span>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">A=np.array([[<span class="number">1</span>,<span class="number">1</span>],[<span class="number">0</span>,<span class="number">1</span>]])</span><br><span class="line">B=np.array([[<span class="number">2</span>,<span class="number">0</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line">A@B</span><br><span class="line">A.dot(B)</span><br></pre></td></tr></table></figure>
 <h1 id="形状变换"><a href="#形状变换" class="headerlink" title="形状变换"></a>形状变换</h1><blockquote>
 <p>a.ravel()扁平化</p>
