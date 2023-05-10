@@ -3872,4 +3872,119 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
         <tag>numpy</tag>
       </tags>
   </entry>
+  <entry>
+    <title>单片机常见通信协议</title>
+    <url>/2022/12/07/%E5%8D%95%E7%89%87%E6%9C%BA%E5%B8%B8%E8%A7%81%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/</url>
+    <content><![CDATA[<p>单片机常见的通信方式有UART、USART、I2C(IIC)、SPI、USB、CAN、DMA</p>
+<span id="more"></span>
+<h1 id="UART"><a href="#UART" class="headerlink" title="UART"></a>UART</h1><p>UART(Universal Asynchronous Receiver/Transmitter)，通用异步收发器。</p>
+<p><img src="/2022/12/07/%E5%8D%95%E7%89%87%E6%9C%BA%E5%B8%B8%E8%A7%81%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/image-20221207203500316.png" alt="image-20221207203500316"></p>
+<p>首先连接两个单片机的GND，使电源基准相同。</p>
+<p>当两个单片机传输数据时，一位一位的发送。UART通信过程遵循低位先发，高位后发的原则。</p>
+<p>发送一位二进制数据的持续时间为1/baud。在通信之前，两个单片机首先要约定好两个单片机之间的通信波特率。</p>
+<p>UART通信，一个字节是8位，没有通信信号时，通信线路保持高电平，当要发送数据之前，先发一位0表示起始位，然后发送8位数据位，按照从低位到高位发送，数据位发送完之后，再发一位1表示停止位。发送8位数据实际上发送了10位。</p>
+<p><img src="/2022/12/07/%E5%8D%95%E7%89%87%E6%9C%BA%E5%B8%B8%E8%A7%81%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/image-20221207204533134.png" alt="image-20221207204533134"></p>
+<blockquote>
+<p>RS232接口一共有9个引脚</p>
+<p>1、载波检测 DCD；2、接收数据 RXD；3、 发送数据 TXD；4、数据终端准备好 DTR；5、信号地线 SG；6、数据准备好 DSR；7、请求发送 RTS；8、清除发送 CTS；9、振铃提示 RI</p>
+<p><img src="/2022/12/07/%E5%8D%95%E7%89%87%E6%9C%BA%E5%B8%B8%E8%A7%81%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/image-20221207204825923.png" alt="image-20221207204825923"></p>
+<p>RS232标准采用负逻辑，-3V~-15V代表1，+3V~+15V代表0，使用电平转换芯片MAX232可以将RS232电平转换成可以与单片机相连的电压。</p>
+</blockquote>
+<p>UART串口常用波特率为300、600、1200、2400、4800、9600、14400、19200、28800、38400、57600、115200</p>
+]]></content>
+      <tags>
+        <tag>单片机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微信小程序开发</title>
+    <url>/2023/01/04/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/</url>
+    <content><![CDATA[<p>App和page的关系</p>
+<pre class="mermaid">graph TD
+App-->Page1
+App-->Page2
+App-->Page3
+Page1-->Compnent1
+Page1-->Compnent2
+Page1-->Compnent3
+Page2-->Compnent4
+Page3-->Compnent5</pre>
+
+<h2 id="App组成"><a href="#App组成" class="headerlink" title="App组成"></a>App组成</h2><blockquote>
+<p>app.js(非必须)</p>
+<p>app.wxss(非必须)</p>
+<p>app.json(必须包含pages注册)</p>
+</blockquote>
+<p><img src="/2023/01/04/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/image-20230104210716886.png" alt="image-20230104210716886"></p>
+<p>放到第一个的，是首页，即index</p>
+<h2 id="Page组成"><a href="#Page组成" class="headerlink" title="Page组成"></a>Page组成</h2><blockquote>
+<p>page.js: 负责页面逻辑 必须有</p>
+<p>page.wxml: 负责页面结构，进行数据渲染，必须有</p>
+<p>page.wxss: 页面样式</p>
+<p>page.json: Component注册</p>
+</blockquote>
+<h2 id="小程序配置"><a href="#小程序配置" class="headerlink" title="小程序配置"></a>小程序配置</h2><blockquote>
+<p>项目开发配置(project.config.json)</p>
+<ul>
+<li>可通过详情以可视化的方式配置</li>
+</ul>
+<p>小程序收录配置(sitemap.json)</p>
+<ul>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/sitemap.html">sitemap配置</a></li>
+<li>前期不用关心，后期按需配置即可</li>
+</ul>
+<p>全局配置(app.json)</p>
+<ul>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#%E9%A1%B5%E9%9D%A2%E9%85%8D%E7%BD%AE">全局配置</a></li>
+<li>重点掌握page，window，tabbar</li>
+</ul>
+<p>页面配置</p>
+<ul>
+<li>页面同名.json</li>
+</ul>
+</blockquote>
+<h2 id="WXML"><a href="#WXML" class="headerlink" title="WXML"></a>WXML</h2><p>数据绑定</p>
+
+<p>支持简单运算、逻辑判断以及三目运算符</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:if</span>=<span class="string">&quot;&#123;&#123;score&gt;=60&#125;&#125;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>及格<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>没有挂科<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>hidden会渲染，但不显示</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">hidden</span>=<span class="string">&quot;&#123;&#123;True&#125;&#125;&quot;</span>&gt;</span>测试<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>遍历渲染</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:for</span>=<span class="string">&quot;&#123;&#123;courselist&#125;&#125;&quot;</span> <span class="attr">wx:for-index</span>=<span class="string">&quot;idx&quot;</span> <span class="attr">wx:for-item</span>=<span class="string">&quot;courseItem&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">src</span>=<span class="string">&#123;&#123;item.data&#125;&#125;</span>&gt;</span> <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">block</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>如果是两层循环，则item使用就近原则，取内部</p>
+<h3 id="模板定义"><a href="#模板定义" class="headerlink" title="模板定义"></a>模板定义</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">name</span>=<span class="string">&#x27;test&#x27;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">&#123;&#123;title&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">    &#123;&#123;desc&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--使用--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">is</span>=<span class="string">&quot;test&quot;</span> <span class="attr">data</span>=<span class="string">&quot;&#123;&#123;title:&#x27;模板测试&#x27;,desc:&#x27;模板测试组件&#x27;&#125;&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>template不是可视化的模板</p>
+<p><strong>文件导入</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">import</span> <span class="attr">src</span>=<span class="string">&quot;/templates/itlike/itlike.wxml&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="WXS-WeiXin-Script"><a href="#WXS-WeiXin-Script" class="headerlink" title="WXS(WeiXin Script)"></a>WXS(WeiXin Script)</h3><p>小程序的一种脚本语言，用来构建出页面结构</p>
+<p>wxs编写在<code>&lt;wxs&gt;</code>或.wxs文件中，都是独立的模块</p>
+<h2 id="WXSS"><a href="#WXSS" class="headerlink" title="WXSS"></a>WXSS</h2><p>内联样式</p>
+<p>project.wxss</p>
+<p>app.wxss(全局样式)，能影响到页面样式，影响不到组件样式</p>
+<h3 id="尺寸单位"><a href="#尺寸单位" class="headerlink" title="尺寸单位"></a>尺寸单位</h3><p>为了兼顾不同手机屏幕宽度</p>
+<p><strong>rpx(responsive pixel),</strong>屏幕宽度固定为750rpx</p>
+<h2 id="内置组件"><a href="#内置组件" class="headerlink" title="内置组件"></a>内置组件</h2><h3 id="text组件"><a href="#text组件" class="headerlink" title="text组件"></a>text组件</h3><p>内部只能嵌套text组件，行内元素，不能自由修改尺寸，可通过display属性修改样式</p>
+<h3 id="image组件"><a href="#image组件" class="headerlink" title="image组件"></a>image组件</h3><p>用于展示图片（本地图片和远程图片）</p>
+<h3 id="icon组件"><a href="#icon组件" class="headerlink" title="icon组件"></a>icon组件</h3><p>负责展示一些特定类型的图标</p>
+<h3 id="button组件"><a href="#button组件" class="headerlink" title="button组件"></a>button组件</h3><p>用于接收用户的点击，来执行不同的业务逻辑</p>
+]]></content>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS学习笔记</title>
+    <url>/2023/02/17/JS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>JavaScript学习笔记</p>
+<span id="more"></span>
+<h1 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h1><h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><p>语句之间一般以分号分割</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">alert(<span class="string">&quot;Hello&quot;</span>);alert(<span class="string">&quot;World&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>当有换行时可以省略分号</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">alert(<span class="string">&quot;Hello&quot;</span>)</span><br><span class="line">alert(<span class="string">&quot;World&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>JavaScript注释标记与C语言相同</p>
+]]></content>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
 </search>
