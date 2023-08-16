@@ -3988,4 +3988,153 @@ Page3-->Compnent5</pre>
         <tag>JavaScript</tag>
       </tags>
   </entry>
+  <entry>
+    <title>processing学习</title>
+    <url>/2023/08/16/processing%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>C++笔记</title>
+    <url>/2023/07/13/C++%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>C++ Primer Plus笔记，学校编的教材讲的一言难尽</p>
+<span id="more"></span>
+<h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><p>C语言中只写<code>main()</code>默认<code>int main()</code>。</p>
+<p>C++ main()与main(void)等效，而C语言则表示对是否接受参数保持沉默。</p>
+<p>主函数的<code>return 0;</code>可以省略</p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p><code>//</code>是C++风格，<code>/* */</code>是C风格。</p>
+<h2 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h2><p><code>using namespace std;</code></p>
+<p><code>using std::cout;</code></p>
+<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>一行代码中不可分割的元素叫做标记(token)。通常必须用空白(空格、制表符和回车)将两个标记分开。 </p>
+<h1 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h1><p>以两个下划线或下划线和大写字母打头的名称保留给实现。以一个下划线开头的名称保留给实现，用作全局标识符。</p>
+<blockquote>
+<p>命名约定俗成的一些规矩：n表示整型，str或sz表示字符串，b表示布尔值，p表示指针，c表示单个字符。</p>
+</blockquote>
+<h2 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h2><p>C++提供了一种灵活的标准，确保了最小长度。</p>
+<h2 id="长度"><a href="#长度" class="headerlink" title="长度"></a>长度</h2><p>使用<code>sizeof</code>运算符查看类型名或变量名长度</p>
+<blockquote>
+<p><code>sizeof(int)</code>或<code>sizeof test</code>当查看变量名时，括号是可选的。</p>
+</blockquote>
+<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>C++在C之上增加了新的声明语法</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">a</span><span class="params">(<span class="number">5</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> <span class="class"><span class="keyword">enum</span>&#123;</span><span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> syss=&#123;&#125;;</span><br></pre></td></tr></table></figure>
+<p>unsigned是unsigned int的缩写；</p>
+<h2 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h2><p>第一位为1~9，则为十进制；第一位为0，第二位为1~7，则为8进制；前两位为0x或0X，则为16进制。</p>
+<p>编译器通过数字后缀来分配变量长度</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">cout &lt;&lt; <span class="keyword">sizeof</span> <span class="number">114514uLL</span> &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p>常见的后缀有u(unsigned int)，l(long)，ul(顺序无所谓，unsigned long)，ull(unsigned long long)。</p>
+<p>C++中，对不带后缀的十进制整数，将使用能够存储该整数的最小类型来表示，int，long，long long；对不带后缀的八进制或十六进制整数，将采用int，unsigned int，unsigned long，unsigned long long。</p>
+<h2 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h2><p>可以使用八进制和十六进制编码表示转义序列，如<code>\032</code>，<code>\x1a</code>。</p>
+<p><code>char</code>在默认情况下既不是没有符号，也不是有符号。是否有符号由C++实现决定。</p>
+<p><code>wchar_t</code>表示宽字符类型，宽字符可以在字符或字符串前加个L标识，如<code>L&#39;p&#39;</code>，输出显示字符串时使用wcout</p>
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>C++中使用const定义常量，不推荐使用#define</p>
+<h2 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h2><p>浮点数有E表示法，如<code>3.14E4</code>等。</p>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p>在计算表达式时，C++将bool、char、unsigned char和short值转换为int。</p>
+<p>强制类型转换有两种方式，</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">(<span class="keyword">long</span>) <span class="function">thorn</span></span><br><span class="line"><span class="function"><span class="title">long</span> <span class="params">(thorn)</span></span></span><br></pre></td></tr></table></figure>
+<p>C++还引入了4个强制类型转换的运算符</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static_cast</span>&lt;<span class="keyword">long</span>&gt;(thorn)</span><br></pre></td></tr></table></figure>
+<p>auto声明自动判断变量类型。</p>
+<h1 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h1><p>C++11初始化数组时可省略<code>=</code></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> a[<span class="number">2</span>] &#123;<span class="number">112</span>,<span class="number">1123</span>&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h2><p>任何两个由空白分隔的字符串常量将自动拼接成一个，第一个字符串末尾的<code>\0</code>会被取代。</p>
+<h2 id="字符串输入"><a href="#字符串输入" class="headerlink" title="字符串输入"></a>字符串输入</h2><p><code>cin</code>使用空白作为分隔符，处理字符串输入。</p>
+<p>读取中间含有空格的字符串可使用<code>cin.getline()</code>。</p>
+<blockquote>
+<p>一种变体</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">cin.<span class="built_in">get</span>(a,<span class="number">20</span>).<span class="built_in">get</span>()</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="string类型"><a href="#string类型" class="headerlink" title="string类型"></a>string类型</h2><p>C++98添加了string类型</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">string str1;</span><br><span class="line">cin &gt;&gt; str1;</span><br><span class="line">cout &lt;&lt; str1 &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p>string可直接赋值，并且可通过+操作实现字符串拼接</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">string str1, str2, str3;</span><br><span class="line">str1 = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line">str2 = <span class="string">&quot;World&quot;</span>;</span><br><span class="line">cout &lt;&lt; str1 + <span class="string">&quot; &quot;</span> + str2 &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p>C++使用前缀u8表示Unicode字符串类型，还新增了原始字符串类型，原始字符串中的回车输出到屏幕上也是回车。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">cout&lt;&lt;<span class="string">R&quot;(1&quot;\n&quot;)&quot;</span>&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+<p>如果想在原始字符串中包含”(、)”，可以通过在”和(之间添加其他字符修改标识符。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">R&quot;1(&quot;()&quot;)1&quot;</span> &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<h2 id="结构类型"><a href="#结构类型" class="headerlink" title="结构类型"></a>结构类型</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">abc</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> a1;</span><br><span class="line">    <span class="keyword">int</span> a2;</span><br><span class="line">    string a3;</span><br><span class="line">&#125;;</span><br><span class="line">abc x1 = &#123;</span><br><span class="line">        <span class="string">&#x27;a&#x27;</span>,</span><br><span class="line">        <span class="number">114514</span>,</span><br><span class="line">        <span class="string">&quot;Hello&quot;</span>&#125;;</span><br><span class="line">abc x2 &#123;<span class="string">&#x27;b&#x27;</span>,<span class="number">1919810</span>,<span class="string">&quot;World&quot;</span>&#125;;</span><br><span class="line">abc x3 &#123;&#125;;</span><br><span class="line">cout &lt;&lt; x1.a1 &lt;&lt; x1.a2 &lt;&lt; x1.a3 &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p>C++中定义结构可以省略struct，初始化时，等号可省略，使用空的大括号时，表示将所有元素初始化为0。</p>
+<p>两个相同的结构之间可以互相赋值。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">abc</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">char</span> a1;</span><br><span class="line">  <span class="keyword">int</span> a2;</span><br><span class="line">  string a3;</span><br><span class="line">&#125; a1&#123;<span class="string">&#x27;c&#x27;</span>, <span class="number">1</span>, <span class="string">&quot;2&quot;</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p>定义结构时，可以同时声明变量并进行赋值。还可以省略结构名称。</p>
+<h3 id="结构数组"><a href="#结构数组" class="headerlink" title="结构数组"></a>结构数组</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">abc x4[<span class="number">2</span>] = &#123;&#123;<span class="string">&#x27;d&#x27;</span>, <span class="number">2</span>, <span class="string">&quot;CC&quot;</span>&#125;, &#123;<span class="string">&#x27;e&#x27;</span>, <span class="number">4</span>, <span class="string">&quot;DD&quot;</span>&#125;&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="结构中的位字段"><a href="#结构中的位字段" class="headerlink" title="结构中的位字段"></a>结构中的位字段</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">def</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">unsigned</span> <span class="keyword">int</span> : <span class="number">4</span>;</span><br><span class="line">  <span class="keyword">unsigned</span> SN : <span class="number">5</span>;</span><br><span class="line">  <span class="keyword">bool</span> goodIn : <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">bool</span> goodTorgle : <span class="number">1</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="共用体-节省空间"><a href="#共用体-节省空间" class="headerlink" title="共用体(节省空间)"></a>共用体(节省空间)</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">union</span> <span class="title">a</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">int</span> a1;</span><br><span class="line">  <span class="keyword">long</span> a2;</span><br><span class="line">  <span class="keyword">long</span> <span class="keyword">long</span> a3;</span><br><span class="line">&#125;;</span><br><span class="line">a c1;</span><br><span class="line">c1.a3 = <span class="number">1e14</span>;</span><br><span class="line">cout &lt;&lt; c1.a3 &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p>共用体的长度为其最大成员长度。</p>
+<h3 id="匿名共用体"><a href="#匿名共用体" class="headerlink" title="匿名共用体"></a>匿名共用体</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">unitest</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> a;</span><br><span class="line">    <span class="class"><span class="keyword">union</span> </span></span><br><span class="line"><span class="class">    &#123;</span></span><br><span class="line">        <span class="keyword">int</span> a1;</span><br><span class="line">        <span class="keyword">char</span> a2[<span class="number">4</span>]; </span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">double</span> c1;</span><br><span class="line">&#125;;</span><br><span class="line">unitest test;</span><br><span class="line">test.a1 = <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+<p>a1和a2位于相同的地址。</p>
+<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">spec</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    red,</span><br><span class="line">    orange,</span><br><span class="line">    yellow,</span><br><span class="line">    green</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    a = orange;</span><br><span class="line">    cout &lt;&lt; a;</span><br><span class="line">    spec testvar;</span><br><span class="line">    testvar = <span class="built_in">spec</span>(<span class="number">3</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="设置枚举类型的值"><a href="#设置枚举类型的值" class="headerlink" title="设置枚举类型的值"></a>设置枚举类型的值</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">spec</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    red,</span><br><span class="line">    orange,</span><br><span class="line">    yellow=<span class="number">100</span>,</span><br><span class="line">    green</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这样red为0，orange为1，green为101；</p>
+<p>可以创建多个值相同的枚举变量。</p>
+<h3 id="取值范围"><a href="#取值范围" class="headerlink" title="取值范围"></a>取值范围</h3><p>枚举变量可取的值不一定是枚举定义中的值，可根据上界和下界确定枚举变量的取值范围。上界确定方法为，120-&gt;128，最大为127。如果枚举变量中最小值为正数，则下界为0，否则，下界确定的方法和上界相同。</p>
+<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>分配空间</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> *p=<span class="keyword">new</span> <span class="keyword">int</span>;</span><br></pre></td></tr></table></figure>
+<p>在C++中，值为0的指针成为空指针。</p>
+<p>使用delete释放内存只会释放内存空间，不会删除指针本身，可以指向别的内存地址。</p>
+<p>不要重复释放内存(除非指针是空指针，这种情况可以)。</p>
+<p>静态联编(编译时分配内存) VS 动态联编(运行时分配内存)</p>
+<p>分配数组</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> *p=<span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">10</span>];</span><br><span class="line">...</span><br><span class="line"><span class="keyword">delete</span> [] p;</span><br></pre></td></tr></table></figure>
+<p>用引号括起来的字符串传递的是字符串首字符的地址。</p>
+<h3 id="动态结构"><a href="#动态结构" class="headerlink" title="动态结构"></a>动态结构</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">test</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> cht;</span><br><span class="line">    <span class="keyword">int</span> intt;</span><br><span class="line">&#125;;</span><br><span class="line">test *p = <span class="keyword">new</span> test;</span><br><span class="line">p-&gt;cht;</span><br><span class="line">(*p).intt;</span><br></pre></td></tr></table></figure>
+<h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><p>C++中有三种管理数据内存的方法，自动存储、静态存储和动态存储。</p>
+<h3 id="自动存储"><a href="#自动存储" class="headerlink" title="自动存储"></a>自动存储</h3><p>在函数内部定义的常规变量使用自动存储空间，被称为自动变量，通常存储在栈中。</p>
+<h3 id="静态存储"><a href="#静态存储" class="headerlink" title="静态存储"></a>静态存储</h3><p>静态存储是整个程序执行期间都存在的存储方式，有两种方式，一是定义在函数外部，另一种方式是使用关键词static。</p>
+<h3 id="动态存储"><a href="#动态存储" class="headerlink" title="动态存储"></a>动态存储</h3><p>使用new和delete分配和释放内存空间。</p>
+<h2 id="vector-和-array"><a href="#vector-和-array" class="headerlink" title="vector 和 array"></a>vector 和 array</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">a</span><span class="params">(<span class="number">3</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">array&lt;<span class="keyword">int</span>, 5&gt; a1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p>vector存储在堆中，array存储在栈中，两者均存在索引越界的问题，使用at方法可在索引前进行检查，但是会增加程序执行时间。</p>
+<h1 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h1><p>C++将赋值表达式的值定义为左侧成员的值。</p>
+<h2 id="递增-递减运算符"><a href="#递增-递减运算符" class="headerlink" title="递增/递减运算符"></a>递增/递减运算符</h2><p>对于类而言，前缀版本效率比后缀版本高。</p>
+<p><em>++p执行先将p指针++再取值，++\</em>p表示先取值再++，*p++表示先取值，再对地址++。</p>
+<h2 id="逗号表达式"><a href="#逗号表达式" class="headerlink" title="逗号表达式"></a>逗号表达式</h2><p>先计算第一个表达式，再计算第二个表达式。逗号表达式的值是第二部分的值。所有运算符中，逗号表达式的优先级是最低的。</p>
+<h2 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h2><p>关系运算符的优先级比算术运算符低。</p>
+<h2 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> typeName aliasName;</span><br></pre></td></tr></table></figure>
+<p>typedef不会创建新类型，只会为已有的类型创建一个新名称。</p>
+<h2 id="基于范围的for循环"><a href="#基于范围的for循环" class="headerlink" title="基于范围的for循环"></a>基于范围的for循环</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> price[<span class="number">5</span>] = &#123;<span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">4.0</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">double</span> x : price)</span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt; x &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果检测到EOF，则将eofbit和failbit设置为1，因此可将cin.eof和cin.fail放在读取后。</p>
+<h1 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h1><p>当用于函数头和函数原型时，<code>int * arr</code>和<code>int arr[]</code>是相同的。</p>
+<p>传递数组时，函数中使用的是原数组。</p>
+<p>可以使用<code>void test(const int a [],int n)</code>这样的方式禁止在函数内修改原数组的值。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> age=<span class="number">50</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *p=&amp;age;</span><br></pre></td></tr></table></figure>
+<p>上边的这段代码无法通过p指针修改age变量的值，但是可以通过age变量进行修改。另外，</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> age=<span class="number">50</span>;</span><br><span class="line"><span class="keyword">int</span> * p=&amp;age;</span><br></pre></td></tr></table></figure>
+<p>这种情况是<strong>不允许</strong>的。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> age=<span class="number">50</span>;</span><br><span class="line"><span class="keyword">int</span> * <span class="keyword">const</span> p=&amp;age;</span><br></pre></td></tr></table></figure>
+<p>这样声明的p指针只能指向age，但是age的值能通过p指针进行xiu’gai</p>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>深度学习笔记</title>
+    <url>/2023/05/10/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="数据操作"><a href="#数据操作" class="headerlink" title="　数据操作"></a>　数据操作</h2><h3 id="原地操作"><a href="#原地操作" class="headerlink" title="原地操作"></a>原地操作</h3><p>使用x[:]=x+y或x+=y来进行原地操作。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x=torch.randn((<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line">y=torch.arange(<span class="number">12</span>).reshape((<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line">before=<span class="built_in">id</span>(x)</span><br><span class="line">x[:]=x+y</span><br><span class="line"><span class="built_in">id</span>(x)==before</span><br><span class="line">-------------------------------</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">In [<span class="number">2</span>]: <span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">In [<span class="number">3</span>]: a = torch.tensor([<span class="number">3.14</span>])</span><br><span class="line"></span><br><span class="line">In [<span class="number">4</span>]: a.item(), <span class="built_in">float</span>(a), <span class="built_in">int</span>(a)</span><br><span class="line">Out[<span class="number">4</span>]: (<span class="number">3.140000104904175</span>, <span class="number">3.140000104904175</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p>使用$\mathbf{b}$表示向量，使用$\mathbf{B}$表示矩阵</p>
+<h3 id="矩阵操作"><a href="#矩阵操作" class="headerlink" title="矩阵操作"></a>矩阵操作</h3><p><code>x.T</code></p>
+<p>张量是描述具有任意数量轴的n维数组的通用方法。</p>
+<h4 id="均值"><a href="#均值" class="headerlink" title="均值"></a>均值</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x.mean()</span><br><span class="line">x.<span class="built_in">sum</span>()/x.numel()</span><br></pre></td></tr></table></figure>
+<h4 id="非降维求和"><a href="#非降维求和" class="headerlink" title="非降维求和"></a>非降维求和</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x_sum=x.<span class="built_in">sum</span>(axis=<span class="number">1</span>,keepdims=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="累计总和"><a href="#累计总和" class="headerlink" title="累计总和"></a>累计总和</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s.cumsum(axis=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="矩阵向量积"><a href="#矩阵向量积" class="headerlink" title="矩阵向量积"></a>矩阵向量积</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.mv(A,x)</span><br></pre></td></tr></table></figure>
+<h4 id="矩阵乘法"><a href="#矩阵乘法" class="headerlink" title="矩阵乘法"></a>矩阵乘法</h4><p>类似于很多个矩阵向量积</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.mm(A,b)</span><br></pre></td></tr></table></figure>
+<h4 id="向量范数"><a href="#向量范数" class="headerlink" title="向量范数"></a>向量范数</h4><script type="math/tex; mode=display">
+||x||_2=\sqrt{\sum_{i=1}^nx_i^2}</script><script type="math/tex; mode=display">
+||x||_1=\sum_{i=1}^n|x_i|</script><p>推而广之</p>
+<script type="math/tex; mode=display">
+||x||_p=(\sum_{i=1}^n|x_i|^p)^{\frac{1}{p}}</script><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.norm(u)</span><br></pre></td></tr></table></figure>
+<h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><p>给定特征估计目标的过程称为预测或推断，但更经常使用预测，在统计学中推断更多的表示基于数据集估计参数。</p>
+<p>输入值都是已经给定的，并且只有⼀个计算神经元。由于模型重点在发生计算的地方，所以通常在计算层数时不考虑输入层。</p>
+<p>对于线性回归，每个输入都与每个输出相连，我们将这种变换称为全连接层或稠密层。</p>
+]]></content>
+      <tags>
+        <tag>python</tag>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
 </search>
