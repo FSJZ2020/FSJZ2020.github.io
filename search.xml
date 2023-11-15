@@ -3008,6 +3008,32 @@ ${$tep1}{\style{visibility:hidden}{(x+1)(x+1)}}</script>]]></content>
 <p><strong>添加快捷键</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global alias.st status</span><br></pre></td></tr></table></figure>
 <p>单个仓库下的配置文件放在<code>.git/config</code>下，全局<strong>git</strong>配置存放在用户名目录中</p>
+<h1 id="更新-阅读Pro-Git笔记"><a href="#更新-阅读Pro-Git笔记" class="headerlink" title="更新(阅读Pro Git笔记)"></a>更新(阅读Pro Git笔记)</h1><p>VCS:版本控制系统</p>
+<p>其他版本控制系统基于差异，git基于快照</p>
+<p><strong>三种状态：</strong>已修改、已暂存、已提交</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --system --global --<span class="built_in">local</span> </span><br></pre></td></tr></table></figure>
+<p>分别配置全局、当前用户和当前仓库的配置，就近原则，即针对仓库的覆盖全局的。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --list</span><br><span class="line">git config --show-origin user.name</span><br><span class="line">git config &lt;key&gt;</span><br></pre></td></tr></table></figure>
+<p>检查某一项的配置</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">help</span> &lt;verb&gt;</span><br><span class="line">git &lt;verb&gt; --<span class="built_in">help</span></span><br><span class="line">git &lt;verb&gt; -h <span class="comment">#简短参考</span></span><br></pre></td></tr></table></figure>
+<p>某一命令的帮助</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add &lt;files&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git status -s</span><br></pre></td></tr></table></figure>
+<p>查看工作区状态</p>
+<p>左栏表示暂存区状态，右栏表示工作区状态</p>
+<h2 id="gitignore格式规范"><a href="#gitignore格式规范" class="headerlink" title=".gitignore格式规范"></a>.gitignore格式规范</h2><ul>
+<li>所有空行和以#开头的行会被git忽略</li>
+<li>使用glob模式(shell使用的简化的正则表达式)匹配</li>
+<li>可以以<code>/</code>开头防止递归</li>
+<li>以<code>/</code>结尾指定目录</li>
+<li>模式前加<code>!</code>取反</li>
+</ul>
+<p>子目录下的<code>.gitignore</code>仅作用于它所在的目录</p>
+<h2 id="查看修改内容"><a href="#查看修改内容" class="headerlink" title="查看修改内容"></a>查看修改内容</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git diff <span class="comment"># 查看尚未暂存的改动</span></span><br><span class="line">git diff --staged [--cached] <span class="comment">#两者为同义词</span></span><br></pre></td></tr></table></figure>
+<h2 id="提交修改"><a href="#提交修改" class="headerlink" title="提交修改"></a>提交修改</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit -a -m <span class="string">&#x27;message&#x27;</span></span><br><span class="line">git rm test.txt <span class="comment">#删除暂存区和工作目录下的</span></span><br><span class="line">git rm --cached test.txt <span class="comment">#只删除暂存区的</span></span><br><span class="line">git mv README.md README <span class="comment"># 重命名操作</span></span><br><span class="line">git <span class="built_in">log</span> -p <span class="comment"># 显示每次提交引入的差异</span></span><br><span class="line">git <span class="built_in">log</span> --pretty=oneline[short][full][fuller]</span><br></pre></td></tr></table></figure>
+<h2 id="撤销操作"><a href="#撤销操作" class="headerlink" title="撤销操作"></a>撤销操作</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit -amend <span class="comment">#当你忘了添加某个文件，而提交时，使用这个可以让新提交换掉旧提交</span></span><br><span class="line">git reset HEAD README.md <span class="comment">#取消暂存</span></span><br><span class="line">git checkout -- README.md <span class="comment"># 取消修改</span></span><br></pre></td></tr></table></figure>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote -v <span class="comment">#显示读写远程仓库使用的git简写及对应的url</span></span><br><span class="line">git fetch orgin <span class="comment"># 从远程下载数据，不会合并和修改你当前的工作</span></span><br><span class="line">git remote show <span class="comment">#　显示所有远程分支</span></span><br><span class="line">git remote rename orgin or <span class="comment"># 重命名远程仓库</span></span><br><span class="line">git remote remove origin <span class="comment"># 移除远程仓库</span></span><br></pre></td></tr></table></figure>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>git</tag>
@@ -3991,7 +4017,60 @@ Page3-->Compnent5</pre>
   <entry>
     <title>processing学习</title>
     <url>/2023/08/16/processing%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p>Processing学习笔记</p>
+<span id="more"></span>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">line(x1,y1,x2,y2)<span class="comment">#直线</span></span><br><span class="line">size(width,height)<span class="comment">#窗口大小</span></span><br><span class="line">background(r,g,b)<span class="comment">#背景颜色</span></span><br><span class="line">stroke(<span class="number">255</span>)<span class="comment">#描边颜色</span></span><br><span class="line">stroke(<span class="number">255</span>, <span class="number">128</span>, <span class="number">0</span>)<span class="comment"># 三原色版</span></span><br><span class="line">stroke(<span class="string">&quot;#FF8000&quot;</span>)  <span class="comment"># 十六进制版</span></span><br><span class="line">stroke(<span class="number">255</span>, <span class="number">128</span>, <span class="number">0</span>, <span class="number">128</span>)<span class="comment"># 增加透明度，透明度取值范围0~255</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>填充和描边颜色会影响绘制到屏幕上的所有几何图形，直到下一个填充和描边函数为止。</p>
+<h1 id="交互式程序"><a href="#交互式程序" class="headerlink" title="交互式程序"></a>交互式程序</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">setup</span>():</span></span><br><span class="line">    size(<span class="number">400</span>, <span class="number">400</span>)</span><br><span class="line">    stroke(<span class="number">255</span>)</span><br><span class="line">    background(<span class="number">192</span>, <span class="number">64</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">draw</span>():</span></span><br><span class="line">    line(<span class="number">150</span>, <span class="number">25</span>, mouseX, mouseY)</span><br><span class="line">    saveFrame(<span class="string">&quot;output-####.png&quot;</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mousePressed</span>():</span></span><br><span class="line">    background(<span class="number">192</span>, <span class="number">64</span>, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>setup()块执行一次，draw()重复运行，mousePressed()当鼠标按下时执行。</p>
+<p> saveFrame( )将保存程序输出的 TIFF 格式图像的编号序列</p>
+<h1 id="渲染器"><a href="#渲染器" class="headerlink" title="渲染器"></a>渲染器</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">size(<span class="number">400</span>, <span class="number">400</span>, P2D)</span><br><span class="line"><span class="comment"># P2D渲染器使用OpenGL来更快地渲染二维图形，同时使用Processing更简单的图形API和Processing开发环境的简单应用程序导出。</span></span><br><span class="line">size(<span class="number">400</span>, <span class="number">400</span>, P3D)</span><br><span class="line"><span class="comment"># P3D 渲染器还使用 OpenGL 来实现更快的渲染。它可以绘制空间中的三维物体和二维物体以及灯光、纹理和材质。</span></span><br><span class="line">size(<span class="number">400</span>, <span class="number">400</span>, PDF, <span class="string">&quot;output.pdf&quot;</span>)</span><br><span class="line"><span class="comment"># PDF渲染器将所有几何图形绘制到文件而不是屏幕上。要使用 PDF，除了更改 size() 函数之外，还必须选择“导入库”，然后从“草图”菜单中选择“PDF”。这是默认渲染器的近亲，但直接写入 PDF 文件。</span></span><br></pre></td></tr></table></figure>
+<h1 id="基本绘图"><a href="#基本绘图" class="headerlink" title="基本绘图"></a>基本绘图</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">line</span><br><span class="line">point</span><br><span class="line">rect(x,y,width,height)</span><br><span class="line">rectMode(CENTER)<span class="comment">#可选CENTER、CORNERS</span></span><br><span class="line">ellipseMode(CORNERS)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">stroke描边</span><br><span class="line">fill填充</span><br><span class="line">noStroke取消描边</span><br><span class="line">noFill取消填充</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="自定义颜色范围"><a href="#自定义颜色范围" class="headerlink" title="自定义颜色范围"></a>自定义颜色范围</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">colorMode(RGB,<span class="number">100</span>)</span><br><span class="line">colorMode(RGB,<span class="number">100</span>,<span class="number">500</span>,<span class="number">10</span>,<span class="number">255</span>)</span><br><span class="line"><span class="comment">#颜色模式也可以设为HSB</span></span><br></pre></td></tr></table></figure>
+<h2 id="交互式控制"><a href="#交互式控制" class="headerlink" title="交互式控制"></a>交互式控制</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">draw</span>():</span></span><br><span class="line">	frameRate(<span class="number">12</span>)</span><br><span class="line">    println(<span class="built_in">str</span>(mouseX)+<span class="string">&quot;:&quot;</span>+<span class="built_in">str</span>(mouseY))</span><br></pre></td></tr></table></figure>
+<p>屏幕宽度和高度分别为<code>width</code>和<code>height</code></p>
+<p><code>pmouseX</code>和<code>pmouseY</code>存储前一帧的鼠标值</p>
+<p><code>mousePressed</code>检测鼠标按下状态</p>
+<p><code>mouseButton</code>检测鼠标按下按键</p>
+<p><code>strokeWeight</code>设置描边的粗细</p>
+<p><code>key</code>保存最近按下的按键，<code>text</code>输出文字消息，<code>textSize</code>设置文字大小。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (key == CODED):</span><br><span class="line">        <span class="keyword">if</span> (keyCode == ALT):</span><br><span class="line">            y = <span class="number">20</span></span><br><span class="line">        <span class="keyword">elif</span> (keyCode == DOWN):</span><br><span class="line">            y = <span class="number">50</span></span><br></pre></td></tr></table></figure>
+<h2 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h2><p>鼠标事件函数有 mousePressed()、mouseReleased()、mouseMoved() 和 mouseDragged()</p>
+<h2 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h2><p>keyPressed()和keyReleased()</p>
+<h2 id="事件流程"><a href="#事件流程" class="headerlink" title="事件流程"></a>事件流程</h2><p>draw()函数每秒显示60帧，noLoop()停止draw()循环，Loop()恢复操作，</p>
+<p>redraw()运行draw()中的代码一次，停止执行。</p>
+<h2 id="光标图标"><a href="#光标图标" class="headerlink" title="光标图标"></a>光标图标</h2><p>使用noCursor()隐藏鼠标光标，使用cursor()设置不同的图标</p>
+<p>运行noCursor()隐藏鼠标光标，使用cursor()显示图标</p>
+<p>cursor()参数选项：ARROW, CROSS, HAND, MOVE, TEXT, and WAIT</p>
+<h2 id="图像操作"><a href="#图像操作" class="headerlink" title="图像操作"></a>图像操作</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">img=loadImage(<span class="string">&quot;test.jpg&quot;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">createImage(<span class="number">200</span>,<span class="number">200</span>,RGB)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">image(img,<span class="number">0</span>,<span class="number">0</span>,<span class="number">640</span>,<span class="number">320</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tint(light,alpha)</span><br><span class="line">tint(red,green,blue)</span><br><span class="line">tint(red,green,blue,alpha)</span><br></pre></td></tr></table></figure>
+<h2 id="像素操作"><a href="#像素操作" class="headerlink" title="像素操作"></a>像素操作</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">loadPixels()</span><br><span class="line">pixels=...</span><br><span class="line">updatePixels()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">constrain(r,<span class="number">0</span>,<span class="number">255</span>)<span class="comment">#将范围限制在0-255</span></span><br><span class="line">dist(x,y,mouseX,mouseY)</span><br></pre></td></tr></table></figure>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">createFont(&quot;Arial&quot;,20,True)</span><br><span class="line">textFont(f)</span><br><span class="line">textAlign(CENTER)</span><br><span class="line">text(message,0,0)</span><br></pre></td></tr></table></figure>
+<h2 id="2D变换"><a href="#2D变换" class="headerlink" title="2D变换"></a>2D变换</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pushMatrix() <span class="comment">#保存当前坐标参数</span></span><br><span class="line">popMatrix() <span class="comment">#恢复当前坐标参数</span></span><br><span class="line">radians() <span class="comment"># 将度数转为弧度数</span></span><br><span class="line">degrees() <span class="comment">#将弧度数转为度数</span></span><br><span class="line">scale(<span class="number">3.0</span>,<span class="number">0.5</span>) <span class="comment">#缩放x轴3倍，y轴0.5倍</span></span><br></pre></td></tr></table></figure>
+<p>每次执行draw()函数时，坐标系会恢复到原来的状态，原点位于窗口左上方，不旋转，不缩放。</p>
+<p>对于三维，可使用translate，给三个参数，scale类似，三维的旋转可使用rotateX、rotateY和rotateZ</p>
+<h2 id="P3D"><a href="#P3D" class="headerlink" title="P3D"></a>P3D</h2><p><img src="https://py.processing.org/tutorials/p3d/imgs/coordinatesystem.png" alt="img"></p>
+<p>python版本对P3D支持的不好，使用Java版会好一些</p>
+<p><strong>灯光</strong></p>
+<p>默认灯光直接使用light，环境光使用ambientLight，定向光使用directiveLight，聚光SpotLight，点光pointLight</p>
+<h2 id="在命令行使用processing"><a href="#在命令行使用processing" class="headerlink" title="在命令行使用processing"></a>在命令行使用processing</h2><p>安装Java8(实测更高版本的也能用)，配置环境变量</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java -jar processing-py.jar your-sketch.py</span><br></pre></td></tr></table></figure>
+<p><strong>其他参数</strong></p>
+<p>-Xms 初始堆大小 -Xmx最大堆大小</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java -Xms256m -Xmx1024m -jar processing-py.jar </span><br></pre></td></tr></table></figure>
+<p>当导入文件时，先从data目录下查找，如果找不到，再从同目录下查找。</p>
+<p><strong>导入库</strong></p>
+<p>将库文件放到草图文件相同目录的“libraries”文件夹下，使用<code>add_library(&quot;module&quot;)</code>。</p>
+<h2 id="杂记"><a href="#杂记" class="headerlink" title="杂记"></a>杂记</h2><p>processing.py基于Jython实现，Jython实现的是python2.7，有些功能和python3不兼容。</p>
+]]></content>
+      <tags>
+        <tag>python</tag>
+        <tag>processing</tag>
+      </tags>
   </entry>
   <entry>
     <title>C++笔记</title>
@@ -4136,5 +4215,10 @@ Page3-->Compnent5</pre>
         <tag>python</tag>
         <tag>深度学习</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>周志华-机器学习</title>
+    <url>/2023/10/04/%E5%91%A8%E5%BF%97%E5%8D%8E-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
