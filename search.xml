@@ -4219,6 +4219,35 @@ Page3-->Compnent5</pre>
   <entry>
     <title>周志华-机器学习</title>
     <url>/2023/10/04/%E5%91%A8%E5%BF%97%E5%8D%8E-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<span id="more"></span>
+<h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><p>m个样本中有a个样本分类错误，则错误率</p>
+<script type="math/tex; mode=display">
+E=\frac{a}{m}</script><p>精度=1-错误率，</p>
+<pre class="mermaid">graph LR
+误差-->训练误差or经验误差
+误差-->泛化误差</pre>
+
+<p>过拟合(过配) 与 欠拟合(欠配)</p>
+<h2 id="从数据集中产生训练集和测试集的方法"><a href="#从数据集中产生训练集和测试集的方法" class="headerlink" title="从数据集中产生训练集和测试集的方法"></a>从数据集中产生训练集和测试集的方法</h2><ol>
+<li>留出法</li>
+</ol>
+<blockquote>
+<p>将数据集拆成互斥的两部分，一部分作为训练集，一部分作为测试集，采用若干次随机划分，重复进行实验评估后取平均值作为留出法的评估结果。</p>
+<p>常见做法是将2/3或4/5的样本作为训练集，剩余的样本作为测试集。</p>
+</blockquote>
+<ol>
+<li>交叉验证法</li>
+</ol>
+<blockquote>
+<p>将数据集D划分成K个大小相似的互斥子集，每次用k-1个子集作为训练集，1个子集作为测试集，从而可进行k次训练和测试。k最常用的取值是10。</p>
+<p>k折交叉验证通常要采用不同的划分重复p次，最终的评估结果是这p次k折交叉验证结果的均值。</p>
+</blockquote>
+<ol>
+<li></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
   </entry>
 </search>
